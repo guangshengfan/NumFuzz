@@ -1,0 +1,4 @@
+diff id:000009,src:000000,op:havoc,rep:128,+cov -> id:000010,src:000000,op:havoc,rep:128,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/s_floor.c
+  New 'line' coverage: 73
+  New 'line' coverage: 74

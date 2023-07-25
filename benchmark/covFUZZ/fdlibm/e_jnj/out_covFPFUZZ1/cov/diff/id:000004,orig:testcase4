@@ -1,0 +1,7 @@
+diff id:000003,orig:testcase3 -> id:000004,orig:testcase4
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_jnj/e_jnj.c
+  New 'line' coverage: 830
+  New 'line' coverage: 831
+  New 'line' coverage: 832
+  New 'line' coverage: 833
+  New 'line' coverage: 962

@@ -1,0 +1,8 @@
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_nextafter/s_nextafter.c
+  New 'line' coverage: 60
+  New 'line' coverage: 61
+  New 'line' coverage: 75
+  New 'line' coverage: 76
+  New 'line' coverage: 77
+  New 'line' coverage: 78

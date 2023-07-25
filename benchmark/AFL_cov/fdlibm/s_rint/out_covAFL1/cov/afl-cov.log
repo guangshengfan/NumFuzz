@@ -1,0 +1,66 @@
+
+*** Imported 11 new test cases from: out_covAFL1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covAFL1//queue/id:000000,orig:testcase | ./s_rint_cov out_covAFL1//queue/id:000000,orig:testcase
+    0.0000000000000000e+00
+    The Value of b is 0.000000
+++++++ END
+
+[+] AFL test case: id:000001,src:000000,op:flip1,pos:0,+cov (1 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000002,src:000000,op:flip1,pos:0,+cov (2 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000003,src:000000,op:havoc,rep:64,+cov (3 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000004,src:000000,op:havoc,rep:8,+cov (4 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000005,src:000000,op:havoc,rep:64,+cov (5 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000006,src:000002,op:arith8,pos:2,val:+5,+cov (6 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000007,src:000003,op:arith8,pos:1,val:+20,+cov (7 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000008,src:000003,op:arith8,pos:7,val:-3,+cov (8 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000009,src:000008,op:flip1,pos:1,+cov (9 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] AFL test case: id:000010,src:000009+000004,op:splice,rep:4,+cov (10 / 11), cycle: 0
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] Processed 11 / 11 test cases.
+
+[+] Final zero coverage report: out_covAFL1//cov/zero-cov
+[+] Final positive coverage report: out_covAFL1//cov/pos-cov
+    lines......: 0.0% (0 of 36 lines)
+    functions..: no data found
+    branches...: 0.0% (0 of 20 branches)
+[+] Final lcov web report: out_covAFL1//cov/web/index.html

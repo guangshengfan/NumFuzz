@@ -1,0 +1,3 @@
+diff id:000021,src:000012,op:flip2,pos:15 -> id:000022,src:000012,op:arith8,pos:1,val:+12,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_sqrt/e_sqrt.c
+  New 'line' coverage: 113

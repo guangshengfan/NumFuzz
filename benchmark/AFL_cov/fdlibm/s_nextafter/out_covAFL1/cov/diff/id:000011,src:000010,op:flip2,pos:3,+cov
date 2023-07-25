@@ -1,0 +1,4 @@
+diff id:000010,src:000002+000007,op:splice,rep:2,+cov -> id:000011,src:000010,op:flip2,pos:3,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_nextafter/s_nextafter.c
+  New 'line' coverage: 68
+  New 'line' coverage: 69

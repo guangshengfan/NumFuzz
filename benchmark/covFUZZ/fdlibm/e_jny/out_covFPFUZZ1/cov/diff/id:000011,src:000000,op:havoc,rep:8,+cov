@@ -1,0 +1,5 @@
+diff id:000010,src:000000,op:havoc,rep:16,+cov -> id:000011,src:000000,op:havoc,rep:8,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_jny/e_jny.c
+  New 'line' coverage: 1017
+  New 'line' coverage: 1019
+  New 'line' coverage: 1023

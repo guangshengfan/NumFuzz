@@ -1,0 +1,7 @@
+diff id:000006,orig:testcase14 -> id:000007,orig:testcase15
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_sinh/e_sinh.c
+  New 'line' coverage: 160
+  New 'line' coverage: 161
+  New 'line' coverage: 162
+  New 'line' coverage: 163
+  New 'line' coverage: 164

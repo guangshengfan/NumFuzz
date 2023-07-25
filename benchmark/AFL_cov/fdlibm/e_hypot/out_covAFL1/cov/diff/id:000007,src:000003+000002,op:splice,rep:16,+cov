@@ -1,0 +1,7 @@
+diff id:000006,src:000003,op:havoc,rep:32,+cov -> id:000007,src:000003+000002,op:splice,rep:16,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_hypot/e_hypot.c
+  New 'line' coverage: 71
+  New 'line' coverage: 72
+  New 'line' coverage: 73
+  New 'line' coverage: 74
+  New 'line' coverage: 75

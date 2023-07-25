@@ -1,0 +1,12 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_lgamma_r/e_lgamma_r.c
+  New 'function' coverage: __ieee754_lgamma_r()
+  New 'line' coverage: 366
+  New 'line' coverage: 372
+  New 'line' coverage: 373
+  New 'line' coverage: 375
+  New 'line' coverage: 376
+  New 'line' coverage: 379
+  New 'line' coverage: 380
+  New 'line' coverage: 381
+  New 'line' coverage: 382

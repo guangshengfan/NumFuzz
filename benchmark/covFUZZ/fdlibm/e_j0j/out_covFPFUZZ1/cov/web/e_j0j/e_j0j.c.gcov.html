@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - trace.lcov_info_final - e_j0j/e_j0j.c</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">e_j0j</a> - e_j0j.c<span style="font-size: 80%;"> (source / <a href="e_j0j.c.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">trace.lcov_info_final</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2022-06-17 09:31:35</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntryHi">94.4 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : </a>
+<a name="2"><span class="lineNum">       2 </span>                :            : /* @(#)e_j0.c 1.3 95/01/18 */</a>
+<a name="3"><span class="lineNum">       3 </span>                :            : /*</a>
+<a name="4"><span class="lineNum">       4 </span>                :            :  * ====================================================</a>
+<a name="5"><span class="lineNum">       5 </span>                :            :  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.</a>
+<a name="6"><span class="lineNum">       6 </span>                :            :  *</a>
+<a name="7"><span class="lineNum">       7 </span>                :            :  * Developed at SunSoft, a Sun Microsystems, Inc. business.</a>
+<a name="8"><span class="lineNum">       8 </span>                :            :  * Permission to use, copy, modify, and distribute this</a>
+<a name="9"><span class="lineNum">       9 </span>                :            :  * software is freely granted, provided that this notice </a>
+<a name="10"><span class="lineNum">      10 </span>                :            :  * is preserved.</a>
+<a name="11"><span class="lineNum">      11 </span>                :            :  * ====================================================</a>
+<a name="12"><span class="lineNum">      12 </span>                :            :  */</a>
+<a name="13"><span class="lineNum">      13 </span>                :            : </a>
+<a name="14"><span class="lineNum">      14 </span>                :            : /* __ieee754_j0(x), __ieee754_y0(x)</a>
+<a name="15"><span class="lineNum">      15 </span>                :            :  * Bessel function of the first and second kinds of order zero.</a>
+<a name="16"><span class="lineNum">      16 </span>                :            :  * Method -- j0(x):</a>
+<a name="17"><span class="lineNum">      17 </span>                :            :  *      1. For tiny x, we use j0(x) = 1 - x^2/4 + x^4/64 - ...</a>
+<a name="18"><span class="lineNum">      18 </span>                :            :  *      2. Reduce x to |x| since j0(x)=j0(-x),  and</a>
+<a name="19"><span class="lineNum">      19 </span>                :            :  *         for x in (0,2)</a>
+<a name="20"><span class="lineNum">      20 </span>                :            :  *              j0(x) = 1-z/4+ z^2*R0/S0,  where z = x*x;</a>
+<a name="21"><span class="lineNum">      21 </span>                :            :  *         (precision:  |j0-1+z/4-z^2R0/S0 |&lt;2**-63.67 )</a>
+<a name="22"><span class="lineNum">      22 </span>                :            :  *         for x in (2,inf)</a>
+<a name="23"><span class="lineNum">      23 </span>                :            :  *              j0(x) = sqrt(2/(pi*x))*(p0(x)*cos(x0)-q0(x)*sin(x0))</a>
+<a name="24"><span class="lineNum">      24 </span>                :            :  *         where x0 = x-pi/4. It is better to compute sin(x0),cos(x0)</a>
+<a name="25"><span class="lineNum">      25 </span>                :            :  *         as follow:</a>
+<a name="26"><span class="lineNum">      26 </span>                :            :  *              cos(x0) = cos(x)cos(pi/4)+sin(x)sin(pi/4)</a>
+<a name="27"><span class="lineNum">      27 </span>                :            :  *                      = 1/sqrt(2) * (cos(x) + sin(x))</a>
+<a name="28"><span class="lineNum">      28 </span>                :            :  *              sin(x0) = sin(x)cos(pi/4)-cos(x)sin(pi/4)</a>
+<a name="29"><span class="lineNum">      29 </span>                :            :  *                      = 1/sqrt(2) * (sin(x) - cos(x))</a>
+<a name="30"><span class="lineNum">      30 </span>                :            :  *         (To avoid cancellation, use</a>
+<a name="31"><span class="lineNum">      31 </span>                :            :  *              sin(x) +- cos(x) = -cos(2x)/(sin(x) -+ cos(x))</a>
+<a name="32"><span class="lineNum">      32 </span>                :            :  *          to compute the worse one.)</a>
+<a name="33"><span class="lineNum">      33 </span>                :            :  *         </a>
+<a name="34"><span class="lineNum">      34 </span>                :            :  *      3 Special cases</a>
+<a name="35"><span class="lineNum">      35 </span>                :            :  *              j0(nan)= nan</a>
+<a name="36"><span class="lineNum">      36 </span>                :            :  *              j0(0) = 1</a>
+<a name="37"><span class="lineNum">      37 </span>                :            :  *              j0(inf) = 0</a>
+<a name="38"><span class="lineNum">      38 </span>                :            :  *              </a>
+<a name="39"><span class="lineNum">      39 </span>                :            :  * Method -- y0(x):</a>
+<a name="40"><span class="lineNum">      40 </span>                :            :  *      1. For x&lt;2.</a>
+<a name="41"><span class="lineNum">      41 </span>                :            :  *         Since </a>
+<a name="42"><span class="lineNum">      42 </span>                :            :  *              y0(x) = 2/pi*(j0(x)*(ln(x/2)+Euler) + x^2/4 - ...)</a>
+<a name="43"><span class="lineNum">      43 </span>                :            :  *         therefore y0(x)-2/pi*j0(x)*ln(x) is an even function.</a>
+<a name="44"><span class="lineNum">      44 </span>                :            :  *         We use the following function to approximate y0,</a>
+<a name="45"><span class="lineNum">      45 </span>                :            :  *              y0(x) = U(z)/V(z) + (2/pi)*(j0(x)*ln(x)), z= x^2</a>
+<a name="46"><span class="lineNum">      46 </span>                :            :  *         where </a>
+<a name="47"><span class="lineNum">      47 </span>                :            :  *              U(z) = u00 + u01*z + ... + u06*z^6</a>
+<a name="48"><span class="lineNum">      48 </span>                :            :  *              V(z) = 1  + v01*z + ... + v04*z^4</a>
+<a name="49"><span class="lineNum">      49 </span>                :            :  *         with absolute approximation error bounded by 2**-72.</a>
+<a name="50"><span class="lineNum">      50 </span>                :            :  *         Note: For tiny x, U/V = u0 and j0(x)~1, hence</a>
+<a name="51"><span class="lineNum">      51 </span>                :            :  *              y0(tiny) = u0 + (2/pi)*ln(tiny), (choose tiny&lt;2**-27)</a>
+<a name="52"><span class="lineNum">      52 </span>                :            :  *      2. For x&gt;=2.</a>
+<a name="53"><span class="lineNum">      53 </span>                :            :  *              y0(x) = sqrt(2/(pi*x))*(p0(x)*cos(x0)+q0(x)*sin(x0))</a>
+<a name="54"><span class="lineNum">      54 </span>                :            :  *         where x0 = x-pi/4. It is better to compute sin(x0),cos(x0)</a>
+<a name="55"><span class="lineNum">      55 </span>                :            :  *         by the method mentioned above.</a>
+<a name="56"><span class="lineNum">      56 </span>                :            :  *      3. Special cases: y0(0)=-inf, y0(x&lt;0)=NaN, y0(inf)=0.</a>
+<a name="57"><span class="lineNum">      57 </span>                :            :  */</a>
+<a name="58"><span class="lineNum">      58 </span>                :            : </a>
+<a name="59"><span class="lineNum">      59 </span>                :            : #include &quot;fdlibm.h&quot;</a>
+<a name="60"><span class="lineNum">      60 </span>                :            : #include &lt;math.h&gt;</a>
+<a name="61"><span class="lineNum">      61 </span>                :            : #include &lt;stdio.h&gt;</a>
+<a name="62"><span class="lineNum">      62 </span>                :            : #include &lt;stdlib.h&gt;</a>
+<a name="63"><span class="lineNum">      63 </span>                :            : </a>
+<a name="64"><span class="lineNum">      64 </span>                :            : </a>
+<a name="65"><span class="lineNum">      65 </span>                :            : #ifdef __STDC__</a>
+<a name="66"><span class="lineNum">      66 </span>                :            : static double pzero(double), qzero(double);</a>
+<a name="67"><span class="lineNum">      67 </span>                :            : #else</a>
+<a name="68"><span class="lineNum">      68 </span>                :            : static double pzero(), qzero();</a>
+<a name="69"><span class="lineNum">      69 </span>                :            : #endif</a>
+<a name="70"><span class="lineNum">      70 </span>                :            : </a>
+<a name="71"><span class="lineNum">      71 </span>                :            : #ifdef __STDC__</a>
+<a name="72"><span class="lineNum">      72 </span>                :            : static const double </a>
+<a name="73"><span class="lineNum">      73 </span>                :            : #else</a>
+<a name="74"><span class="lineNum">      74 </span>                :            : static double </a>
+<a name="75"><span class="lineNum">      75 </span>                :            : #endif</a>
+<a name="76"><span class="lineNum">      76 </span>                :            : huge    = 1e300,</a>
+<a name="77"><span class="lineNum">      77 </span>                :            : one     = 1.0,</a>
+<a name="78"><span class="lineNum">      78 </span>                :            : invsqrtpi=  5.64189583547756279280e-01, /* 0x3FE20DD7, 0x50429B6D */</a>
+<a name="79"><span class="lineNum">      79 </span>                :            : tpi      =  6.36619772367581382433e-01, /* 0x3FE45F30, 0x6DC9C883 */</a>
+<a name="80"><span class="lineNum">      80 </span>                :            :                 /* R0/S0 on [0, 2.00] */</a>
+<a name="81"><span class="lineNum">      81 </span>                :            : R02  =  1.56249999999999947958e-02, /* 0x3F8FFFFF, 0xFFFFFFFD */</a>
+<a name="82"><span class="lineNum">      82 </span>                :            : R03  = -1.89979294238854721751e-04, /* 0xBF28E6A5, 0xB61AC6E9 */</a>
+<a name="83"><span class="lineNum">      83 </span>                :            : R04  =  1.82954049532700665670e-06, /* 0x3EBEB1D1, 0x0C503919 */</a>
+<a name="84"><span class="lineNum">      84 </span>                :            : R05  = -4.61832688532103189199e-09, /* 0xBE33D5E7, 0x73D63FCE */</a>
+<a name="85"><span class="lineNum">      85 </span>                :            : S01  =  1.56191029464890010492e-02, /* 0x3F8FFCE8, 0x82C8C2A4 */</a>
+<a name="86"><span class="lineNum">      86 </span>                :            : S02  =  1.16926784663337450260e-04, /* 0x3F1EA6D2, 0xDD57DBF4 */</a>
+<a name="87"><span class="lineNum">      87 </span>                :            : S03  =  5.13546550207318111446e-07, /* 0x3EA13B54, 0xCE84D5A9 */</a>
+<a name="88"><span class="lineNum">      88 </span>                :            : S04  =  1.16614003333790000205e-09; /* 0x3E1408BC, 0xF4745D8F */</a>
+<a name="89"><span class="lineNum">      89 </span>                :            : </a>
+<a name="90"><span class="lineNum">      90 </span>                :            : static double zero = 0.0;</a>
+<a name="91"><span class="lineNum">      91 </span>                :            : </a>
+<a name="92"><span class="lineNum">      92 </span>                :            : #ifdef __STDC__</a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         12 :         double __ieee754_j0(double x) </span></a>
+<a name="94"><span class="lineNum">      94 </span>                :            : #else</a>
+<a name="95"><span class="lineNum">      95 </span>                :            :         double __ieee754_j0(x) </a>
+<a name="96"><span class="lineNum">      96 </span>                :            :         double x;</a>
+<a name="97"><span class="lineNum">      97 </span>                :            : #endif</a>
+<a name="98"><span class="lineNum">      98 </span>                :            : {</a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         12 :         double z, s,c,ss,cc,r,u,v;</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         12 :         int hx,ix;</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :            : </a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">         12 :         hx = __HI(x);</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">         12 :         ix = hx&amp;0x7fffffff;</span></a>
+<a name="104"><span class="lineNum">     104 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         12 :         if(ix&gt;=0x7ff00000) return one/(x*x);</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         11 :         x = fabs(x);</span></a>
+<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         11 :         if(ix &gt;= 0x40000000) {       /* |x| &gt;= 2.0 */</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">          6 :                 s = sin(x);</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">          6 :                 c = cos(x);</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">          6 :                 ss = s-c;</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">          6 :                 cc = s+c;</span></a>
+<a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          6 :                 if(ix&lt;0x7fe00000) {  /* make sure x+x not overflow */</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          5 :                     z = -cos(x+x);</span></a>
+<a name="113"><span class="lineNum">     113 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          5 :                     if ((s*c)&lt;zero) cc = z/ss;</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">          3 :                     else            ss = z/cc;</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :            :                 }</a>
+<a name="116"><span class="lineNum">     116 </span>                :            :         /*</a>
+<a name="117"><span class="lineNum">     117 </span>                :            :          * j0(x) = 1/sqrt(pi) * (P(0,x)*cc - Q(0,x)*ss) / sqrt(x)</a>
+<a name="118"><span class="lineNum">     118 </span>                :            :          * y0(x) = 1/sqrt(pi) * (P(0,x)*ss + Q(0,x)*cc) / sqrt(x)</a>
+<a name="119"><span class="lineNum">     119 </span>                :            :          */</a>
+<a name="120"><span class="lineNum">     120 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          6 :                 if(ix&gt;0x48000000) z = (invsqrtpi*cc)/sqrt(x);</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :            :                 else {</a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">          4 :                     u = pzero(x); v = qzero(x);</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">          4 :                     z = invsqrtpi*(u*cc-v*ss)/sqrt(x);</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :            :                 }</a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">          6 :                 return z;</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :            :         }</a>
+<a name="127"><span class="lineNum">     127 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          5 :         if(ix&lt;0x3f200000) {  /* |x| &lt; 2**-13 */</span></a>
+<a name="128"><span class="lineNum">     128 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :             if(huge+x&gt;one) { /* raise inexact if x != 0 */</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :                 if(ix&lt;0x3e400000) return one;        /* |x|&lt;2**-27 */</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">          1 :                 else          return one - 0.25*x*x;</span></a>
+<a name="131"><span class="lineNum">     131 </span>                :            :             }</a>
+<a name="132"><span class="lineNum">     132 </span>                :            :         }</a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">          3 :         z = x*x;</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">          3 :         r =  z*(R02+z*(R03+z*(R04+z*R05)));</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          3 :         s =  one+z*(S01+z*(S02+z*(S03+z*S04)));</span></a>
+<a name="136"><span class="lineNum">     136 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          3 :         if(ix &lt; 0x3FF00000) {        /* |x| &lt; 1.00 */</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          2 :             return one + z*(-0.25+(r/s));</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :            :         } else {</a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">          1 :             u = 0.5*x;</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">          1 :             return((one+u)*(one-u)+z*(r/s));</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :            :         }</a>
+<a name="142"><span class="lineNum">     142 </span>                :            : }</a>
+<a name="143"><span class="lineNum">     143 </span>                :            : </a>
+<a name="144"><span class="lineNum">     144 </span>                :            : //LCOV_EXCL_START</a>
+<a name="145"><span class="lineNum">     145 </span>                :            : #ifdef __STDC__</a>
+<a name="146"><span class="lineNum">     146 </span>                :            : static const double</a>
+<a name="147"><span class="lineNum">     147 </span>                :            : #else</a>
+<a name="148"><span class="lineNum">     148 </span>                :            : static double</a>
+<a name="149"><span class="lineNum">     149 </span>                :            : #endif</a>
+<a name="150"><span class="lineNum">     150 </span>                :            : u00  = -7.38042951086872317523e-02, /* 0xBFB2E4D6, 0x99CBD01F */</a>
+<a name="151"><span class="lineNum">     151 </span>                :            : u01  =  1.76666452509181115538e-01, /* 0x3FC69D01, 0x9DE9E3FC */</a>
+<a name="152"><span class="lineNum">     152 </span>                :            : u02  = -1.38185671945596898896e-02, /* 0xBF8C4CE8, 0xB16CFA97 */</a>
+<a name="153"><span class="lineNum">     153 </span>                :            : u03  =  3.47453432093683650238e-04, /* 0x3F36C54D, 0x20B29B6B */</a>
+<a name="154"><span class="lineNum">     154 </span>                :            : u04  = -3.81407053724364161125e-06, /* 0xBECFFEA7, 0x73D25CAD */</a>
+<a name="155"><span class="lineNum">     155 </span>                :            : u05  =  1.95590137035022920206e-08, /* 0x3E550057, 0x3B4EABD4 */</a>
+<a name="156"><span class="lineNum">     156 </span>                :            : u06  = -3.98205194132103398453e-11, /* 0xBDC5E43D, 0x693FB3C8 */</a>
+<a name="157"><span class="lineNum">     157 </span>                :            : v01  =  1.27304834834123699328e-02, /* 0x3F8A1270, 0x91C9C71A */</a>
+<a name="158"><span class="lineNum">     158 </span>                :            : v02  =  7.60068627350353253702e-05, /* 0x3F13ECBB, 0xF578C6C1 */</a>
+<a name="159"><span class="lineNum">     159 </span>                :            : v03  =  2.59150851840457805467e-07, /* 0x3E91642D, 0x7FF202FD */</a>
+<a name="160"><span class="lineNum">     160 </span>                :            : v04  =  4.41110311332675467403e-10; /* 0x3DFE5018, 0x3BD6D9EF */</a>
+<a name="161"><span class="lineNum">     161 </span>                :            : </a>
+<a name="162"><span class="lineNum">     162 </span>                :            : </a>
+<a name="163"><span class="lineNum">     163 </span>                :            : /* The asymptotic expansions of pzero is</a>
+<a name="164"><span class="lineNum">     164 </span>                :            :  *      1 - 9/128 s^2 + 11025/98304 s^4 - ...,  where s = 1/x.</a>
+<a name="165"><span class="lineNum">     165 </span>                :            :  * For x &gt;= 2, We approximate pzero by</a>
+<a name="166"><span class="lineNum">     166 </span>                :            :  *      pzero(x) = 1 + (R/S)</a>
+<a name="167"><span class="lineNum">     167 </span>                :            :  * where  R = pR0 + pR1*s^2 + pR2*s^4 + ... + pR5*s^10</a>
+<a name="168"><span class="lineNum">     168 </span>                :            :  *        S = 1 + pS0*s^2 + ... + pS4*s^10</a>
+<a name="169"><span class="lineNum">     169 </span>                :            :  * and</a>
+<a name="170"><span class="lineNum">     170 </span>                :            :  *      | pzero(x)-1-R/S | &lt;= 2  ** ( -60.26)</a>
+<a name="171"><span class="lineNum">     171 </span>                :            :  */</a>
+<a name="172"><span class="lineNum">     172 </span>                :            : #ifdef __STDC__</a>
+<a name="173"><span class="lineNum">     173 </span>                :            : static const double pR8[6] = { /* for x in [inf, 8]=1/[0,0.125] */</a>
+<a name="174"><span class="lineNum">     174 </span>                :            : #else</a>
+<a name="175"><span class="lineNum">     175 </span>                :            : static double pR8[6] = { /* for x in [inf, 8]=1/[0,0.125] */</a>
+<a name="176"><span class="lineNum">     176 </span>                :            : #endif</a>
+<a name="177"><span class="lineNum">     177 </span>                :            :   0.00000000000000000000e+00, /* 0x00000000, 0x00000000 */</a>
+<a name="178"><span class="lineNum">     178 </span>                :            :  -7.03124999999900357484e-02, /* 0xBFB1FFFF, 0xFFFFFD32 */</a>
+<a name="179"><span class="lineNum">     179 </span>                :            :  -8.08167041275349795626e+00, /* 0xC02029D0, 0xB44FA779 */</a>
+<a name="180"><span class="lineNum">     180 </span>                :            :  -2.57063105679704847262e+02, /* 0xC0701102, 0x7B19E863 */</a>
+<a name="181"><span class="lineNum">     181 </span>                :            :  -2.48521641009428822144e+03, /* 0xC0A36A6E, 0xCD4DCAFC */</a>
+<a name="182"><span class="lineNum">     182 </span>                :            :  -5.25304380490729545272e+03, /* 0xC0B4850B, 0x36CC643D */</a>
+<a name="183"><span class="lineNum">     183 </span>                :            : };</a>
+<a name="184"><span class="lineNum">     184 </span>                :            : #ifdef __STDC__</a>
+<a name="185"><span class="lineNum">     185 </span>                :            : static const double pS8[5] = {</a>
+<a name="186"><span class="lineNum">     186 </span>                :            : #else</a>
+<a name="187"><span class="lineNum">     187 </span>                :            : static double pS8[5] = {</a>
+<a name="188"><span class="lineNum">     188 </span>                :            : #endif</a>
+<a name="189"><span class="lineNum">     189 </span>                :            :   1.16534364619668181717e+02, /* 0x405D2233, 0x07A96751 */</a>
+<a name="190"><span class="lineNum">     190 </span>                :            :   3.83374475364121826715e+03, /* 0x40ADF37D, 0x50596938 */</a>
+<a name="191"><span class="lineNum">     191 </span>                :            :   4.05978572648472545552e+04, /* 0x40E3D2BB, 0x6EB6B05F */</a>
+<a name="192"><span class="lineNum">     192 </span>                :            :   1.16752972564375915681e+05, /* 0x40FC810F, 0x8F9FA9BD */</a>
+<a name="193"><span class="lineNum">     193 </span>                :            :   4.76277284146730962675e+04, /* 0x40E74177, 0x4F2C49DC */</a>
+<a name="194"><span class="lineNum">     194 </span>                :            : };</a>
+<a name="195"><span class="lineNum">     195 </span>                :            : </a>
+<a name="196"><span class="lineNum">     196 </span>                :            : #ifdef __STDC__</a>
+<a name="197"><span class="lineNum">     197 </span>                :            : static const double pR5[6] = { /* for x in [8,4.5454]=1/[0.125,0.22001] */</a>
+<a name="198"><span class="lineNum">     198 </span>                :            : #else</a>
+<a name="199"><span class="lineNum">     199 </span>                :            : static double pR5[6] = { /* for x in [8,4.5454]=1/[0.125,0.22001] */</a>
+<a name="200"><span class="lineNum">     200 </span>                :            : #endif</a>
+<a name="201"><span class="lineNum">     201 </span>                :            :  -1.14125464691894502584e-11, /* 0xBDA918B1, 0x47E495CC */</a>
+<a name="202"><span class="lineNum">     202 </span>                :            :  -7.03124940873599280078e-02, /* 0xBFB1FFFF, 0xE69AFBC6 */</a>
+<a name="203"><span class="lineNum">     203 </span>                :            :  -4.15961064470587782438e+00, /* 0xC010A370, 0xF90C6BBF */</a>
+<a name="204"><span class="lineNum">     204 </span>                :            :  -6.76747652265167261021e+01, /* 0xC050EB2F, 0x5A7D1783 */</a>
+<a name="205"><span class="lineNum">     205 </span>                :            :  -3.31231299649172967747e+02, /* 0xC074B3B3, 0x6742CC63 */</a>
+<a name="206"><span class="lineNum">     206 </span>                :            :  -3.46433388365604912451e+02, /* 0xC075A6EF, 0x28A38BD7 */</a>
+<a name="207"><span class="lineNum">     207 </span>                :            : };</a>
+<a name="208"><span class="lineNum">     208 </span>                :            : #ifdef __STDC__</a>
+<a name="209"><span class="lineNum">     209 </span>                :            : static const double pS5[5] = {</a>
+<a name="210"><span class="lineNum">     210 </span>                :            : #else</a>
+<a name="211"><span class="lineNum">     211 </span>                :            : static double pS5[5] = {</a>
+<a name="212"><span class="lineNum">     212 </span>                :            : #endif</a>
+<a name="213"><span class="lineNum">     213 </span>                :            :   6.07539382692300335975e+01, /* 0x404E6081, 0x0C98C5DE */</a>
+<a name="214"><span class="lineNum">     214 </span>                :            :   1.05125230595704579173e+03, /* 0x40906D02, 0x5C7E2864 */</a>
+<a name="215"><span class="lineNum">     215 </span>                :            :   5.97897094333855784498e+03, /* 0x40B75AF8, 0x8FBE1D60 */</a>
+<a name="216"><span class="lineNum">     216 </span>                :            :   9.62544514357774460223e+03, /* 0x40C2CCB8, 0xFA76FA38 */</a>
+<a name="217"><span class="lineNum">     217 </span>                :            :   2.40605815922939109441e+03, /* 0x40A2CC1D, 0xC70BE864 */</a>
+<a name="218"><span class="lineNum">     218 </span>                :            : };</a>
+<a name="219"><span class="lineNum">     219 </span>                :            : </a>
+<a name="220"><span class="lineNum">     220 </span>                :            : #ifdef __STDC__</a>
+<a name="221"><span class="lineNum">     221 </span>                :            : static const double pR3[6] = {/* for x in [4.547,2.8571]=1/[0.2199,0.35001] */</a>
+<a name="222"><span class="lineNum">     222 </span>                :            : #else</a>
+<a name="223"><span class="lineNum">     223 </span>                :            : static double pR3[6] = {/* for x in [4.547,2.8571]=1/[0.2199,0.35001] */</a>
+<a name="224"><span class="lineNum">     224 </span>                :            : #endif</a>
+<a name="225"><span class="lineNum">     225 </span>                :            :  -2.54704601771951915620e-09, /* 0xBE25E103, 0x6FE1AA86 */</a>
+<a name="226"><span class="lineNum">     226 </span>                :            :  -7.03119616381481654654e-02, /* 0xBFB1FFF6, 0xF7C0E24B */</a>
+<a name="227"><span class="lineNum">     227 </span>                :            :  -2.40903221549529611423e+00, /* 0xC00345B2, 0xAEA48074 */</a>
+<a name="228"><span class="lineNum">     228 </span>                :            :  -2.19659774734883086467e+01, /* 0xC035F74A, 0x4CB94E14 */</a>
+<a name="229"><span class="lineNum">     229 </span>                :            :  -5.80791704701737572236e+01, /* 0xC04D0A22, 0x420A1A45 */</a>
+<a name="230"><span class="lineNum">     230 </span>                :            :  -3.14479470594888503854e+01, /* 0xC03F72AC, 0xA892D80F */</a>
+<a name="231"><span class="lineNum">     231 </span>                :            : };</a>
+<a name="232"><span class="lineNum">     232 </span>                :            : #ifdef __STDC__</a>
+<a name="233"><span class="lineNum">     233 </span>                :            : static const double pS3[5] = {</a>
+<a name="234"><span class="lineNum">     234 </span>                :            : #else</a>
+<a name="235"><span class="lineNum">     235 </span>                :            : static double pS3[5] = {</a>
+<a name="236"><span class="lineNum">     236 </span>                :            : #endif</a>
+<a name="237"><span class="lineNum">     237 </span>                :            :   3.58560338055209726349e+01, /* 0x4041ED92, 0x84077DD3 */</a>
+<a name="238"><span class="lineNum">     238 </span>                :            :   3.61513983050303863820e+02, /* 0x40769839, 0x464A7C0E */</a>
+<a name="239"><span class="lineNum">     239 </span>                :            :   1.19360783792111533330e+03, /* 0x4092A66E, 0x6D1061D6 */</a>
+<a name="240"><span class="lineNum">     240 </span>                :            :   1.12799679856907414432e+03, /* 0x40919FFC, 0xB8C39B7E */</a>
+<a name="241"><span class="lineNum">     241 </span>                :            :   1.73580930813335754692e+02, /* 0x4065B296, 0xFC379081 */</a>
+<a name="242"><span class="lineNum">     242 </span>                :            : };</a>
+<a name="243"><span class="lineNum">     243 </span>                :            : </a>
+<a name="244"><span class="lineNum">     244 </span>                :            : #ifdef __STDC__</a>
+<a name="245"><span class="lineNum">     245 </span>                :            : static const double pR2[6] = {/* for x in [2.8570,2]=1/[0.3499,0.5] */</a>
+<a name="246"><span class="lineNum">     246 </span>                :            : #else</a>
+<a name="247"><span class="lineNum">     247 </span>                :            : static double pR2[6] = {/* for x in [2.8570,2]=1/[0.3499,0.5] */</a>
+<a name="248"><span class="lineNum">     248 </span>                :            : #endif</a>
+<a name="249"><span class="lineNum">     249 </span>                :            :  -8.87534333032526411254e-08, /* 0xBE77D316, 0xE927026D */</a>
+<a name="250"><span class="lineNum">     250 </span>                :            :  -7.03030995483624743247e-02, /* 0xBFB1FF62, 0x495E1E42 */</a>
+<a name="251"><span class="lineNum">     251 </span>                :            :  -1.45073846780952986357e+00, /* 0xBFF73639, 0x8A24A843 */</a>
+<a name="252"><span class="lineNum">     252 </span>                :            :  -7.63569613823527770791e+00, /* 0xC01E8AF3, 0xEDAFA7F3 */</a>
+<a name="253"><span class="lineNum">     253 </span>                :            :  -1.11931668860356747786e+01, /* 0xC02662E6, 0xC5246303 */</a>
+<a name="254"><span class="lineNum">     254 </span>                :            :  -3.23364579351335335033e+00, /* 0xC009DE81, 0xAF8FE70F */</a>
+<a name="255"><span class="lineNum">     255 </span>                :            : };</a>
+<a name="256"><span class="lineNum">     256 </span>                :            : #ifdef __STDC__</a>
+<a name="257"><span class="lineNum">     257 </span>                :            : static const double pS2[5] = {</a>
+<a name="258"><span class="lineNum">     258 </span>                :            : #else</a>
+<a name="259"><span class="lineNum">     259 </span>                :            : static double pS2[5] = {</a>
+<a name="260"><span class="lineNum">     260 </span>                :            : #endif</a>
+<a name="261"><span class="lineNum">     261 </span>                :            :   2.22202997532088808441e+01, /* 0x40363865, 0x908B5959 */</a>
+<a name="262"><span class="lineNum">     262 </span>                :            :   1.36206794218215208048e+02, /* 0x4061069E, 0x0EE8878F */</a>
+<a name="263"><span class="lineNum">     263 </span>                :            :   2.70470278658083486789e+02, /* 0x4070E786, 0x42EA079B */</a>
+<a name="264"><span class="lineNum">     264 </span>                :            :   1.53875394208320329881e+02, /* 0x40633C03, 0x3AB6FAFF */</a>
+<a name="265"><span class="lineNum">     265 </span>                :            :   1.46576176948256193810e+01, /* 0x402D50B3, 0x44391809 */</a>
+<a name="266"><span class="lineNum">     266 </span>                :            : };</a>
+<a name="267"><span class="lineNum">     267 </span>                :            : </a>
+<a name="268"><span class="lineNum">     268 </span>                :            : #ifdef __STDC__</a>
+<a name="269"><span class="lineNum">     269 </span>                :            :         static double pzero(double x)</a>
+<a name="270"><span class="lineNum">     270 </span>                :            : #else</a>
+<a name="271"><span class="lineNum">     271 </span>                :            :         static double pzero(x)</a>
+<a name="272"><span class="lineNum">     272 </span>                :            :         double x;</a>
+<a name="273"><span class="lineNum">     273 </span>                :            : #endif</a>
+<a name="274"><span class="lineNum">     274 </span>                :            : {</a>
+<a name="275"><span class="lineNum">     275 </span>                :            : #ifdef __STDC__</a>
+<a name="276"><span class="lineNum">     276 </span>                :            :         const double *p,*q;</a>
+<a name="277"><span class="lineNum">     277 </span>                :            : #else</a>
+<a name="278"><span class="lineNum">     278 </span>                :            :         double *p,*q;</a>
+<a name="279"><span class="lineNum">     279 </span>                :            : #endif</a>
+<a name="280"><span class="lineNum">     280 </span>                :            :         double z,r,s;</a>
+<a name="281"><span class="lineNum">     281 </span>                :            :         int ix;</a>
+<a name="282"><span class="lineNum">     282 </span>                :            :         ix = 0x7fffffff&amp;__HI(x);</a>
+<a name="283"><span class="lineNum">     283 </span>                :            :         if(ix&gt;=0x40200000)     {p = pR8; q= pS8;}</a>
+<a name="284"><span class="lineNum">     284 </span>                :            :         else if(ix&gt;=0x40122E8B){p = pR5; q= pS5;}</a>
+<a name="285"><span class="lineNum">     285 </span>                :            :         else if(ix&gt;=0x4006DB6D){p = pR3; q= pS3;}</a>
+<a name="286"><span class="lineNum">     286 </span>                :            :         else if(ix&gt;=0x40000000){p = pR2; q= pS2;}</a>
+<a name="287"><span class="lineNum">     287 </span>                :            :         z = one/(x*x);</a>
+<a name="288"><span class="lineNum">     288 </span>                :            :         r = p[0]+z*(p[1]+z*(p[2]+z*(p[3]+z*(p[4]+z*p[5]))));</a>
+<a name="289"><span class="lineNum">     289 </span>                :            :         s = one+z*(q[0]+z*(q[1]+z*(q[2]+z*(q[3]+z*q[4]))));</a>
+<a name="290"><span class="lineNum">     290 </span>                :            :         return one+ r/s;</a>
+<a name="291"><span class="lineNum">     291 </span>                :            : }</a>
+<a name="292"><span class="lineNum">     292 </span>                :            :                 </a>
+<a name="293"><span class="lineNum">     293 </span>                :            : </a>
+<a name="294"><span class="lineNum">     294 </span>                :            : /* For x &gt;= 8, the asymptotic expansions of qzero is</a>
+<a name="295"><span class="lineNum">     295 </span>                :            :  *      -1/8 s + 75/1024 s^3 - ..., where s = 1/x.</a>
+<a name="296"><span class="lineNum">     296 </span>                :            :  * We approximate pzero by</a>
+<a name="297"><span class="lineNum">     297 </span>                :            :  *      qzero(x) = s*(-1.25 + (R/S))</a>
+<a name="298"><span class="lineNum">     298 </span>                :            :  * where  R = qR0 + qR1*s^2 + qR2*s^4 + ... + qR5*s^10</a>
+<a name="299"><span class="lineNum">     299 </span>                :            :  *        S = 1 + qS0*s^2 + ... + qS5*s^12</a>
+<a name="300"><span class="lineNum">     300 </span>                :            :  * and</a>
+<a name="301"><span class="lineNum">     301 </span>                :            :  *      | qzero(x)/s +1.25-R/S | &lt;= 2  ** ( -61.22)</a>
+<a name="302"><span class="lineNum">     302 </span>                :            :  */</a>
+<a name="303"><span class="lineNum">     303 </span>                :            : #ifdef __STDC__</a>
+<a name="304"><span class="lineNum">     304 </span>                :            : static const double qR8[6] = { /* for x in [inf, 8]=1/[0,0.125] */</a>
+<a name="305"><span class="lineNum">     305 </span>                :            : #else</a>
+<a name="306"><span class="lineNum">     306 </span>                :            : static double qR8[6] = { /* for x in [inf, 8]=1/[0,0.125] */</a>
+<a name="307"><span class="lineNum">     307 </span>                :            : #endif</a>
+<a name="308"><span class="lineNum">     308 </span>                :            :   0.00000000000000000000e+00, /* 0x00000000, 0x00000000 */</a>
+<a name="309"><span class="lineNum">     309 </span>                :            :   7.32421874999935051953e-02, /* 0x3FB2BFFF, 0xFFFFFE2C */</a>
+<a name="310"><span class="lineNum">     310 </span>                :            :   1.17682064682252693899e+01, /* 0x40278952, 0x5BB334D6 */</a>
+<a name="311"><span class="lineNum">     311 </span>                :            :   5.57673380256401856059e+02, /* 0x40816D63, 0x15301825 */</a>
+<a name="312"><span class="lineNum">     312 </span>                :            :   8.85919720756468632317e+03, /* 0x40C14D99, 0x3E18F46D */</a>
+<a name="313"><span class="lineNum">     313 </span>                :            :   3.70146267776887834771e+04, /* 0x40E212D4, 0x0E901566 */</a>
+<a name="314"><span class="lineNum">     314 </span>                :            : };</a>
+<a name="315"><span class="lineNum">     315 </span>                :            : #ifdef __STDC__</a>
+<a name="316"><span class="lineNum">     316 </span>                :            : static const double qS8[6] = {</a>
+<a name="317"><span class="lineNum">     317 </span>                :            : #else</a>
+<a name="318"><span class="lineNum">     318 </span>                :            : static double qS8[6] = {</a>
+<a name="319"><span class="lineNum">     319 </span>                :            : #endif</a>
+<a name="320"><span class="lineNum">     320 </span>                :            :   1.63776026895689824414e+02, /* 0x406478D5, 0x365B39BC */</a>
+<a name="321"><span class="lineNum">     321 </span>                :            :   8.09834494656449805916e+03, /* 0x40BFA258, 0x4E6B0563 */</a>
+<a name="322"><span class="lineNum">     322 </span>                :            :   1.42538291419120476348e+05, /* 0x41016652, 0x54D38C3F */</a>
+<a name="323"><span class="lineNum">     323 </span>                :            :   8.03309257119514397345e+05, /* 0x412883DA, 0x83A52B43 */</a>
+<a name="324"><span class="lineNum">     324 </span>                :            :   8.40501579819060512818e+05, /* 0x4129A66B, 0x28DE0B3D */</a>
+<a name="325"><span class="lineNum">     325 </span>                :            :  -3.43899293537866615225e+05, /* 0xC114FD6D, 0x2C9530C5 */</a>
+<a name="326"><span class="lineNum">     326 </span>                :            : };</a>
+<a name="327"><span class="lineNum">     327 </span>                :            : </a>
+<a name="328"><span class="lineNum">     328 </span>                :            : #ifdef __STDC__</a>
+<a name="329"><span class="lineNum">     329 </span>                :            : static const double qR5[6] = { /* for x in [8,4.5454]=1/[0.125,0.22001] */</a>
+<a name="330"><span class="lineNum">     330 </span>                :            : #else</a>
+<a name="331"><span class="lineNum">     331 </span>                :            : static double qR5[6] = { /* for x in [8,4.5454]=1/[0.125,0.22001] */</a>
+<a name="332"><span class="lineNum">     332 </span>                :            : #endif</a>
+<a name="333"><span class="lineNum">     333 </span>                :            :   1.84085963594515531381e-11, /* 0x3DB43D8F, 0x29CC8CD9 */</a>
+<a name="334"><span class="lineNum">     334 </span>                :            :   7.32421766612684765896e-02, /* 0x3FB2BFFF, 0xD172B04C */</a>
+<a name="335"><span class="lineNum">     335 </span>                :            :   5.83563508962056953777e+00, /* 0x401757B0, 0xB9953DD3 */</a>
+<a name="336"><span class="lineNum">     336 </span>                :            :   1.35111577286449829671e+02, /* 0x4060E392, 0x0A8788E9 */</a>
+<a name="337"><span class="lineNum">     337 </span>                :            :   1.02724376596164097464e+03, /* 0x40900CF9, 0x9DC8C481 */</a>
+<a name="338"><span class="lineNum">     338 </span>                :            :   1.98997785864605384631e+03, /* 0x409F17E9, 0x53C6E3A6 */</a>
+<a name="339"><span class="lineNum">     339 </span>                :            : };</a>
+<a name="340"><span class="lineNum">     340 </span>                :            : #ifdef __STDC__</a>
+<a name="341"><span class="lineNum">     341 </span>                :            : static const double qS5[6] = {</a>
+<a name="342"><span class="lineNum">     342 </span>                :            : #else</a>
+<a name="343"><span class="lineNum">     343 </span>                :            : static double qS5[6] = {</a>
+<a name="344"><span class="lineNum">     344 </span>                :            : #endif</a>
+<a name="345"><span class="lineNum">     345 </span>                :            :   8.27766102236537761883e+01, /* 0x4054B1B3, 0xFB5E1543 */</a>
+<a name="346"><span class="lineNum">     346 </span>                :            :   2.07781416421392987104e+03, /* 0x40A03BA0, 0xDA21C0CE */</a>
+<a name="347"><span class="lineNum">     347 </span>                :            :   1.88472887785718085070e+04, /* 0x40D267D2, 0x7B591E6D */</a>
+<a name="348"><span class="lineNum">     348 </span>                :            :   5.67511122894947329769e+04, /* 0x40EBB5E3, 0x97E02372 */</a>
+<a name="349"><span class="lineNum">     349 </span>                :            :   3.59767538425114471465e+04, /* 0x40E19118, 0x1F7A54A0 */</a>
+<a name="350"><span class="lineNum">     350 </span>                :            :  -5.35434275601944773371e+03, /* 0xC0B4EA57, 0xBEDBC609 */</a>
+<a name="351"><span class="lineNum">     351 </span>                :            : };</a>
+<a name="352"><span class="lineNum">     352 </span>                :            : </a>
+<a name="353"><span class="lineNum">     353 </span>                :            : #ifdef __STDC__</a>
+<a name="354"><span class="lineNum">     354 </span>                :            : static const double qR3[6] = {/* for x in [4.547,2.8571]=1/[0.2199,0.35001] */</a>
+<a name="355"><span class="lineNum">     355 </span>                :            : #else</a>
+<a name="356"><span class="lineNum">     356 </span>                :            : static double qR3[6] = {/* for x in [4.547,2.8571]=1/[0.2199,0.35001] */</a>
+<a name="357"><span class="lineNum">     357 </span>                :            : #endif</a>
+<a name="358"><span class="lineNum">     358 </span>                :            :   4.37741014089738620906e-09, /* 0x3E32CD03, 0x6ADECB82 */</a>
+<a name="359"><span class="lineNum">     359 </span>                :            :   7.32411180042911447163e-02, /* 0x3FB2BFEE, 0x0E8D0842 */</a>
+<a name="360"><span class="lineNum">     360 </span>                :            :   3.34423137516170720929e+00, /* 0x400AC0FC, 0x61149CF5 */</a>
+<a name="361"><span class="lineNum">     361 </span>                :            :   4.26218440745412650017e+01, /* 0x40454F98, 0x962DAEDD */</a>
+<a name="362"><span class="lineNum">     362 </span>                :            :   1.70808091340565596283e+02, /* 0x406559DB, 0xE25EFD1F */</a>
+<a name="363"><span class="lineNum">     363 </span>                :            :   1.66733948696651168575e+02, /* 0x4064D77C, 0x81FA21E0 */</a>
+<a name="364"><span class="lineNum">     364 </span>                :            : };</a>
+<a name="365"><span class="lineNum">     365 </span>                :            : #ifdef __STDC__</a>
+<a name="366"><span class="lineNum">     366 </span>                :            : static const double qS3[6] = {</a>
+<a name="367"><span class="lineNum">     367 </span>                :            : #else</a>
+<a name="368"><span class="lineNum">     368 </span>                :            : static double qS3[6] = {</a>
+<a name="369"><span class="lineNum">     369 </span>                :            : #endif</a>
+<a name="370"><span class="lineNum">     370 </span>                :            :   4.87588729724587182091e+01, /* 0x40486122, 0xBFE343A6 */</a>
+<a name="371"><span class="lineNum">     371 </span>                :            :   7.09689221056606015736e+02, /* 0x40862D83, 0x86544EB3 */</a>
+<a name="372"><span class="lineNum">     372 </span>                :            :   3.70414822620111362994e+03, /* 0x40ACF04B, 0xE44DFC63 */</a>
+<a name="373"><span class="lineNum">     373 </span>                :            :   6.46042516752568917582e+03, /* 0x40B93C6C, 0xD7C76A28 */</a>
+<a name="374"><span class="lineNum">     374 </span>                :            :   2.51633368920368957333e+03, /* 0x40A3A8AA, 0xD94FB1C0 */</a>
+<a name="375"><span class="lineNum">     375 </span>                :            :  -1.49247451836156386662e+02, /* 0xC062A7EB, 0x201CF40F */</a>
+<a name="376"><span class="lineNum">     376 </span>                :            : };</a>
+<a name="377"><span class="lineNum">     377 </span>                :            : </a>
+<a name="378"><span class="lineNum">     378 </span>                :            : #ifdef __STDC__</a>
+<a name="379"><span class="lineNum">     379 </span>                :            : static const double qR2[6] = {/* for x in [2.8570,2]=1/[0.3499,0.5] */</a>
+<a name="380"><span class="lineNum">     380 </span>                :            : #else</a>
+<a name="381"><span class="lineNum">     381 </span>                :            : static double qR2[6] = {/* for x in [2.8570,2]=1/[0.3499,0.5] */</a>
+<a name="382"><span class="lineNum">     382 </span>                :            : #endif</a>
+<a name="383"><span class="lineNum">     383 </span>                :            :   1.50444444886983272379e-07, /* 0x3E84313B, 0x54F76BDB */</a>
+<a name="384"><span class="lineNum">     384 </span>                :            :   7.32234265963079278272e-02, /* 0x3FB2BEC5, 0x3E883E34 */</a>
+<a name="385"><span class="lineNum">     385 </span>                :            :   1.99819174093815998816e+00, /* 0x3FFFF897, 0xE727779C */</a>
+<a name="386"><span class="lineNum">     386 </span>                :            :   1.44956029347885735348e+01, /* 0x402CFDBF, 0xAAF96FE5 */</a>
+<a name="387"><span class="lineNum">     387 </span>                :            :   3.16662317504781540833e+01, /* 0x403FAA8E, 0x29FBDC4A */</a>
+<a name="388"><span class="lineNum">     388 </span>                :            :   1.62527075710929267416e+01, /* 0x403040B1, 0x71814BB4 */</a>
+<a name="389"><span class="lineNum">     389 </span>                :            : };</a>
+<a name="390"><span class="lineNum">     390 </span>                :            : #ifdef __STDC__</a>
+<a name="391"><span class="lineNum">     391 </span>                :            : static const double qS2[6] = {</a>
+<a name="392"><span class="lineNum">     392 </span>                :            : #else</a>
+<a name="393"><span class="lineNum">     393 </span>                :            : static double qS2[6] = {</a>
+<a name="394"><span class="lineNum">     394 </span>                :            : #endif</a>
+<a name="395"><span class="lineNum">     395 </span>                :            :   3.03655848355219184498e+01, /* 0x403E5D96, 0xF7C07AED */</a>
+<a name="396"><span class="lineNum">     396 </span>                :            :   2.69348118608049844624e+02, /* 0x4070D591, 0xE4D14B40 */</a>
+<a name="397"><span class="lineNum">     397 </span>                :            :   8.44783757595320139444e+02, /* 0x408A6645, 0x22B3BF22 */</a>
+<a name="398"><span class="lineNum">     398 </span>                :            :   8.82935845112488550512e+02, /* 0x408B977C, 0x9C5CC214 */</a>
+<a name="399"><span class="lineNum">     399 </span>                :            :   2.12666388511798828631e+02, /* 0x406A9553, 0x0E001365 */</a>
+<a name="400"><span class="lineNum">     400 </span>                :            :  -5.31095493882666946917e+00, /* 0xC0153E6A, 0xF8B32931 */</a>
+<a name="401"><span class="lineNum">     401 </span>                :            : };</a>
+<a name="402"><span class="lineNum">     402 </span>                :            : </a>
+<a name="403"><span class="lineNum">     403 </span>                :            : #ifdef __STDC__</a>
+<a name="404"><span class="lineNum">     404 </span>                :            :         static double qzero(double x)</a>
+<a name="405"><span class="lineNum">     405 </span>                :            : #else</a>
+<a name="406"><span class="lineNum">     406 </span>                :            :         static double qzero(x)</a>
+<a name="407"><span class="lineNum">     407 </span>                :            :         double x;</a>
+<a name="408"><span class="lineNum">     408 </span>                :            : #endif</a>
+<a name="409"><span class="lineNum">     409 </span>                :            : {</a>
+<a name="410"><span class="lineNum">     410 </span>                :            : #ifdef __STDC__</a>
+<a name="411"><span class="lineNum">     411 </span>                :            :         const double *p,*q;</a>
+<a name="412"><span class="lineNum">     412 </span>                :            : #else</a>
+<a name="413"><span class="lineNum">     413 </span>                :            :         double *p,*q;</a>
+<a name="414"><span class="lineNum">     414 </span>                :            : #endif</a>
+<a name="415"><span class="lineNum">     415 </span>                :            :         double s,r,z;</a>
+<a name="416"><span class="lineNum">     416 </span>                :            :         int ix;</a>
+<a name="417"><span class="lineNum">     417 </span>                :            :         ix = 0x7fffffff&amp;__HI(x);</a>
+<a name="418"><span class="lineNum">     418 </span>                :            :         if(ix&gt;=0x40200000)     {p = qR8; q= qS8;}</a>
+<a name="419"><span class="lineNum">     419 </span>                :            :         else if(ix&gt;=0x40122E8B){p = qR5; q= qS5;}</a>
+<a name="420"><span class="lineNum">     420 </span>                :            :         else if(ix&gt;=0x4006DB6D){p = qR3; q= qS3;}</a>
+<a name="421"><span class="lineNum">     421 </span>                :            :         else if(ix&gt;=0x40000000){p = qR2; q= qS2;}</a>
+<a name="422"><span class="lineNum">     422 </span>                :            :         z = one/(x*x);</a>
+<a name="423"><span class="lineNum">     423 </span>                :            :         r = p[0]+z*(p[1]+z*(p[2]+z*(p[3]+z*(p[4]+z*p[5]))));</a>
+<a name="424"><span class="lineNum">     424 </span>                :            :         s = one+z*(q[0]+z*(q[1]+z*(q[2]+z*(q[3]+z*(q[4]+z*q[5])))));</a>
+<a name="425"><span class="lineNum">     425 </span>                :            :         return (-.125 + r/s)/x;</a>
+<a name="426"><span class="lineNum">     426 </span>                :            : }</a>
+<a name="427"><span class="lineNum">     427 </span>                :            : //LCOV_EXCL_STOP</a>
+<a name="428"><span class="lineNum">     428 </span>                :            : </a>
+<a name="429"><span class="lineNum">     429 </span>                :            : //LCOV_EXCL_START</a>
+<a name="430"><span class="lineNum">     430 </span>                :            : int main(int argc, char **argv)</a>
+<a name="431"><span class="lineNum">     431 </span>                :            : {</a>
+<a name="432"><span class="lineNum">     432 </span>                :            :     double a, b;</a>
+<a name="433"><span class="lineNum">     433 </span>                :            :     FILE *fp = NULL;</a>
+<a name="434"><span class="lineNum">     434 </span>                :            :     const char* filename = argv[1];</a>
+<a name="435"><span class="lineNum">     435 </span>                :            :     fp = fopen(filename, &quot;r&quot;);</a>
+<a name="436"><span class="lineNum">     436 </span>                :            :     fscanf(fp, &quot;%le&quot;, &amp;a);</a>
+<a name="437"><span class="lineNum">     437 </span>                :            :     fclose(fp);</a>
+<a name="438"><span class="lineNum">     438 </span>                :            : </a>
+<a name="439"><span class="lineNum">     439 </span>                :            :     printf (&quot;%.16e\n&quot;, a);</a>
+<a name="440"><span class="lineNum">     440 </span>                :            : </a>
+<a name="441"><span class="lineNum">     441 </span>                :            :     b = __ieee754_j0(a);</a>
+<a name="442"><span class="lineNum">     442 </span>                :            : </a>
+<a name="443"><span class="lineNum">     443 </span>                :            : </a>
+<a name="444"><span class="lineNum">     444 </span>                :            :     printf (&quot;The Value of b is %f\n&quot;, b);</a>
+<a name="445"><span class="lineNum">     445 </span>                :            : </a>
+<a name="446"><span class="lineNum">     446 </span>                :            :     return 0;</a>
+<a name="447"><span class="lineNum">     447 </span>                :            : }</a>
+<a name="448"><span class="lineNum">     448 </span>                :            : //LCOV_EXCL_STOP</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

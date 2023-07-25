@@ -1,0 +1,35 @@
+diff id:000001,orig:testcase1 -> id:000002,orig:testcase10
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_fmod/e_fmod.c
+  New 'line' coverage: 105
+  New 'line' coverage: 106
+  New 'line' coverage: 107
+  New 'line' coverage: 108
+  New 'line' coverage: 110
+  New 'line' coverage: 112
+  New 'line' coverage: 115
+  New 'line' coverage: 116
+  New 'line' coverage: 119
+  New 'line' coverage: 121
+  New 'line' coverage: 122
+  New 'line' coverage: 123
+  New 'line' coverage: 125
+  New 'line' coverage: 130
+  New 'line' coverage: 131
+  New 'line' coverage: 132
+  New 'line' coverage: 133
+  New 'line' coverage: 139
+  New 'line' coverage: 140
+  New 'line' coverage: 141
+  New 'line' coverage: 143
+  New 'line' coverage: 61
+  New 'line' coverage: 67
+  New 'line' coverage: 70
+  New 'line' coverage: 71
+  New 'line' coverage: 74
+  New 'line' coverage: 79
+  New 'line' coverage: 80
+  New 'line' coverage: 91
+  New 'line' coverage: 94
+  New 'line' coverage: 95
+  New 'line' coverage: 96
+  New 'line' coverage: 97

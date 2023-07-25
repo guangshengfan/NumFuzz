@@ -1,0 +1,6 @@
+diff id:000009,src:000000,op:arith11,pos:6,val:+2,+cov -> id:000010,src:000000,op:arith11,pos:8,val:+5,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_expm1/s_expm1.c
+  New 'line' coverage: 213
+  New 'line' coverage: 214
+  New 'line' coverage: 215
+  New 'line' coverage: 216

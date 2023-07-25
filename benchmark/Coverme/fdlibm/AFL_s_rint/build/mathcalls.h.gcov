@@ -1,0 +1,408 @@
+        -:    0:Source:/usr/include/x86_64-linux-gnu/bits/mathcalls.h
+        -:    0:Graph:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/NumFuzz_s_rint/build/foo_raw.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    1:/* Prototype declarations for math functions; helper file for <math.h>.
+        -:    2:   Copyright (C) 1996-2020 Free Software Foundation, Inc.
+        -:    3:   This file is part of the GNU C Library.
+        -:    4:
+        -:    5:   The GNU C Library is free software; you can redistribute it and/or
+        -:    6:   modify it under the terms of the GNU Lesser General Public
+        -:    7:   License as published by the Free Software Foundation; either
+        -:    8:   version 2.1 of the License, or (at your option) any later version.
+        -:    9:
+        -:   10:   The GNU C Library is distributed in the hope that it will be useful,
+        -:   11:   but WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   12:   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        -:   13:   Lesser General Public License for more details.
+        -:   14:
+        -:   15:   You should have received a copy of the GNU Lesser General Public
+        -:   16:   License along with the GNU C Library; if not, see
+        -:   17:   <https://www.gnu.org/licenses/>.  */
+        -:   18:
+        -:   19:/* NOTE: Because of the special way this file is used by <math.h>, this
+        -:   20:   file must NOT be protected from multiple inclusion as header files
+        -:   21:   usually are.
+        -:   22:
+        -:   23:   This file provides prototype declarations for the math functions.
+        -:   24:   Most functions are declared using the macro:
+        -:   25:
+        -:   26:   __MATHCALL (NAME,[_r], (ARGS...));
+        -:   27:
+        -:   28:   This means there is a function `NAME' returning `double' and a function
+        -:   29:   `NAMEf' returning `float'.  Each place `_Mdouble_' appears in the
+        -:   30:   prototype, that is actually `double' in the prototype for `NAME' and
+        -:   31:   `float' in the prototype for `NAMEf'.  Reentrant variant functions are
+        -:   32:   called `NAME_r' and `NAMEf_r'.
+        -:   33:
+        -:   34:   Functions returning other types like `int' are declared using the macro:
+        -:   35:
+        -:   36:   __MATHDECL (TYPE, NAME,[_r], (ARGS...));
+        -:   37:
+        -:   38:   This is just like __MATHCALL but for a function returning `TYPE'
+        -:   39:   instead of `_Mdouble_'.  In all of these cases, there is still
+        -:   40:   both a `NAME' and a `NAMEf' that takes `float' arguments.
+        -:   41:
+        -:   42:   Note that there must be no whitespace before the argument passed for
+        -:   43:   NAME, to make token pasting work with -traditional.  */
+        -:   44:
+        -:   45:#ifndef _MATH_H
+        -:   46:# error "Never include <bits/mathcalls.h> directly; include <math.h> instead."
+        -:   47:#endif
+        -:   48:
+        -:   49:
+        -:   50:/* Trigonometric functions.  */
+        -:   51:
+        -:   52:/* Arc cosine of X.  */
+        -:   53:__MATHCALL (acos,, (_Mdouble_ __x));
+        -:   54:/* Arc sine of X.  */
+        -:   55:__MATHCALL (asin,, (_Mdouble_ __x));
+        -:   56:/* Arc tangent of X.  */
+        -:   57:__MATHCALL (atan,, (_Mdouble_ __x));
+        -:   58:/* Arc tangent of Y/X.  */
+        -:   59:__MATHCALL (atan2,, (_Mdouble_ __y, _Mdouble_ __x));
+        -:   60:
+        -:   61:/* Cosine of X.  */
+        -:   62:__MATHCALL_VEC (cos,, (_Mdouble_ __x));
+        -:   63:/* Sine of X.  */
+        -:   64:__MATHCALL_VEC (sin,, (_Mdouble_ __x));
+        -:   65:/* Tangent of X.  */
+        -:   66:__MATHCALL (tan,, (_Mdouble_ __x));
+        -:   67:
+        -:   68:/* Hyperbolic functions.  */
+        -:   69:
+        -:   70:/* Hyperbolic cosine of X.  */
+        -:   71:__MATHCALL (cosh,, (_Mdouble_ __x));
+        -:   72:/* Hyperbolic sine of X.  */
+        -:   73:__MATHCALL (sinh,, (_Mdouble_ __x));
+        -:   74:/* Hyperbolic tangent of X.  */
+        -:   75:__MATHCALL (tanh,, (_Mdouble_ __x));
+        -:   76:
+        -:   77:#ifdef __USE_GNU
+        -:   78:/* Cosine and sine of X.  */
+        -:   79:__MATHDECL_VEC (void,sincos,,
+        -:   80:		(_Mdouble_ __x, _Mdouble_ *__sinx, _Mdouble_ *__cosx));
+        -:   81:#endif
+        -:   82:
+        -:   83:#if defined __USE_XOPEN_EXTENDED || defined __USE_ISOC99
+        -:   84:/* Hyperbolic arc cosine of X.  */
+        -:   85:__MATHCALL (acosh,, (_Mdouble_ __x));
+        -:   86:/* Hyperbolic arc sine of X.  */
+        -:   87:__MATHCALL (asinh,, (_Mdouble_ __x));
+        -:   88:/* Hyperbolic arc tangent of X.  */
+        -:   89:__MATHCALL (atanh,, (_Mdouble_ __x));
+        -:   90:#endif
+        -:   91:
+        -:   92:/* Exponential and logarithmic functions.  */
+        -:   93:
+        -:   94:/* Exponential function of X.  */
+        -:   95:__MATHCALL_VEC (exp,, (_Mdouble_ __x));
+        -:   96:
+        -:   97:/* Break VALUE into a normalized fraction and an integral power of 2.  */
+        -:   98:__MATHCALL (frexp,, (_Mdouble_ __x, int *__exponent));
+        -:   99:
+        -:  100:/* X times (two to the EXP power).  */
+        -:  101:__MATHCALL (ldexp,, (_Mdouble_ __x, int __exponent));
+        -:  102:
+        -:  103:/* Natural logarithm of X.  */
+        -:  104:__MATHCALL_VEC (log,, (_Mdouble_ __x));
+        -:  105:
+        -:  106:/* Base-ten logarithm of X.  */
+        -:  107:__MATHCALL (log10,, (_Mdouble_ __x));
+        -:  108:
+        -:  109:/* Break VALUE into integral and fractional parts.  */
+        -:  110:__MATHCALL (modf,, (_Mdouble_ __x, _Mdouble_ *__iptr)) __nonnull ((2));
+        -:  111:
+        -:  112:#if __GLIBC_USE (IEC_60559_FUNCS_EXT_C2X)
+        -:  113:/* Compute exponent to base ten.  */
+        -:  114:__MATHCALL (exp10,, (_Mdouble_ __x));
+        -:  115:#endif
+        -:  116:
+        -:  117:#if defined __USE_XOPEN_EXTENDED || defined __USE_ISOC99
+        -:  118:/* Return exp(X) - 1.  */
+        -:  119:__MATHCALL (expm1,, (_Mdouble_ __x));
+        -:  120:
+        -:  121:/* Return log(1 + X).  */
+        -:  122:__MATHCALL (log1p,, (_Mdouble_ __x));
+        -:  123:
+        -:  124:/* Return the base 2 signed integral exponent of X.  */
+        -:  125:__MATHCALL (logb,, (_Mdouble_ __x));
+        -:  126:#endif
+        -:  127:
+        -:  128:#ifdef __USE_ISOC99
+        -:  129:/* Compute base-2 exponential of X.  */
+        -:  130:__MATHCALL (exp2,, (_Mdouble_ __x));
+        -:  131:
+        -:  132:/* Compute base-2 logarithm of X.  */
+        -:  133:__MATHCALL (log2,, (_Mdouble_ __x));
+        -:  134:#endif
+        -:  135:
+        -:  136:
+        -:  137:/* Power functions.  */
+        -:  138:
+        -:  139:/* Return X to the Y power.  */
+        -:  140:__MATHCALL_VEC (pow,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  141:
+        -:  142:/* Return the square root of X.  */
+        -:  143:__MATHCALL (sqrt,, (_Mdouble_ __x));
+        -:  144:
+        -:  145:#if defined __USE_XOPEN || defined __USE_ISOC99
+        -:  146:/* Return `sqrt(X*X + Y*Y)'.  */
+        -:  147:__MATHCALL (hypot,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  148:#endif
+        -:  149:
+        -:  150:#if defined __USE_XOPEN_EXTENDED || defined __USE_ISOC99
+        -:  151:/* Return the cube root of X.  */
+        -:  152:__MATHCALL (cbrt,, (_Mdouble_ __x));
+        -:  153:#endif
+        -:  154:
+        -:  155:
+        -:  156:/* Nearest integer, absolute value, and remainder functions.  */
+        -:  157:
+        -:  158:/* Smallest integral value not less than X.  */
+        -:  159:__MATHCALLX (ceil,, (_Mdouble_ __x), (__const__));
+        -:  160:
+        -:  161:/* Absolute value of X.  */
+        -:  162:__MATHCALLX (fabs,, (_Mdouble_ __x), (__const__));
+        -:  163:
+        -:  164:/* Largest integer not greater than X.  */
+        -:  165:__MATHCALLX (floor,, (_Mdouble_ __x), (__const__));
+        -:  166:
+        -:  167:/* Floating-point modulo remainder of X/Y.  */
+        -:  168:__MATHCALL (fmod,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  169:
+        -:  170:#ifdef __USE_MISC
+        -:  171:# if ((!defined __cplusplus \
+        -:  172:       || __cplusplus < 201103L /* isinf conflicts with C++11.  */ \
+        -:  173:       || __MATH_DECLARING_DOUBLE == 0)) /* isinff or isinfl don't.  */ \
+        -:  174:      && !__MATH_DECLARING_FLOATN
+        -:  175:/* Return 0 if VALUE is finite or NaN, +1 if it
+        -:  176:   is +Infinity, -1 if it is -Infinity.  */
+        -:  177:__MATHDECL_1 (int,isinf,, (_Mdouble_ __value)) __attribute__ ((__const__));
+        -:  178:# endif
+        -:  179:
+        -:  180:# if !__MATH_DECLARING_FLOATN
+        -:  181:/* Return nonzero if VALUE is finite and not NaN.  */
+        -:  182:__MATHDECL_1 (int,finite,, (_Mdouble_ __value)) __attribute__ ((__const__));
+        -:  183:
+        -:  184:/* Return the remainder of X/Y.  */
+        -:  185:__MATHCALL (drem,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  186:
+        -:  187:
+        -:  188:/* Return the fractional part of X after dividing out `ilogb (X)'.  */
+        -:  189:__MATHCALL (significand,, (_Mdouble_ __x));
+        -:  190:# endif
+        -:  191:
+        -:  192:#endif /* Use misc.  */
+        -:  193:
+        -:  194:#ifdef __USE_ISOC99
+        -:  195:/* Return X with its signed changed to Y's.  */
+        -:  196:__MATHCALLX (copysign,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+        -:  197:#endif
+        -:  198:
+        -:  199:#ifdef __USE_ISOC99
+        -:  200:/* Return representation of qNaN for double type.  */
+        -:  201:__MATHCALL (nan,, (const char *__tagb));
+        -:  202:#endif
+        -:  203:
+        -:  204:
+        -:  205:#if defined __USE_MISC || (defined __USE_XOPEN && !defined __USE_XOPEN2K)
+        -:  206:# if ((!defined __cplusplus \
+        -:  207:       || __cplusplus < 201103L /* isnan conflicts with C++11.  */ \
+        -:  208:       || __MATH_DECLARING_DOUBLE == 0)) /* isnanf or isnanl don't.  */ \
+        -:  209:      && !__MATH_DECLARING_FLOATN
+        -:  210:/* Return nonzero if VALUE is not a number.  */
+        -:  211:__MATHDECL_1 (int,isnan,, (_Mdouble_ __value)) __attribute__ ((__const__));
+        -:  212:# endif
+        -:  213:#endif
+        -:  214:
+        -:  215:#if defined __USE_MISC || (defined __USE_XOPEN && __MATH_DECLARING_DOUBLE)
+        -:  216:/* Bessel functions.  */
+        -:  217:__MATHCALL (j0,, (_Mdouble_));
+        -:  218:__MATHCALL (j1,, (_Mdouble_));
+        -:  219:__MATHCALL (jn,, (int, _Mdouble_));
+        -:  220:__MATHCALL (y0,, (_Mdouble_));
+        -:  221:__MATHCALL (y1,, (_Mdouble_));
+        -:  222:__MATHCALL (yn,, (int, _Mdouble_));
+        -:  223:#endif
+        -:  224:
+        -:  225:
+        -:  226:#if defined __USE_XOPEN || defined __USE_ISOC99
+        -:  227:/* Error and gamma functions.  */
+        -:  228:__MATHCALL (erf,, (_Mdouble_));
+        -:  229:__MATHCALL (erfc,, (_Mdouble_));
+        -:  230:__MATHCALL (lgamma,, (_Mdouble_));
+        -:  231:#endif
+        -:  232:
+        -:  233:#ifdef __USE_ISOC99
+        -:  234:/* True gamma function.  */
+        -:  235:__MATHCALL (tgamma,, (_Mdouble_));
+        -:  236:#endif
+        -:  237:
+        -:  238:#if defined __USE_MISC || (defined __USE_XOPEN && !defined __USE_XOPEN2K)
+        -:  239:# if !__MATH_DECLARING_FLOATN
+        -:  240:/* Obsolete alias for `lgamma'.  */
+        -:  241:__MATHCALL (gamma,, (_Mdouble_));
+        -:  242:# endif
+        -:  243:#endif
+        -:  244:
+        -:  245:#ifdef __USE_MISC
+        -:  246:/* Reentrant version of lgamma.  This function uses the global variable
+        -:  247:   `signgam'.  The reentrant version instead takes a pointer and stores
+        -:  248:   the value through it.  */
+        -:  249:__MATHCALL (lgamma,_r, (_Mdouble_, int *__signgamp));
+        -:  250:#endif
+        -:  251:
+        -:  252:
+        -:  253:#if defined __USE_XOPEN_EXTENDED || defined __USE_ISOC99
+        -:  254:/* Return the integer nearest X in the direction of the
+        -:  255:   prevailing rounding mode.  */
+function rint called 0 returned 0% blocks executed 0%
+    #####:  256:__MATHCALL (rint,, (_Mdouble_ __x));
+branch  0 never executed
+branch  1 never executed
+        -:  257:
+        -:  258:/* Return X + epsilon if X < Y, X - epsilon if X > Y.  */
+        -:  259:__MATHCALL (nextafter,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  260:# if defined __USE_ISOC99 && !defined __LDBL_COMPAT && !__MATH_DECLARING_FLOATN
+        -:  261:__MATHCALL (nexttoward,, (_Mdouble_ __x, long double __y));
+        -:  262:# endif
+        -:  263:
+        -:  264:# if __GLIBC_USE (IEC_60559_BFP_EXT_C2X) || __MATH_DECLARING_FLOATN
+        -:  265:/* Return X - epsilon.  */
+        -:  266:__MATHCALL (nextdown,, (_Mdouble_ __x));
+        -:  267:/* Return X + epsilon.  */
+        -:  268:__MATHCALL (nextup,, (_Mdouble_ __x));
+        -:  269:# endif
+        -:  270:
+        -:  271:/* Return the remainder of integer divison X / Y with infinite precision.  */
+        -:  272:__MATHCALL (remainder,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  273:
+        -:  274:# ifdef __USE_ISOC99
+        -:  275:/* Return X times (2 to the Nth power).  */
+        -:  276:__MATHCALL (scalbn,, (_Mdouble_ __x, int __n));
+        -:  277:# endif
+        -:  278:
+        -:  279:/* Return the binary exponent of X, which must be nonzero.  */
+        -:  280:__MATHDECL (int,ilogb,, (_Mdouble_ __x));
+        -:  281:#endif
+        -:  282:
+        -:  283:#if __GLIBC_USE (IEC_60559_BFP_EXT_C2X) || __MATH_DECLARING_FLOATN
+        -:  284:/* Like ilogb, but returning long int.  */
+        -:  285:__MATHDECL (long int, llogb,, (_Mdouble_ __x));
+        -:  286:#endif
+        -:  287:
+        -:  288:#ifdef __USE_ISOC99
+        -:  289:/* Return X times (2 to the Nth power).  */
+        -:  290:__MATHCALL (scalbln,, (_Mdouble_ __x, long int __n));
+        -:  291:
+        -:  292:/* Round X to integral value in floating-point format using current
+        -:  293:   rounding direction, but do not raise inexact exception.  */
+        -:  294:__MATHCALL (nearbyint,, (_Mdouble_ __x));
+        -:  295:
+        -:  296:/* Round X to nearest integral value, rounding halfway cases away from
+        -:  297:   zero.  */
+        -:  298:__MATHCALLX (round,, (_Mdouble_ __x), (__const__));
+        -:  299:
+        -:  300:/* Round X to the integral value in floating-point format nearest but
+        -:  301:   not larger in magnitude.  */
+        -:  302:__MATHCALLX (trunc,, (_Mdouble_ __x), (__const__));
+        -:  303:
+        -:  304:/* Compute remainder of X and Y and put in *QUO a value with sign of x/y
+        -:  305:   and magnitude congruent `mod 2^n' to the magnitude of the integral
+        -:  306:   quotient x/y, with n >= 3.  */
+        -:  307:__MATHCALL (remquo,, (_Mdouble_ __x, _Mdouble_ __y, int *__quo));
+        -:  308:
+        -:  309:
+        -:  310:/* Conversion functions.  */
+        -:  311:
+        -:  312:/* Round X to nearest integral value according to current rounding
+        -:  313:   direction.  */
+        -:  314:__MATHDECL (long int,lrint,, (_Mdouble_ __x));
+        -:  315:__extension__
+        -:  316:__MATHDECL (long long int,llrint,, (_Mdouble_ __x));
+        -:  317:
+        -:  318:/* Round X to nearest integral value, rounding halfway cases away from
+        -:  319:   zero.  */
+        -:  320:__MATHDECL (long int,lround,, (_Mdouble_ __x));
+        -:  321:__extension__
+        -:  322:__MATHDECL (long long int,llround,, (_Mdouble_ __x));
+        -:  323:
+        -:  324:
+        -:  325:/* Return positive difference between X and Y.  */
+        -:  326:__MATHCALL (fdim,, (_Mdouble_ __x, _Mdouble_ __y));
+        -:  327:
+        -:  328:/* Return maximum numeric value from X and Y.  */
+        -:  329:__MATHCALLX (fmax,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+        -:  330:
+        -:  331:/* Return minimum numeric value from X and Y.  */
+        -:  332:__MATHCALLX (fmin,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+        -:  333:
+        -:  334:/* Multiply-add function computed as a ternary operation.  */
+        -:  335:__MATHCALL (fma,, (_Mdouble_ __x, _Mdouble_ __y, _Mdouble_ __z));
+        -:  336:#endif /* Use ISO C99.  */
+        -:  337:
+        -:  338:#if __GLIBC_USE (IEC_60559_BFP_EXT_C2X) || __MATH_DECLARING_FLOATN
+        -:  339:/* Round X to nearest integer value, rounding halfway cases to even.  */
+        -:  340:__MATHCALLX (roundeven,, (_Mdouble_ __x), (__const__));
+        -:  341:
+        -:  342:/* Round X to nearest signed integer value, not raising inexact, with
+        -:  343:   control of rounding direction and width of result.  */
+        -:  344:__MATHDECL (__intmax_t, fromfp,, (_Mdouble_ __x, int __round,
+        -:  345:				  unsigned int __width));
+        -:  346:
+        -:  347:/* Round X to nearest unsigned integer value, not raising inexact,
+        -:  348:   with control of rounding direction and width of result.  */
+        -:  349:__MATHDECL (__uintmax_t, ufromfp,, (_Mdouble_ __x, int __round,
+        -:  350:				    unsigned int __width));
+        -:  351:
+        -:  352:/* Round X to nearest signed integer value, raising inexact for
+        -:  353:   non-integers, with control of rounding direction and width of
+        -:  354:   result.  */
+        -:  355:__MATHDECL (__intmax_t, fromfpx,, (_Mdouble_ __x, int __round,
+        -:  356:				   unsigned int __width));
+        -:  357:
+        -:  358:/* Round X to nearest unsigned integer value, raising inexact for
+        -:  359:   non-integers, with control of rounding direction and width of
+        -:  360:   result.  */
+        -:  361:__MATHDECL (__uintmax_t, ufromfpx,, (_Mdouble_ __x, int __round,
+        -:  362:				     unsigned int __width));
+        -:  363:
+        -:  364:/* Return value with maximum magnitude.  */
+        -:  365:__MATHCALLX (fmaxmag,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+        -:  366:
+        -:  367:/* Return value with minimum magnitude.  */
+        -:  368:__MATHCALLX (fminmag,, (_Mdouble_ __x, _Mdouble_ __y), (__const__));
+        -:  369:
+        -:  370:/* Canonicalize floating-point representation.  */
+        -:  371:__MATHDECL_1 (int, canonicalize,, (_Mdouble_ *__cx, const _Mdouble_ *__x));
+        -:  372:#endif
+        -:  373:
+        -:  374:#if __GLIBC_USE (IEC_60559_BFP_EXT) || __MATH_DECLARING_FLOATN
+        -:  375:/* Total order operation.  */
+        -:  376:__MATHDECL_1 (int, totalorder,, (const _Mdouble_ *__x,
+        -:  377:				 const _Mdouble_ *__y))
+        -:  378:     __attribute_pure__;
+        -:  379:
+        -:  380:/* Total order operation on absolute values.  */
+        -:  381:__MATHDECL_1 (int, totalordermag,, (const _Mdouble_ *__x,
+        -:  382:				    const _Mdouble_ *__y))
+        -:  383:     __attribute_pure__;
+        -:  384:
+        -:  385:/* Get NaN payload.  */
+        -:  386:__MATHCALL (getpayload,, (const _Mdouble_ *__x));
+        -:  387:
+        -:  388:/* Set quiet NaN payload.  */
+        -:  389:__MATHDECL_1 (int, setpayload,, (_Mdouble_ *__x, _Mdouble_ __payload));
+        -:  390:
+        -:  391:/* Set signaling NaN payload.  */
+        -:  392:__MATHDECL_1 (int, setpayloadsig,, (_Mdouble_ *__x, _Mdouble_ __payload));
+        -:  393:#endif
+        -:  394:
+        -:  395:#if (defined __USE_MISC || (defined __USE_XOPEN_EXTENDED \
+        -:  396:			    && __MATH_DECLARING_DOUBLE	  \
+        -:  397:			    && !defined __USE_XOPEN2K8))  \
+        -:  398:     && !__MATH_DECLARING_FLOATN
+        -:  399:/* Return X times (2 to the Nth power).  */
+        -:  400:__MATHCALL (scalb,, (_Mdouble_ __x, _Mdouble_ __n));
+        -:  401:#endif

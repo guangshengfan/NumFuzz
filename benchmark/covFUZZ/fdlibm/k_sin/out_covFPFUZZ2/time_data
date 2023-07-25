@@ -1,0 +1,7 @@
+# queue_name, start_time, produce_time, total_time
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/out_covFPFUZZ2/queue/id:000000,orig:testcase, 1657767402952, 1657767399094, 142
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/out_covFPFUZZ2/queue/id:000001,orig:testcase1, 1657767402952, 1657767399094, 142
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/out_covFPFUZZ2/queue/id:000002,orig:testcase2, 1657767402952, 1657767399094, 142
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/out_covFPFUZZ2/queue/id:000003,orig:testcase3, 1657767402952, 1657767399094, 142
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/out_covFPFUZZ2/queue/id:000004,orig:testcase4, 1657767402952, 1657767399094, 142
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/out_covFPFUZZ2/queue/id:000005,src:000000,op:flip1,pos:63,+cov, 1657767402952, 1657767403117, 165

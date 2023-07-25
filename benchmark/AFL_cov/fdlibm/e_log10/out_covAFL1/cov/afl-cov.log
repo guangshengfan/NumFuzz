@@ -1,0 +1,82 @@
+
+*** Imported 8 new test cases from: out_covAFL1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 8), cycle: 0
+    lines......: 47.6% (10 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (2 of 8 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_log10/e_log10.c
+  New 'function' coverage: __ieee754_log10()
+  New 'line' coverage: 142
+  New 'line' coverage: 148
+  New 'line' coverage: 149
+  New 'line' coverage: 150
+  New 'line' coverage: 152
+  New 'line' coverage: 153
+  New 'line' coverage: 155
+  New 'line' coverage: 156
+  New 'line' coverage: 157
+  New 'line' coverage: 158
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covAFL1//queue/id:000000,orig:testcase | ./e_log10_cov out_covAFL1//queue/id:000000,orig:testcase
+    0.0000000000000000e+00
+    The Value of b is -inf
+++++++ END
+
+[+] AFL test case: id:000001,src:000000,op:flip1,pos:0,+cov (1 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 62.5% (5 of 8 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,src:000000,op:flip1,pos:0,+cov
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_log10/e_log10.c
+  New 'line' coverage: 159
+  New 'line' coverage: 160
+  New 'line' coverage: 161
+  New 'line' coverage: 163
+  New 'line' coverage: 164
+  New 'line' coverage: 165
+  New 'line' coverage: 166
+  New 'line' coverage: 167
+  New 'line' coverage: 168
+  New 'line' coverage: 169
+  New 'line' coverage: 170
+
+[+] AFL test case: id:000002,src:000000,op:flip1,pos:0,+cov (2 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000003,src:000000,op:flip1,pos:2,+cov (3 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000004,src:000000,op:flip4,pos:2,+cov (4 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000005,src:000000,op:arith8,pos:1,val:+11,+cov (5 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000006,src:000000,op:arith8,pos:2,val:+5,+cov (6 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000007,src:000003,op:arith8,pos:0,val:-3,+cov (7 / 8), cycle: 0
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (7 of 8 branches)
+[+] Processed 8 / 8 test cases.
+
+[+] Final zero coverage report: out_covAFL1//cov/zero-cov
+[+] Final positive coverage report: out_covAFL1//cov/pos-cov
+    lines......: 100.0% (21 of 21 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (7 of 8 branches)
+[+] Final lcov web report: out_covAFL1//cov/web/index.html

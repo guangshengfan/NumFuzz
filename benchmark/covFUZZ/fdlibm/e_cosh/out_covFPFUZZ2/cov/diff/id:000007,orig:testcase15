@@ -1,0 +1,7 @@
+diff id:000006,orig:testcase14 -> id:000007,orig:testcase15
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_cosh/e_cosh.c
+  New 'line' coverage: 167
+  New 'line' coverage: 168
+  New 'line' coverage: 170
+  New 'line' coverage: 171
+  New 'line' coverage: 172

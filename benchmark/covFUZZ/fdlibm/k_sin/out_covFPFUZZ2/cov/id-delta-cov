@@ -1,0 +1,2 @@
+# id:NNNNNN*_file, cycle, src_file, coverage_type, fcn/line
+id:000000,orig:testcase, 0, /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/k_sin.c, function, __kernel_sin()

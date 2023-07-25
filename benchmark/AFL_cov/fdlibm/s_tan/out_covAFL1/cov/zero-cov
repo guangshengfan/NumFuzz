@@ -1,0 +1,3 @@
+# All functions / lines in this file were never executed by any
+# AFL test case.
+File: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_tan/s_tan.c

@@ -1,0 +1,6 @@
+diff id:000005,src:000003,op:flip4,pos:3,+cov -> id:000006,src:000005,op:ext_AO,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_acosh/e_acosh.c
+  New 'line' coverage: 131
+  New 'line' coverage: 133
+  New 'line' coverage: 134
+  New 'line' coverage: 135

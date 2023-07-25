@@ -1,0 +1,7 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 475
+  New 'line' coverage: 476
+  New 'line' coverage: 479
+  New 'line' coverage: 482
+  New 'line' coverage: 483

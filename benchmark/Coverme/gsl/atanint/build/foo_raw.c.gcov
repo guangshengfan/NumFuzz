@@ -1,0 +1,156 @@
+        -:    0:Source:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/atanint/build/foo_raw.c
+        -:    0:Graph:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/atanint/build/foo_raw.gcno
+        -:    0:Data:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/atanint/build/foo_raw.gcda
+        -:    0:Runs:1
+        -:    1:/* specfunc/atanint.c
+        -:    2: * 
+        -:    3: * Copyright (C) 1996, 1997, 1998, 1999, 2000 Gerard Jungman
+        -:    4: * 
+        -:    5: * This program is free software; you can redistribute it and/or modify
+        -:    6: * it under the terms of the GNU General Public License as published by
+        -:    7: * the Free Software Foundation; either version 3 of the License, or (at
+        -:    8: * your option) any later version.
+        -:    9: * 
+        -:   10: * This program is distributed in the hope that it will be useful, but
+        -:   11: * WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   12: * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        -:   13: * General Public License for more details.
+        -:   14: * 
+        -:   15: * You should have received a copy of the GNU General Public License
+        -:   16: * along with this program; if not, write to the Free Software
+        -:   17: * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+        -:   18: */
+        -:   19:
+        -:   20:/* Author:  G. Jungman */
+        -:   21:
+        -:   22:#include "../../config.h"
+        -:   23:#include <gsl/gsl_math.h>
+        -:   24:#include <gsl/gsl_errno.h>
+        -:   25:#include <gsl/gsl_mode.h>
+        -:   26:#include <gsl/gsl_sf_expint.h>
+        -:   27:
+        -:   28:#include "../chebyshev.h"
+        -:   29:#include "../cheb_eval.c"
+        -:   30:
+        -:   31:
+        -:   32:static double atanint_data[21] = {
+        -:   33:  1.91040361296235937512,
+        -:   34: -0.4176351437656746940e-01,
+        -:   35:  0.275392550786367434e-02,
+        -:   36: -0.25051809526248881e-03,
+        -:   37:  0.2666981285121171e-04,
+        -:   38: -0.311890514107001e-05,
+        -:   39:  0.38833853132249e-06,
+        -:   40: -0.5057274584964e-07,
+        -:   41:  0.681225282949e-08,
+        -:   42: -0.94212561654e-09,
+        -:   43:  0.13307878816e-09,
+        -:   44: -0.1912678075e-10,
+        -:   45:  0.278912620e-11,
+        -:   46: -0.41174820e-12,
+        -:   47:  0.6142987e-13,
+        -:   48: -0.924929e-14,
+        -:   49:  0.140387e-14,
+        -:   50: -0.21460e-15,
+        -:   51:  0.3301e-16,
+        -:   52: -0.511e-17,
+        -:   53:  0.79e-18,
+        -:   54:};
+        -:   55:static cheb_series atanint_cs = {
+        -:   56:  atanint_data,
+        -:   57:  20,
+        -:   58:  -1, 1,
+        -:   59:  10
+        -:   60:};
+        -:   61:
+        -:   62:
+        -:   63:/*-*-*-*-*-*-*-*-*-*-*-* Functions with Error Codes *-*-*-*-*-*-*-*-*-*-*/
+        -:   64:
+        -:   65:int
+function foo_raw called 10 returned 100% blocks executed 93%
+       10:   66:foo_raw(const double x, gsl_sf_result * result)
+        -:   67:{
+       10:   68:  const double ax  = fabs(x);
+       10:   69:  const double sgn = GSL_SIGN(x);
+branch  0 taken 40% (fallthrough)
+branch  1 taken 60%
+        -:   70:
+        -:   71:  /* CHECK_POINTER(result) */
+        -:   72:
+       10:   73:  if(ax == 0.0) {
+branch  0 taken 10% (fallthrough)
+branch  1 taken 90%
+        1:   74:    result->val = 0.0;
+        1:   75:    result->err = 0.0;
+        1:   76:    return GSL_SUCCESS;
+        -:   77:  }
+        9:   78:  else if(ax < 0.5*GSL_SQRT_DBL_EPSILON) {
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+        3:   79:    result->val = x;
+        3:   80:    result->err = 0.0;
+        3:   81:    return GSL_SUCCESS;
+        -:   82:  }
+        6:   83:  else if(ax <= 1.0) {
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+        2:   84:    const double t = 2.0 * (x*x - 0.5);
+        -:   85:    gsl_sf_result result_c;
+        2:   86:    cheb_eval_e(&atanint_cs, t, &result_c);
+call    0 returned 100%
+        2:   87:    result->val  = x * result_c.val;
+        2:   88:    result->err  = x * result_c.err;
+        2:   89:    result->err += GSL_DBL_EPSILON * fabs(result->val);
+        2:   90:    return GSL_SUCCESS;
+        -:   91:  }
+        4:   92:  else if(ax < 1.0/GSL_SQRT_DBL_EPSILON) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   93:    const double t = 2.0 * (1.0/(x*x) - 0.5);
+        -:   94:    gsl_sf_result result_c;
+        4:   95:    cheb_eval_e(&atanint_cs, t, &result_c);
+call    0 returned 100%
+        4:   96:    result->val  = sgn * (0.5*M_PI*log(ax) + result_c.val/ax);
+        4:   97:    result->err  = result_c.err/ax + fabs(result->val*GSL_DBL_EPSILON);
+        4:   98:    result->err += GSL_DBL_EPSILON * fabs(result->val);
+        4:   99:    return GSL_SUCCESS;
+        -:  100:  }
+        -:  101:  else {
+    #####:  102:    result->val = sgn * (0.5*M_PI*log(ax) + 1.0 / ax);
+    #####:  103:    result->err = 2.0 * fabs(result->val * GSL_DBL_EPSILON);
+    #####:  104:    return GSL_SUCCESS;
+        -:  105:  }
+        -:  106:}
+        -:  107:
+        -:  108:/*-*-*-*-*-*-*-*-*-* Functions w/ Natural Prototypes *-*-*-*-*-*-*-*-*-*-*/
+        -:  109:
+        -:  110:#include "../eval.h"
+        -:  111:/*
+        -:  112:double foo_raw(const double x)
+        -:  113:{
+        -:  114:  EVAL_RESULT(gsl_sf_atanint_e(x, &result));
+        -:  115:}
+        -:  116:*/
+        -:  117:
+        -:  118:/*
+        -:  119://LCOV_EXCL_START
+        -:  120:int main(int argc, char **argv)
+        -:  121:{
+        -:  122:    double a, b;
+        -:  123:    FILE *fp = NULL;
+        -:  124:    const char* filename = argv[1];
+        -:  125:    fp = fopen(filename, "r");
+        -:  126:    fscanf(fp, "%le", &a);
+        -:  127:    fclose(fp);
+        -:  128:
+        -:  129:    printf ("%.15e\n", a);
+        -:  130:
+        -:  131:    b = foo_raw(a);
+        -:  132:
+        -:  133:
+        -:  134:    printf ("The Value of b is %f\n", b);
+        -:  135:
+        -:  136:    return 0;
+        -:  137:}
+        -:  138://LCOV_EXCL_STOP
+        -:  139:*/

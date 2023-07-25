@@ -1,0 +1,3 @@
+diff id:000008,orig:testcase2 -> id:000009,orig:testcase3
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 182

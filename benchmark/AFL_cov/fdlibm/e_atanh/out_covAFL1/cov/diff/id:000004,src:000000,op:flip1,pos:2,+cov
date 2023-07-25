@@ -1,0 +1,4 @@
+diff id:000003,src:000000,op:flip1,pos:2,+cov -> id:000004,src:000000,op:flip1,pos:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_atanh/e_atanh.c
+  New 'line' coverage: 67
+  New 'line' coverage: 68

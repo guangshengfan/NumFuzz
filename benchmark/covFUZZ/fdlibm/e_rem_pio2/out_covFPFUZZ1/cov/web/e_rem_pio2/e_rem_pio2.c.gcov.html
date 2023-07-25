@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - trace.lcov_info_final - e_rem_pio2/e_rem_pio2.c</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">e_rem_pio2</a> - e_rem_pio2.c<span style="font-size: 80%;"> (source / <a href="e_rem_pio2.c.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">trace.lcov_info_final</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">54</td>
+            <td class="headerCovTableEntry">65</td>
+            <td class="headerCovTableEntryMed">83.1 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2022-06-17 21:13:21</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntryMed">86.7 %</td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : </a>
+<a name="2"><span class="lineNum">       2 </span>                :            : /* @(#)e_rem_pio2.c 1.4 95/01/18 */</a>
+<a name="3"><span class="lineNum">       3 </span>                :            : /*</a>
+<a name="4"><span class="lineNum">       4 </span>                :            :  * ====================================================</a>
+<a name="5"><span class="lineNum">       5 </span>                :            :  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.</a>
+<a name="6"><span class="lineNum">       6 </span>                :            :  *</a>
+<a name="7"><span class="lineNum">       7 </span>                :            :  * Developed at SunSoft, a Sun Microsystems, Inc. business.</a>
+<a name="8"><span class="lineNum">       8 </span>                :            :  * Permission to use, copy, modify, and distribute this</a>
+<a name="9"><span class="lineNum">       9 </span>                :            :  * software is freely granted, provided that this notice </a>
+<a name="10"><span class="lineNum">      10 </span>                :            :  * is preserved.</a>
+<a name="11"><span class="lineNum">      11 </span>                :            :  * ====================================================</a>
+<a name="12"><span class="lineNum">      12 </span>                :            :  *</a>
+<a name="13"><span class="lineNum">      13 </span>                :            :  */</a>
+<a name="14"><span class="lineNum">      14 </span>                :            : </a>
+<a name="15"><span class="lineNum">      15 </span>                :            : /* __ieee754_rem_pio2(x,y)</a>
+<a name="16"><span class="lineNum">      16 </span>                :            :  * </a>
+<a name="17"><span class="lineNum">      17 </span>                :            :  * return the remainder of x rem pi/2 in y[0]+y[1] </a>
+<a name="18"><span class="lineNum">      18 </span>                :            :  * use __kernel_rem_pio2()</a>
+<a name="19"><span class="lineNum">      19 </span>                :            :  */</a>
+<a name="20"><span class="lineNum">      20 </span>                :            : </a>
+<a name="21"><span class="lineNum">      21 </span>                :            : #include &quot;fdlibm.h&quot;</a>
+<a name="22"><span class="lineNum">      22 </span>                :            : #include &lt;math.h&gt;</a>
+<a name="23"><span class="lineNum">      23 </span>                :            : #include &lt;stdio.h&gt;</a>
+<a name="24"><span class="lineNum">      24 </span>                :            : #include &lt;stdlib.h&gt;</a>
+<a name="25"><span class="lineNum">      25 </span>                :            : </a>
+<a name="26"><span class="lineNum">      26 </span>                :            : //LCOV_EXCL_START</a>
+<a name="27"><span class="lineNum">      27 </span>                :            : #ifdef __STDC__</a>
+<a name="28"><span class="lineNum">      28 </span>                :            : static const int init_jk[] = {2,3,4,6}; /* initial value for jk */</a>
+<a name="29"><span class="lineNum">      29 </span>                :            : #else</a>
+<a name="30"><span class="lineNum">      30 </span>                :            : static int init_jk[] = {2,3,4,6}; </a>
+<a name="31"><span class="lineNum">      31 </span>                :            : #endif</a>
+<a name="32"><span class="lineNum">      32 </span>                :            : </a>
+<a name="33"><span class="lineNum">      33 </span>                :            : #ifdef __STDC__</a>
+<a name="34"><span class="lineNum">      34 </span>                :            : static const double PIo2[] = {</a>
+<a name="35"><span class="lineNum">      35 </span>                :            : #else</a>
+<a name="36"><span class="lineNum">      36 </span>                :            : static double PIo2[] = {</a>
+<a name="37"><span class="lineNum">      37 </span>                :            : #endif</a>
+<a name="38"><span class="lineNum">      38 </span>                :            :   1.57079625129699707031e+00, /* 0x3FF921FB, 0x40000000 */</a>
+<a name="39"><span class="lineNum">      39 </span>                :            :   7.54978941586159635335e-08, /* 0x3E74442D, 0x00000000 */</a>
+<a name="40"><span class="lineNum">      40 </span>                :            :   5.39030252995776476554e-15, /* 0x3CF84698, 0x80000000 */</a>
+<a name="41"><span class="lineNum">      41 </span>                :            :   3.28200341580791294123e-22, /* 0x3B78CC51, 0x60000000 */</a>
+<a name="42"><span class="lineNum">      42 </span>                :            :   1.27065575308067607349e-29, /* 0x39F01B83, 0x80000000 */</a>
+<a name="43"><span class="lineNum">      43 </span>                :            :   1.22933308981111328932e-36, /* 0x387A2520, 0x40000000 */</a>
+<a name="44"><span class="lineNum">      44 </span>                :            :   2.73370053816464559624e-44, /* 0x36E38222, 0x80000000 */</a>
+<a name="45"><span class="lineNum">      45 </span>                :            :   2.16741683877804819444e-51, /* 0x3569F31D, 0x00000000 */</a>
+<a name="46"><span class="lineNum">      46 </span>                :            : };</a>
+<a name="47"><span class="lineNum">      47 </span>                :            : </a>
+<a name="48"><span class="lineNum">      48 </span>                :            : #ifdef __STDC__</a>
+<a name="49"><span class="lineNum">      49 </span>                :            : static const double                     </a>
+<a name="50"><span class="lineNum">      50 </span>                :            : #else</a>
+<a name="51"><span class="lineNum">      51 </span>                :            : static double                   </a>
+<a name="52"><span class="lineNum">      52 </span>                :            : #endif</a>
+<a name="53"><span class="lineNum">      53 </span>                :            : zero   = 0.0,</a>
+<a name="54"><span class="lineNum">      54 </span>                :            : one    = 1.0,</a>
+<a name="55"><span class="lineNum">      55 </span>                :            : two24   =  1.67772160000000000000e+07, /* 0x41700000, 0x00000000 */</a>
+<a name="56"><span class="lineNum">      56 </span>                :            : twon24  =  5.96046447753906250000e-08; /* 0x3E700000, 0x00000000 */</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : </a>
+<a name="58"><span class="lineNum">      58 </span>                :            : #ifdef __STDC__</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :         int __kernel_rem_pio2(double *x, double *y, int e0, int nx, int prec, const int *ipio2) </a>
+<a name="60"><span class="lineNum">      60 </span>                :            : #else</a>
+<a name="61"><span class="lineNum">      61 </span>                :            :         int __kernel_rem_pio2(x,y,e0,nx,prec,ipio2)     </a>
+<a name="62"><span class="lineNum">      62 </span>                :            :         double x[], y[]; int e0,nx,prec; int ipio2[];</a>
+<a name="63"><span class="lineNum">      63 </span>                :            : #endif</a>
+<a name="64"><span class="lineNum">      64 </span>                :            : {</a>
+<a name="65"><span class="lineNum">      65 </span>                :            :         int jz,jx,jv,jp,jk,carry,n,iq[20],i,j,k,m,q0,ih;</a>
+<a name="66"><span class="lineNum">      66 </span>                :            :         double z,fw,f[20],fq[20],q[20];</a>
+<a name="67"><span class="lineNum">      67 </span>                :            : </a>
+<a name="68"><span class="lineNum">      68 </span>                :            :     /* initialize jk*/</a>
+<a name="69"><span class="lineNum">      69 </span>                :            :         jk = init_jk[prec];</a>
+<a name="70"><span class="lineNum">      70 </span>                :            :         jp = jk;</a>
+<a name="71"><span class="lineNum">      71 </span>                :            : </a>
+<a name="72"><span class="lineNum">      72 </span>                :            :     /* determine jx,jv,q0, note that 3&gt;q0 */</a>
+<a name="73"><span class="lineNum">      73 </span>                :            :         jx =  nx-1;</a>
+<a name="74"><span class="lineNum">      74 </span>                :            :         jv = (e0-3)/24; if(jv&lt;0) jv=0;</a>
+<a name="75"><span class="lineNum">      75 </span>                :            :         q0 =  e0-24*(jv+1);</a>
+<a name="76"><span class="lineNum">      76 </span>                :            : </a>
+<a name="77"><span class="lineNum">      77 </span>                :            :     /* set up f[0] to f[jx+jk] where f[jx+jk] = ipio2[jv+jk] */</a>
+<a name="78"><span class="lineNum">      78 </span>                :            :         j = jv-jx; m = jx+jk;</a>
+<a name="79"><span class="lineNum">      79 </span>                :            :         for(i=0;i&lt;=m;i++,j++) f[i] = (j&lt;0)? zero : (double) ipio2[j];</a>
+<a name="80"><span class="lineNum">      80 </span>                :            : </a>
+<a name="81"><span class="lineNum">      81 </span>                :            :     /* compute q[0],q[1],...q[jk] */</a>
+<a name="82"><span class="lineNum">      82 </span>                :            :         for (i=0;i&lt;=jk;i++) {</a>
+<a name="83"><span class="lineNum">      83 </span>                :            :             for(j=0,fw=0.0;j&lt;=jx;j++) fw += x[j]*f[jx+i-j]; q[i] = fw;</a>
+<a name="84"><span class="lineNum">      84 </span>                :            :         }</a>
+<a name="85"><span class="lineNum">      85 </span>                :            : </a>
+<a name="86"><span class="lineNum">      86 </span>                :            :         jz = jk;</a>
+<a name="87"><span class="lineNum">      87 </span>                :            : recompute:</a>
+<a name="88"><span class="lineNum">      88 </span>                :            :     /* distill q[] into iq[] reversingly */</a>
+<a name="89"><span class="lineNum">      89 </span>                :            :         for(i=0,j=jz,z=q[jz];j&gt;0;i++,j--) {</a>
+<a name="90"><span class="lineNum">      90 </span>                :            :             fw    =  (double)((int)(twon24* z));</a>
+<a name="91"><span class="lineNum">      91 </span>                :            :             iq[i] =  (int)(z-two24*fw);</a>
+<a name="92"><span class="lineNum">      92 </span>                :            :             z     =  q[j-1]+fw;</a>
+<a name="93"><span class="lineNum">      93 </span>                :            :         }</a>
+<a name="94"><span class="lineNum">      94 </span>                :            : </a>
+<a name="95"><span class="lineNum">      95 </span>                :            :     /* compute n */</a>
+<a name="96"><span class="lineNum">      96 </span>                :            :         z  = scalbn(z,q0);              /* actual value of z */</a>
+<a name="97"><span class="lineNum">      97 </span>                :            :         z -= 8.0*floor(z*0.125);                /* trim off integer &gt;= 8 */</a>
+<a name="98"><span class="lineNum">      98 </span>                :            :         n  = (int) z;</a>
+<a name="99"><span class="lineNum">      99 </span>                :            :         z -= (double)n;</a>
+<a name="100"><span class="lineNum">     100 </span>                :            :         ih = 0;</a>
+<a name="101"><span class="lineNum">     101 </span>                :            :         if(q0&gt;0) {   /* need iq[jz-1] to determine n */</a>
+<a name="102"><span class="lineNum">     102 </span>                :            :             i  = (iq[jz-1]&gt;&gt;(24-q0)); n += i;</a>
+<a name="103"><span class="lineNum">     103 </span>                :            :             iq[jz-1] -= i&lt;&lt;(24-q0);</a>
+<a name="104"><span class="lineNum">     104 </span>                :            :             ih = iq[jz-1]&gt;&gt;(23-q0);</a>
+<a name="105"><span class="lineNum">     105 </span>                :            :         } </a>
+<a name="106"><span class="lineNum">     106 </span>                :            :         else if(q0==0) ih = iq[jz-1]&gt;&gt;23;</a>
+<a name="107"><span class="lineNum">     107 </span>                :            :         else if(z&gt;=0.5) ih=2;</a>
+<a name="108"><span class="lineNum">     108 </span>                :            : </a>
+<a name="109"><span class="lineNum">     109 </span>                :            :         if(ih&gt;0) {   /* q &gt; 0.5 */</a>
+<a name="110"><span class="lineNum">     110 </span>                :            :             n += 1; carry = 0;</a>
+<a name="111"><span class="lineNum">     111 </span>                :            :             for(i=0;i&lt;jz ;i++) {     /* compute 1-q */</a>
+<a name="112"><span class="lineNum">     112 </span>                :            :                 j = iq[i];</a>
+<a name="113"><span class="lineNum">     113 </span>                :            :                 if(carry==0) {</a>
+<a name="114"><span class="lineNum">     114 </span>                :            :                     if(j!=0) {</a>
+<a name="115"><span class="lineNum">     115 </span>                :            :                         carry = 1; iq[i] = 0x1000000- j;</a>
+<a name="116"><span class="lineNum">     116 </span>                :            :                     }</a>
+<a name="117"><span class="lineNum">     117 </span>                :            :                 } else  iq[i] = 0xffffff - j;</a>
+<a name="118"><span class="lineNum">     118 </span>                :            :             }</a>
+<a name="119"><span class="lineNum">     119 </span>                :            :             if(q0&gt;0) {               /* rare case: chance is 1 in 12 */</a>
+<a name="120"><span class="lineNum">     120 </span>                :            :                 switch(q0) {</a>
+<a name="121"><span class="lineNum">     121 </span>                :            :                 case 1:</a>
+<a name="122"><span class="lineNum">     122 </span>                :            :                    iq[jz-1] &amp;= 0x7fffff; break;</a>
+<a name="123"><span class="lineNum">     123 </span>                :            :                 case 2:</a>
+<a name="124"><span class="lineNum">     124 </span>                :            :                    iq[jz-1] &amp;= 0x3fffff; break;</a>
+<a name="125"><span class="lineNum">     125 </span>                :            :                 }</a>
+<a name="126"><span class="lineNum">     126 </span>                :            :             }</a>
+<a name="127"><span class="lineNum">     127 </span>                :            :             if(ih==2) {</a>
+<a name="128"><span class="lineNum">     128 </span>                :            :                 z = one - z;</a>
+<a name="129"><span class="lineNum">     129 </span>                :            :                 if(carry!=0) z -= scalbn(one,q0);</a>
+<a name="130"><span class="lineNum">     130 </span>                :            :             }</a>
+<a name="131"><span class="lineNum">     131 </span>                :            :         }</a>
+<a name="132"><span class="lineNum">     132 </span>                :            : </a>
+<a name="133"><span class="lineNum">     133 </span>                :            :     /* check if recomputation is needed */</a>
+<a name="134"><span class="lineNum">     134 </span>                :            :         if(z==zero) {</a>
+<a name="135"><span class="lineNum">     135 </span>                :            :             j = 0;</a>
+<a name="136"><span class="lineNum">     136 </span>                :            :             for (i=jz-1;i&gt;=jk;i--) j |= iq[i];</a>
+<a name="137"><span class="lineNum">     137 </span>                :            :             if(j==0) { /* need recomputation */</a>
+<a name="138"><span class="lineNum">     138 </span>                :            :                 for(k=1;iq[jk-k]==0;k++);   /* k = no. of terms needed */</a>
+<a name="139"><span class="lineNum">     139 </span>                :            : </a>
+<a name="140"><span class="lineNum">     140 </span>                :            :                 for(i=jz+1;i&lt;=jz+k;i++) {   /* add q[jz+1] to q[jz+k] */</a>
+<a name="141"><span class="lineNum">     141 </span>                :            :                     f[jx+i] = (double) ipio2[jv+i];</a>
+<a name="142"><span class="lineNum">     142 </span>                :            :                     for(j=0,fw=0.0;j&lt;=jx;j++) fw += x[j]*f[jx+i-j];</a>
+<a name="143"><span class="lineNum">     143 </span>                :            :                     q[i] = fw;</a>
+<a name="144"><span class="lineNum">     144 </span>                :            :                 }</a>
+<a name="145"><span class="lineNum">     145 </span>                :            :                 jz += k;</a>
+<a name="146"><span class="lineNum">     146 </span>                :            :                 goto recompute;</a>
+<a name="147"><span class="lineNum">     147 </span>                :            :             }</a>
+<a name="148"><span class="lineNum">     148 </span>                :            :         }</a>
+<a name="149"><span class="lineNum">     149 </span>                :            : </a>
+<a name="150"><span class="lineNum">     150 </span>                :            :     /* chop off zero terms */</a>
+<a name="151"><span class="lineNum">     151 </span>                :            :         if(z==0.0) {</a>
+<a name="152"><span class="lineNum">     152 </span>                :            :             jz -= 1; q0 -= 24;</a>
+<a name="153"><span class="lineNum">     153 </span>                :            :             while(iq[jz]==0) { jz--; q0-=24;}</a>
+<a name="154"><span class="lineNum">     154 </span>                :            :         } else { /* break z into 24-bit if necessary */</a>
+<a name="155"><span class="lineNum">     155 </span>                :            :             z = scalbn(z,-q0);</a>
+<a name="156"><span class="lineNum">     156 </span>                :            :             if(z&gt;=two24) { </a>
+<a name="157"><span class="lineNum">     157 </span>                :            :                 fw = (double)((int)(twon24*z));</a>
+<a name="158"><span class="lineNum">     158 </span>                :            :                 iq[jz] = (int)(z-two24*fw);</a>
+<a name="159"><span class="lineNum">     159 </span>                :            :                 jz += 1; q0 += 24;</a>
+<a name="160"><span class="lineNum">     160 </span>                :            :                 iq[jz] = (int) fw;</a>
+<a name="161"><span class="lineNum">     161 </span>                :            :             } else iq[jz] = (int) z ;</a>
+<a name="162"><span class="lineNum">     162 </span>                :            :         }</a>
+<a name="163"><span class="lineNum">     163 </span>                :            : </a>
+<a name="164"><span class="lineNum">     164 </span>                :            :     /* convert integer &quot;bit&quot; chunk to floating-point value */</a>
+<a name="165"><span class="lineNum">     165 </span>                :            :         fw = scalbn(one,q0);</a>
+<a name="166"><span class="lineNum">     166 </span>                :            :         for(i=jz;i&gt;=0;i--) {</a>
+<a name="167"><span class="lineNum">     167 </span>                :            :             q[i] = fw*(double)iq[i]; fw*=twon24;</a>
+<a name="168"><span class="lineNum">     168 </span>                :            :         }</a>
+<a name="169"><span class="lineNum">     169 </span>                :            : </a>
+<a name="170"><span class="lineNum">     170 </span>                :            :     /* compute PIo2[0,...,jp]*q[jz,...,0] */</a>
+<a name="171"><span class="lineNum">     171 </span>                :            :         for(i=jz;i&gt;=0;i--) {</a>
+<a name="172"><span class="lineNum">     172 </span>                :            :             for(fw=0.0,k=0;k&lt;=jp&amp;&amp;k&lt;=jz-i;k++) fw += PIo2[k]*q[i+k];</a>
+<a name="173"><span class="lineNum">     173 </span>                :            :             fq[jz-i] = fw;</a>
+<a name="174"><span class="lineNum">     174 </span>                :            :         }</a>
+<a name="175"><span class="lineNum">     175 </span>                :            : </a>
+<a name="176"><span class="lineNum">     176 </span>                :            :     /* compress fq[] into y[] */</a>
+<a name="177"><span class="lineNum">     177 </span>                :            :         switch(prec) {</a>
+<a name="178"><span class="lineNum">     178 </span>                :            :             case 0:</a>
+<a name="179"><span class="lineNum">     179 </span>                :            :                 fw = 0.0;</a>
+<a name="180"><span class="lineNum">     180 </span>                :            :                 for (i=jz;i&gt;=0;i--) fw += fq[i];</a>
+<a name="181"><span class="lineNum">     181 </span>                :            :                 y[0] = (ih==0)? fw: -fw; </a>
+<a name="182"><span class="lineNum">     182 </span>                :            :                 break;</a>
+<a name="183"><span class="lineNum">     183 </span>                :            :             case 1:</a>
+<a name="184"><span class="lineNum">     184 </span>                :            :             case 2:</a>
+<a name="185"><span class="lineNum">     185 </span>                :            :                 fw = 0.0;</a>
+<a name="186"><span class="lineNum">     186 </span>                :            :                 for (i=jz;i&gt;=0;i--) fw += fq[i]; </a>
+<a name="187"><span class="lineNum">     187 </span>                :            :                 y[0] = (ih==0)? fw: -fw; </a>
+<a name="188"><span class="lineNum">     188 </span>                :            :                 fw = fq[0]-fw;</a>
+<a name="189"><span class="lineNum">     189 </span>                :            :                 for (i=1;i&lt;=jz;i++) fw += fq[i];</a>
+<a name="190"><span class="lineNum">     190 </span>                :            :                 y[1] = (ih==0)? fw: -fw; </a>
+<a name="191"><span class="lineNum">     191 </span>                :            :                 break;</a>
+<a name="192"><span class="lineNum">     192 </span>                :            :             case 3:     /* painful */</a>
+<a name="193"><span class="lineNum">     193 </span>                :            :                 for (i=jz;i&gt;0;i--) {</a>
+<a name="194"><span class="lineNum">     194 </span>                :            :                     fw      = fq[i-1]+fq[i]; </a>
+<a name="195"><span class="lineNum">     195 </span>                :            :                     fq[i]  += fq[i-1]-fw;</a>
+<a name="196"><span class="lineNum">     196 </span>                :            :                     fq[i-1] = fw;</a>
+<a name="197"><span class="lineNum">     197 </span>                :            :                 }</a>
+<a name="198"><span class="lineNum">     198 </span>                :            :                 for (i=jz;i&gt;1;i--) {</a>
+<a name="199"><span class="lineNum">     199 </span>                :            :                     fw      = fq[i-1]+fq[i]; </a>
+<a name="200"><span class="lineNum">     200 </span>                :            :                     fq[i]  += fq[i-1]-fw;</a>
+<a name="201"><span class="lineNum">     201 </span>                :            :                     fq[i-1] = fw;</a>
+<a name="202"><span class="lineNum">     202 </span>                :            :                 }</a>
+<a name="203"><span class="lineNum">     203 </span>                :            :                 for (fw=0.0,i=jz;i&gt;=2;i--) fw += fq[i]; </a>
+<a name="204"><span class="lineNum">     204 </span>                :            :                 if(ih==0) {</a>
+<a name="205"><span class="lineNum">     205 </span>                :            :                     y[0] =  fq[0]; y[1] =  fq[1]; y[2] =  fw;</a>
+<a name="206"><span class="lineNum">     206 </span>                :            :                 } else {</a>
+<a name="207"><span class="lineNum">     207 </span>                :            :                     y[0] = -fq[0]; y[1] = -fq[1]; y[2] = -fw;</a>
+<a name="208"><span class="lineNum">     208 </span>                :            :                 }</a>
+<a name="209"><span class="lineNum">     209 </span>                :            :         }</a>
+<a name="210"><span class="lineNum">     210 </span>                :            :         return n&amp;7;</a>
+<a name="211"><span class="lineNum">     211 </span>                :            : }</a>
+<a name="212"><span class="lineNum">     212 </span>                :            : //LCOV_EXCL_STOP</a>
+<a name="213"><span class="lineNum">     213 </span>                :            : </a>
+<a name="214"><span class="lineNum">     214 </span>                :            : </a>
+<a name="215"><span class="lineNum">     215 </span>                :            : </a>
+<a name="216"><span class="lineNum">     216 </span>                :            : </a>
+<a name="217"><span class="lineNum">     217 </span>                :            : /*</a>
+<a name="218"><span class="lineNum">     218 </span>                :            :  * Table of constants for 2/pi, 396 Hex digits (476 decimal) of 2/pi </a>
+<a name="219"><span class="lineNum">     219 </span>                :            :  */</a>
+<a name="220"><span class="lineNum">     220 </span>                :            : #ifdef __STDC__</a>
+<a name="221"><span class="lineNum">     221 </span>                :            : static const int two_over_pi[] = {</a>
+<a name="222"><span class="lineNum">     222 </span>                :            : #else</a>
+<a name="223"><span class="lineNum">     223 </span>                :            : static int two_over_pi[] = {</a>
+<a name="224"><span class="lineNum">     224 </span>                :            : #endif</a>
+<a name="225"><span class="lineNum">     225 </span>                :            : 0xA2F983, 0x6E4E44, 0x1529FC, 0x2757D1, 0xF534DD, 0xC0DB62, </a>
+<a name="226"><span class="lineNum">     226 </span>                :            : 0x95993C, 0x439041, 0xFE5163, 0xABDEBB, 0xC561B7, 0x246E3A, </a>
+<a name="227"><span class="lineNum">     227 </span>                :            : 0x424DD2, 0xE00649, 0x2EEA09, 0xD1921C, 0xFE1DEB, 0x1CB129, </a>
+<a name="228"><span class="lineNum">     228 </span>                :            : 0xA73EE8, 0x8235F5, 0x2EBB44, 0x84E99C, 0x7026B4, 0x5F7E41, </a>
+<a name="229"><span class="lineNum">     229 </span>                :            : 0x3991D6, 0x398353, 0x39F49C, 0x845F8B, 0xBDF928, 0x3B1FF8, </a>
+<a name="230"><span class="lineNum">     230 </span>                :            : 0x97FFDE, 0x05980F, 0xEF2F11, 0x8B5A0A, 0x6D1F6D, 0x367ECF, </a>
+<a name="231"><span class="lineNum">     231 </span>                :            : 0x27CB09, 0xB74F46, 0x3F669E, 0x5FEA2D, 0x7527BA, 0xC7EBE5, </a>
+<a name="232"><span class="lineNum">     232 </span>                :            : 0xF17B3D, 0x0739F7, 0x8A5292, 0xEA6BFB, 0x5FB11F, 0x8D5D08, </a>
+<a name="233"><span class="lineNum">     233 </span>                :            : 0x560330, 0x46FC7B, 0x6BABF0, 0xCFBC20, 0x9AF436, 0x1DA9E3, </a>
+<a name="234"><span class="lineNum">     234 </span>                :            : 0x91615E, 0xE61B08, 0x659985, 0x5F14A0, 0x68408D, 0xFFD880, </a>
+<a name="235"><span class="lineNum">     235 </span>                :            : 0x4D7327, 0x310606, 0x1556CA, 0x73A8C9, 0x60E27B, 0xC08C6B, </a>
+<a name="236"><span class="lineNum">     236 </span>                :            : };</a>
+<a name="237"><span class="lineNum">     237 </span>                :            : </a>
+<a name="238"><span class="lineNum">     238 </span>                :            : #ifdef __STDC__</a>
+<a name="239"><span class="lineNum">     239 </span>                :            : static const int npio2_hw[] = {</a>
+<a name="240"><span class="lineNum">     240 </span>                :            : #else</a>
+<a name="241"><span class="lineNum">     241 </span>                :            : static int npio2_hw[] = {</a>
+<a name="242"><span class="lineNum">     242 </span>                :            : #endif</a>
+<a name="243"><span class="lineNum">     243 </span>                :            : 0x3FF921FB, 0x400921FB, 0x4012D97C, 0x401921FB, 0x401F6A7A, 0x4022D97C,</a>
+<a name="244"><span class="lineNum">     244 </span>                :            : 0x4025FDBB, 0x402921FB, 0x402C463A, 0x402F6A7A, 0x4031475C, 0x4032D97C,</a>
+<a name="245"><span class="lineNum">     245 </span>                :            : 0x40346B9C, 0x4035FDBB, 0x40378FDB, 0x403921FB, 0x403AB41B, 0x403C463A,</a>
+<a name="246"><span class="lineNum">     246 </span>                :            : 0x403DD85A, 0x403F6A7A, 0x40407E4C, 0x4041475C, 0x4042106C, 0x4042D97C,</a>
+<a name="247"><span class="lineNum">     247 </span>                :            : 0x4043A28C, 0x40446B9C, 0x404534AC, 0x4045FDBB, 0x4046C6CB, 0x40478FDB,</a>
+<a name="248"><span class="lineNum">     248 </span>                :            : 0x404858EB, 0x404921FB,</a>
+<a name="249"><span class="lineNum">     249 </span>                :            : };</a>
+<a name="250"><span class="lineNum">     250 </span>                :            : </a>
+<a name="251"><span class="lineNum">     251 </span>                :            : /*</a>
+<a name="252"><span class="lineNum">     252 </span>                :            :  * invpio2:  53 bits of 2/pi</a>
+<a name="253"><span class="lineNum">     253 </span>                :            :  * pio2_1:   first  33 bit of pi/2</a>
+<a name="254"><span class="lineNum">     254 </span>                :            :  * pio2_1t:  pi/2 - pio2_1</a>
+<a name="255"><span class="lineNum">     255 </span>                :            :  * pio2_2:   second 33 bit of pi/2</a>
+<a name="256"><span class="lineNum">     256 </span>                :            :  * pio2_2t:  pi/2 - (pio2_1+pio2_2)</a>
+<a name="257"><span class="lineNum">     257 </span>                :            :  * pio2_3:   third  33 bit of pi/2</a>
+<a name="258"><span class="lineNum">     258 </span>                :            :  * pio2_3t:  pi/2 - (pio2_1+pio2_2+pio2_3)</a>
+<a name="259"><span class="lineNum">     259 </span>                :            :  */</a>
+<a name="260"><span class="lineNum">     260 </span>                :            : </a>
+<a name="261"><span class="lineNum">     261 </span>                :            : #ifdef __STDC__</a>
+<a name="262"><span class="lineNum">     262 </span>                :            : static const double </a>
+<a name="263"><span class="lineNum">     263 </span>                :            : #else</a>
+<a name="264"><span class="lineNum">     264 </span>                :            : static double </a>
+<a name="265"><span class="lineNum">     265 </span>                :            : #endif</a>
+<a name="266"><span class="lineNum">     266 </span>                :            : //zero =  0.00000000000000000000e+00, /* 0x00000000, 0x00000000 */</a>
+<a name="267"><span class="lineNum">     267 </span>                :            : half =  5.00000000000000000000e-01, /* 0x3FE00000, 0x00000000 */</a>
+<a name="268"><span class="lineNum">     268 </span>                :            : //two24 =  1.67772160000000000000e+07, /* 0x41700000, 0x00000000 */</a>
+<a name="269"><span class="lineNum">     269 </span>                :            : invpio2 =  6.36619772367581382433e-01, /* 0x3FE45F30, 0x6DC9C883 */</a>
+<a name="270"><span class="lineNum">     270 </span>                :            : pio2_1  =  1.57079632673412561417e+00, /* 0x3FF921FB, 0x54400000 */</a>
+<a name="271"><span class="lineNum">     271 </span>                :            : pio2_1t =  6.07710050650619224932e-11, /* 0x3DD0B461, 0x1A626331 */</a>
+<a name="272"><span class="lineNum">     272 </span>                :            : pio2_2  =  6.07710050630396597660e-11, /* 0x3DD0B461, 0x1A600000 */</a>
+<a name="273"><span class="lineNum">     273 </span>                :            : pio2_2t =  2.02226624879595063154e-21, /* 0x3BA3198A, 0x2E037073 */</a>
+<a name="274"><span class="lineNum">     274 </span>                :            : pio2_3  =  2.02226624871116645580e-21, /* 0x3BA3198A, 0x2E000000 */</a>
+<a name="275"><span class="lineNum">     275 </span>                :            : pio2_3t =  8.47842766036889956997e-32; /* 0x397B839A, 0x252049C1 */</a>
+<a name="276"><span class="lineNum">     276 </span>                :            : </a>
+<a name="277"><span class="lineNum">     277 </span>                :            : #ifdef __STDC__</a>
+<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">         26 :         int __ieee754_rem_pio2(double x, double *y)</span></a>
+<a name="279"><span class="lineNum">     279 </span>                :            : #else</a>
+<a name="280"><span class="lineNum">     280 </span>                :            :         int __ieee754_rem_pio2(x,y)</a>
+<a name="281"><span class="lineNum">     281 </span>                :            :         double x,y[];</a>
+<a name="282"><span class="lineNum">     282 </span>                :            : #endif</a>
+<a name="283"><span class="lineNum">     283 </span>                :            : {</a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">         26 :         double z,w,t,r,fn;</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">         26 :         double tx[3];</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         26 :         int e0,i,j,nx,n,ix,hx;</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :            : </a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">         26 :         hx = __HI(x);           /* high word of x */</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">         26 :         ix = hx&amp;0x7fffffff;</span></a>
+<a name="290"><span class="lineNum">     290 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         26 :         if(ix&lt;=0x3fe921fb)   /* |x| ~&lt;= pi/4 , no need for reduction */</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">          1 :             {y[0] = x; y[1] = 0; return 0;}</span></a>
+<a name="292"><span class="lineNum">     292 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">         25 :         if(ix&lt;0x4002d97c) {  /* |x| &lt; 3pi/4, special case with n=+-1 */</span></a>
+<a name="293"><span class="lineNum">     293 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          3 :             if(hx&gt;0) { </span></a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          2 :                 z = x - pio2_1;</span></a>
+<a name="295"><span class="lineNum">     295 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :                 if(ix!=0x3ff921fb) {    /* 33+53 bit pi is good enough */</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">          2 :                     y[0] = z - pio2_1t;</span></a>
+<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">          2 :                     y[1] = (z-y[0])-pio2_1t;</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :            :                 } else {                /* near pi/2, use 33+33+53 bit pi */</a>
+<a name="299"><span class="lineNum">     299 </span>                :<span class="lineNoCov">          0 :                     z -= pio2_2;</span></a>
+<a name="300"><span class="lineNum">     300 </span>                :<span class="lineNoCov">          0 :                     y[0] = z - pio2_2t;</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineNoCov">          0 :                     y[1] = (z-y[0])-pio2_2t;</span></a>
+<a name="302"><span class="lineNum">     302 </span>                :            :                 }</a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">          2 :                 return 1;</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :            :             } else {    /* negative x */</a>
+<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">          1 :                 z = x + pio2_1;</span></a>
+<a name="306"><span class="lineNum">     306 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :                 if(ix!=0x3ff921fb) {    /* 33+53 bit pi is good enough */</span></a>
+<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">          1 :                     y[0] = z + pio2_1t;</span></a>
+<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">          1 :                     y[1] = (z-y[0])+pio2_1t;</span></a>
+<a name="309"><span class="lineNum">     309 </span>                :            :                 } else {                /* near pi/2, use 33+33+53 bit pi */</a>
+<a name="310"><span class="lineNum">     310 </span>                :<span class="lineNoCov">          0 :                     z += pio2_2;</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineNoCov">          0 :                     y[0] = z + pio2_2t;</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :<span class="lineNoCov">          0 :                     y[1] = (z-y[0])+pio2_2t;</span></a>
+<a name="313"><span class="lineNum">     313 </span>                :            :                 }</a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">          1 :                 return -1;</span></a>
+<a name="315"><span class="lineNum">     315 </span>                :            :             }</a>
+<a name="316"><span class="lineNum">     316 </span>                :            :         }</a>
+<a name="317"><span class="lineNum">     317 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span>]:<span class="lineCov">         22 :         if(ix&lt;=0x413921fb) { /* |x| ~&lt;= 2^19*(pi/2), medium size */</span></a>
+<a name="318"><span class="lineNum">     318 </span>                :<span class="lineCov">          4 :             t  = fabs(x);</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">          4 :             n  = (int) (t*invpio2+half);</span></a>
+<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">          4 :             fn = (double)n;</span></a>
+<a name="321"><span class="lineNum">     321 </span>                :<span class="lineCov">          4 :             r  = t-fn*pio2_1;</span></a>
+<a name="322"><span class="lineNum">     322 </span>                :<span class="lineCov">          4 :             w  = fn*pio2_1t;    /* 1st round good to 85 bit */</span></a>
+<a name="323"><span class="lineNum">     323 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          4 :             if(n&lt;32&amp;&amp;ix!=npio2_hw[n-1]) {    </span></a>
+<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">          2 :                 y[0] = r-w;     /* quick check no cancellation */</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :            :             } else {</a>
+<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">          2 :                 j  = ix&gt;&gt;20;</span></a>
+<a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">          2 :                 y[0] = r-w; </span></a>
+<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">          2 :                 i = j-(((__HI(y[0]))&gt;&gt;20)&amp;0x7ff);</span></a>
+<a name="329"><span class="lineNum">     329 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :                 if(i&gt;16) {  /* 2nd iteration needed, good to 118 */</span></a>
+<a name="330"><span class="lineNum">     330 </span>                :<span class="lineCov">          1 :                     t  = r;</span></a>
+<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">          1 :                     w  = fn*pio2_2;     </span></a>
+<a name="332"><span class="lineNum">     332 </span>                :<span class="lineCov">          1 :                     r  = t-w;</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">          1 :                     w  = fn*pio2_2t-((t-r)-w);  </span></a>
+<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">          1 :                     y[0] = r-w;</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">          1 :                     i = j-(((__HI(y[0]))&gt;&gt;20)&amp;0x7ff);</span></a>
+<a name="336"><span class="lineNum">     336 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :                     if(i&gt;49)  {      /* 3rd iteration need, 151 bits acc */</span></a>
+<a name="337"><span class="lineNum">     337 </span>                :<span class="lineNoCov">          0 :                         t  = r; /* will cover all possible cases */</span></a>
+<a name="338"><span class="lineNum">     338 </span>                :<span class="lineNoCov">          0 :                         w  = fn*pio2_3; </span></a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineNoCov">          0 :                         r  = t-w;</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :<span class="lineNoCov">          0 :                         w  = fn*pio2_3t-((t-r)-w);      </span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineNoCov">          0 :                         y[0] = r-w;</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :            :                     }</a>
+<a name="343"><span class="lineNum">     343 </span>                :            :                 }</a>
+<a name="344"><span class="lineNum">     344 </span>                :            :             }</a>
+<a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">          4 :             y[1] = (r-y[0])-w;</span></a>
+<a name="346"><span class="lineNum">     346 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          4 :             if(hx&lt;0)         {y[0] = -y[0]; y[1] = -y[1]; return -n;}</span></a>
+<a name="347"><span class="lineNum">     347 </span>                :            :             else         return n;</a>
+<a name="348"><span class="lineNum">     348 </span>                :            :         }</a>
+<a name="349"><span class="lineNum">     349 </span>                :            :     /* </a>
+<a name="350"><span class="lineNum">     350 </span>                :            :      * all other (large) arguments</a>
+<a name="351"><span class="lineNum">     351 </span>                :            :      */</a>
+<a name="352"><span class="lineNum">     352 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         18 :         if(ix&gt;=0x7ff00000) {         /* x is inf or NaN */</span></a>
+<a name="353"><span class="lineNum">     353 </span>                :<span class="lineCov">          1 :             y[0]=y[1]=x-x; return 0;</span></a>
+<a name="354"><span class="lineNum">     354 </span>                :            :         }</a>
+<a name="355"><span class="lineNum">     355 </span>                :            :     /* set z = scalbn(|x|,ilogb(x)-23) */</a>
+<a name="356"><span class="lineNum">     356 </span>                :<span class="lineCov">         17 :         __LO(z) = __LO(x);</span></a>
+<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">         17 :         e0      = (ix&gt;&gt;20)-1046;  /* e0 = ilogb(z)-23; */</span></a>
+<a name="358"><span class="lineNum">     358 </span>                :<span class="lineCov">         17 :         __HI(z) = ix - (e0&lt;&lt;20);</span></a>
+<a name="359"><span class="lineNum">     359 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         51 :         for(i=0;i&lt;2;i++) {</span></a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         34 :                 tx[i] = (double)((int)(z));</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">         34 :                 z     = (z-tx[i])*two24;</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :            :         }</a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">         17 :         tx[2] = z;</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">         17 :         nx = 3;</span></a>
+<a name="365"><span class="lineNum">     365 </span>        [<span class="branchCov" title="Branch 0 was taken 17 times"> + </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         34 :         while(tx[nx-1]==zero) nx--;     /* skip zero term */</span></a>
+<a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">         17 :         n  =  __kernel_rem_pio2(tx,y,e0,nx,2,two_over_pi);</span></a>
+<a name="367"><span class="lineNum">     367 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         17 :         if(hx&lt;0) {y[0] = -y[0]; y[1] = -y[1]; return -n;}</span></a>
+<a name="368"><span class="lineNum">     368 </span>                :            :         return n;</a>
+<a name="369"><span class="lineNum">     369 </span>                :            : }</a>
+<a name="370"><span class="lineNum">     370 </span>                :            : </a>
+<a name="371"><span class="lineNum">     371 </span>                :            : //LCOV_EXCL_START</a>
+<a name="372"><span class="lineNum">     372 </span>                :            : int main(int argc, char **argv)</a>
+<a name="373"><span class="lineNum">     373 </span>                :            : {</a>
+<a name="374"><span class="lineNum">     374 </span>                :            :     double a, b, c[2]={0};</a>
+<a name="375"><span class="lineNum">     375 </span>                :            :     FILE *fp = NULL;</a>
+<a name="376"><span class="lineNum">     376 </span>                :            :     const char* filename = argv[1];</a>
+<a name="377"><span class="lineNum">     377 </span>                :            :     fp = fopen(filename, &quot;r&quot;);</a>
+<a name="378"><span class="lineNum">     378 </span>                :            :     fscanf(fp, &quot;%le&quot;, &amp;a);</a>
+<a name="379"><span class="lineNum">     379 </span>                :            : //    fscanf(fp, &quot;%le&quot;, &amp;c);</a>
+<a name="380"><span class="lineNum">     380 </span>                :            :     fclose(fp);</a>
+<a name="381"><span class="lineNum">     381 </span>                :            : </a>
+<a name="382"><span class="lineNum">     382 </span>                :            : //    printf (&quot;%.16e %.16e\n&quot;, a, c);</a>
+<a name="383"><span class="lineNum">     383 </span>                :            : </a>
+<a name="384"><span class="lineNum">     384 </span>                :            :     b = __ieee754_rem_pio2(a, c);</a>
+<a name="385"><span class="lineNum">     385 </span>                :            : </a>
+<a name="386"><span class="lineNum">     386 </span>                :            : </a>
+<a name="387"><span class="lineNum">     387 </span>                :            :     printf (&quot;The Value of b is %f\n&quot;, b);</a>
+<a name="388"><span class="lineNum">     388 </span>                :            : </a>
+<a name="389"><span class="lineNum">     389 </span>                :            :     return 0;</a>
+<a name="390"><span class="lineNum">     390 </span>                :            : }</a>
+<a name="391"><span class="lineNum">     391 </span>                :            : //LCOV_EXCL_STOP</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

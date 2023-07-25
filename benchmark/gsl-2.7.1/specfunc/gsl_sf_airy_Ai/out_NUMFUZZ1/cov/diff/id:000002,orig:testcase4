@@ -1,0 +1,10 @@
+diff id:000001,orig:testcase1 -> id:000002,orig:testcase4
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/gsl-2.7.1/specfunc/gsl_sf_airy_Ai/airy_Ai.c
+  New 'line' coverage: 592
+  New 'line' coverage: 593
+  New 'line' coverage: 594
+  New 'line' coverage: 595
+  New 'line' coverage: 596
+  New 'line' coverage: 597
+  New 'line' coverage: 598
+  New 'line' coverage: 599

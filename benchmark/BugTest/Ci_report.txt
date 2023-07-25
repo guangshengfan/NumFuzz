@@ -1,0 +1,47 @@
+Title   Unexpected result in gsl_sf_Ci_e function
+
+
+Dear GSL developers,
+
+Recently, I have got an unexpected result when using GSL's gsl_sf_Ci_e function. The short program which exercises the issue is shown below:
+
+Code gsl_sf_Ci_unexpected.c:
+
+#include <gsl/gsl_math.h>
+
+#include <gsl/gsl_errno.h>
+
+#include <gsl/gsl_sf_trig.h>
+
+#include <gsl/gsl_sf_expint.h>
+
+int main() {
+    
+    gsl_sf_result result;
+
+    double x = 2.21e44;
+
+    int status = gsl_sf_Ci_e(x, &result);
+
+    printf ("status is %d, result.val is %g, result.err is %g\n", status, result.val, result.err);
+
+    return 0;
+}
+
+# To reproduce the issue, please use:
+$ gcc gsl_sf_Ci_unexpected.c -o Ci_test -lgsl -lgslcblas -lm
+$ ./Ci_test
+
+After running the program will get:  status is 0, result.val is inf, result.err is inf
+
+Calculating with the input x = 2.21e44, in the one hand, the result.val is inf, is incorrect; Using mpmath to check you will get gsl_sf_Ci_e[2.21e44]=-4.52e-45. In the other hand, the result.err is inf, is inaccurate, and the returned status is 0, that is GSL_SUCCESS, which can be misleading to users.
+
+In my opinion, the cause of this issue is: gsl_sf_Ci_e (2.21e44) calls gsl_sf_sin_e (x, &sin_result) and gsl_sf_cos_e (x, &cos_result). After the call, both sin_result.val and sin_result.err become inf, cos_result.val and cos_result.err become -inf and inf respectively, which is clearly not true, because that's out of the bound [-1, 1] of trig values. Since “it is known that the GSL gsl_sf_cos and gsl_sf_sin functions fail for large inputs” (from https://lists.gnu.org/archive/html/bug-gsl/2017-11/msg00012.html), maybe the gsl_sf_Ci_e function should consider using the libc/libm cos/sin functions instead.
+
+The GSL version is 2.7.1, and we compiled it with gcc 9.4.0 on Ubuntu 20.04.
+Not sure if this issue is a bug in GSL. I'm looking forward to hearing from you!
+
+
+Best regards,
+
+Chenghu Ma

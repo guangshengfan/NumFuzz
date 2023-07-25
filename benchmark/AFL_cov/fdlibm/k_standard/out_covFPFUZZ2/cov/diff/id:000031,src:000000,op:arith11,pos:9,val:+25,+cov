@@ -1,0 +1,10 @@
+diff id:000030,src:000000,op:arith11,pos:10,val:+23,+cov -> id:000031,src:000000,op:arith11,pos:9,val:+25,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_standard/k_standard.c
+  New 'line' coverage: 504
+  New 'line' coverage: 506
+  New 'line' coverage: 507
+  New 'line' coverage: 508
+  New 'line' coverage: 511
+  New 'line' coverage: 512
+  New 'line' coverage: 514
+  New 'line' coverage: 515

@@ -1,0 +1,7 @@
+diff id:000003,src:000000,op:flip1,pos:0,+cov -> id:000004,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_j1j/e_j1j.c
+  New 'line' coverage: 132
+  New 'line' coverage: 133
+  New 'line' coverage: 134
+  New 'line' coverage: 135
+  New 'line' coverage: 136

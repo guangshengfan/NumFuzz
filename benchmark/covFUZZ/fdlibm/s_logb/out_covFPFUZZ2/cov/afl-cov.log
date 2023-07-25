@@ -1,0 +1,100 @@
+
+*** Imported 16 new test cases from: out_covFPFUZZ2//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 16), cycle: 0
+    lines......: 62.5% (5 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 0.0% (0 of 10 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_logb/s_logb.c
+  New 'line' coverage: 27
+  New 'line' coverage: 33
+  New 'line' coverage: 34
+  New 'line' coverage: 35
+  New 'line' coverage: 36
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ2//queue/id:000000,orig:testcase | ./s_logb_cov out_covFPFUZZ2//queue/id:000000,orig:testcase
+    0.0000000000000000e+00
+    The Value of b is -inf
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_logb/s_logb.c
+  New 'line' coverage: 37
+  New 'line' coverage: 38
+  New 'line' coverage: 41
+
+[+] AFL test case: id:000002,orig:testcase10 (2 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000003,orig:testcase11 (3 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000004,orig:testcase12 (4 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000005,orig:testcase13 (5 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000006,orig:testcase14 (6 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000007,orig:testcase15 (7 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000008,orig:testcase2 (8 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 20.0% (2 of 10 branches)
+[+] AFL test case: id:000009,orig:testcase3 (9 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] AFL test case: id:000010,orig:testcase4 (10 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] AFL test case: id:000011,orig:testcase5 (11 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] AFL test case: id:000012,orig:testcase6 (12 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] AFL test case: id:000013,orig:testcase7 (13 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] AFL test case: id:000014,orig:testcase8 (14 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] AFL test case: id:000015,orig:testcase9 (15 / 16), cycle: 0
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] Processed 16 / 16 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ2//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ2//cov/pos-cov
+    lines......: 100.0% (8 of 8 lines)
+    functions..: 0.0% (0 of 1 function)
+    branches...: 30.0% (3 of 10 branches)
+[+] Final lcov web report: out_covFPFUZZ2//cov/web/index.html

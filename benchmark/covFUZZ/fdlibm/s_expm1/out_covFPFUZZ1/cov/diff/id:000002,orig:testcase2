@@ -1,0 +1,13 @@
+diff id:000001,orig:testcase1 -> id:000002,orig:testcase2
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_expm1/s_expm1.c
+  New 'line' coverage: 174
+  New 'line' coverage: 175
+  New 'line' coverage: 176
+  New 'line' coverage: 177
+  New 'line' coverage: 202
+  New 'line' coverage: 207
+  New 'line' coverage: 208
+  New 'line' coverage: 209
+  New 'line' coverage: 210
+  New 'line' coverage: 211
+  New 'line' coverage: 219

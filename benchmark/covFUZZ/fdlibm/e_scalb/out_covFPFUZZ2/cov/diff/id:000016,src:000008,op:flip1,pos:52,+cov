@@ -1,0 +1,5 @@
+diff id:000015,orig:testcase9 -> id:000016,src:000008,op:flip1,pos:52,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_scalb/e_scalb.c
+  New 'line' coverage: 52
+  New 'line' coverage: 53
+  New 'line' coverage: 54

@@ -1,0 +1,7 @@
+diff id:000002,src:000000,op:flip1,pos:0,+cov -> id:000003,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_sin/sin.c
+  New 'line' coverage: 91
+  New 'line' coverage: 92
+  New 'line' coverage: 93
+  New 'line' coverage: 97
+  New 'line' coverage: 98

@@ -1,0 +1,12 @@
+diff id:000002,orig:testcase2 -> id:000003,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_hypot/e_hypot.c
+  New 'line' coverage: 116
+  New 'line' coverage: 117
+  New 'line' coverage: 118
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+  New 'line' coverage: 88
+  New 'line' coverage: 89

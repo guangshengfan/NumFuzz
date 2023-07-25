@@ -1,0 +1,111 @@
+        -:    0:Source:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/bessel_i0_scaled/build/foo_raw.c
+        -:    0:Graph:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/bessel_i0_scaled/build/foo_raw.gcno
+        -:    0:Data:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/bessel_i0_scaled/build/foo_raw.gcda
+        -:    0:Runs:1
+        -:    1:/* specfunc/bessel_i.c
+        -:    2: * 
+        -:    3: * Copyright (C) 1996, 1997, 1998, 1999, 2000 Gerard Jungman
+        -:    4: * 
+        -:    5: * This program is free software; you can redistribute it and/or modify
+        -:    6: * it under the terms of the GNU General Public License as published by
+        -:    7: * the Free Software Foundation; either version 3 of the License, or (at
+        -:    8: * your option) any later version.
+        -:    9: * 
+        -:   10: * This program is distributed in the hope that it will be useful, but
+        -:   11: * WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   12: * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+        -:   13: * General Public License for more details.
+        -:   14: * 
+        -:   15: * You should have received a copy of the GNU General Public License
+        -:   16: * along with this program; if not, write to the Free Software
+        -:   17: * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+        -:   18: */
+        -:   19:
+        -:   20:/* Author:  G. Jungman */
+        -:   21:
+        -:   22:#include "../../config.h"
+        -:   23:#include <gsl/gsl_math.h>
+        -:   24:#include <gsl/gsl_errno.h>
+        -:   25:#include <gsl/gsl_sf_pow_int.h>
+        -:   26:#include <gsl/gsl_sf_bessel.h>
+        -:   27:
+        -:   28:#include "../error.h"
+        -:   29:
+        -:   30:#include "../bessel.h"
+        -:   31:
+        -:   32:
+        -:   33:/*-*-*-*-*-*-*-*-*-*-*-* Functions with Error Codes *-*-*-*-*-*-*-*-*-*-*-*/
+        -:   34:
+function foo_raw called 6 returned 100% blocks executed 78%
+        6:   35:int foo_raw(const double x, gsl_sf_result * result)
+        -:   36:{
+        6:   37:  double ax = fabs(x);
+        -:   38:
+        -:   39:  /* CHECK_POINTER(result) */
+        -:   40:
+        6:   41:  if(x == 0.0) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   42:    result->val = 1.0;
+    #####:   43:    result->err = 0.0;
+    #####:   44:    return GSL_SUCCESS;    
+        -:   45:  }
+        6:   46:  else if(ax < 0.2) {
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+        2:   47:    const double eax = exp(-ax);
+        2:   48:    const double y = ax*ax;
+        2:   49:    const double c1 = 1.0/6.0;
+        2:   50:    const double c2 = 1.0/120.0;
+        2:   51:    const double c3 = 1.0/5040.0;
+        2:   52:    const double c4 = 1.0/362880.0;
+        2:   53:    const double c5 = 1.0/39916800.0;
+        2:   54:    const double sum = 1.0 + y*(c1 + y*(c2 + y*(c3 + y*(c4 + y*c5))));
+        2:   55:    result->val = eax * sum;
+        2:   56:    result->err = 2.0 * GSL_DBL_EPSILON * result->val;
+        -:   57:  }
+        4:   58:  else if(ax < -0.5*GSL_LOG_DBL_EPSILON) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        4:   59:    result->val = (1.0 - exp(-2.0*ax))/(2.0*ax);
+        4:   60:    result->err = 2.0 * GSL_DBL_EPSILON * result->val;
+        -:   61:  }
+        -:   62:  else {
+    #####:   63:    result->val = 1.0/(2.0*ax);
+    #####:   64:    result->err = 2.0 * GSL_DBL_EPSILON * result->val;
+        -:   65:  }
+        6:   66:  return GSL_SUCCESS;
+        -:   67:}
+        -:   68:
+        -:   69:
+        -:   70:
+        -:   71:/*-*-*-*-*-*-*-*-*-* Functions w/ Natural Prototypes *-*-*-*-*-*-*-*-*-*-*/
+        -:   72:/*
+        -:   73:#include "../eval.h"
+        -:   74:
+        -:   75:double gsl_sf_bessel_i0_scaled(const double x)
+        -:   76:{
+        -:   77:  EVAL_RESULT(gsl_sf_bessel_i0_scaled_e(x, &result));
+        -:   78:}
+        -:   79:
+        -:   80:
+        -:   81:
+        -:   82:int main(int argc, char **argv)
+        -:   83:{
+        -:   84:    double a, b;
+        -:   85:    FILE *fp = NULL;
+        -:   86:    const char* filename = argv[1];
+        -:   87:    fp = fopen(filename, "r");
+        -:   88:    fscanf(fp, "%le", &a);
+        -:   89:    fclose(fp);
+        -:   90:
+        -:   91:    printf ("%.15e\n", a);
+        -:   92:    
+        -:   93:    b = gsl_sf_bessel_i0_scaled(a);
+        -:   94:
+        -:   95:
+        -:   96:    printf ("The Value of b is %f\n", b);
+        -:   97:    
+        -:   98:    return 0;
+        -:   99:}
+        -:  100:*/

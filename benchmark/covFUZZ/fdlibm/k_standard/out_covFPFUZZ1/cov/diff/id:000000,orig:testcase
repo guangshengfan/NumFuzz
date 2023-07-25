@@ -1,0 +1,9 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_standard/k_standard.c
+  New 'function' coverage: __kernel_standard()
+  New 'line' coverage: 110
+  New 'line' coverage: 116
+  New 'line' coverage: 127
+  New 'line' coverage: 128
+  New 'line' coverage: 129
+  New 'line' coverage: 764

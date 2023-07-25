@@ -1,0 +1,6 @@
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_atanh/e_atanh.c
+  New 'line' coverage: 65
+  New 'line' coverage: 66
+  New 'line' coverage: 70
+  New 'line' coverage: 71

@@ -1,0 +1,4 @@
+diff id:000008,orig:testcase2 -> id:000009,orig:testcase3
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_ceil/s_ceil.c
+  New 'line' coverage: 61
+  New 'line' coverage: 62

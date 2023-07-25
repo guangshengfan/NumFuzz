@@ -1,0 +1,9 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/k_sin/k_sin.c
+  New 'function' coverage: __kernel_sin()
+  New 'line' coverage: 62
+  New 'line' coverage: 68
+  New 'line' coverage: 69
+  New 'line' coverage: 70
+  New 'line' coverage: 71
+  New 'line' coverage: 72

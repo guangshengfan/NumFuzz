@@ -1,0 +1,9 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_acosh/e_acosh.c
+  New 'function' coverage: __ieee754_acosh()
+  New 'line' coverage: 115
+  New 'line' coverage: 121
+  New 'line' coverage: 122
+  New 'line' coverage: 123
+  New 'line' coverage: 124
+  New 'line' coverage: 125

@@ -1,0 +1,4 @@
+diff id:000002,orig:testcase2 -> id:000003,src:000002,op:flip1,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_ilogb/s_ilogb.c
+  New 'line' coverage: 38
+  New 'line' coverage: 39

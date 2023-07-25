@@ -1,0 +1,10 @@
+diff id:000039,src:000001,op:havoc,rep:2,+cov -> id:000040,src:000001,op:havoc,rep:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_standard/k_standard.c
+  New 'line' coverage: 645
+  New 'line' coverage: 647
+  New 'line' coverage: 648
+  New 'line' coverage: 649
+  New 'line' coverage: 650
+  New 'line' coverage: 652
+  New 'line' coverage: 653
+  New 'line' coverage: 657

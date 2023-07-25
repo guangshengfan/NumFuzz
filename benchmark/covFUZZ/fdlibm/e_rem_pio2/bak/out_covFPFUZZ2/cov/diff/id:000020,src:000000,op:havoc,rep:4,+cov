@@ -1,0 +1,9 @@
+diff id:000019,src:000000,op:havoc,rep:64,+cov -> id:000020,src:000000,op:havoc,rep:4,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 330
+  New 'line' coverage: 331
+  New 'line' coverage: 332
+  New 'line' coverage: 333
+  New 'line' coverage: 334
+  New 'line' coverage: 335
+  New 'line' coverage: 336

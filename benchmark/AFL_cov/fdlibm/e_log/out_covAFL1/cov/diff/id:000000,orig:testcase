@@ -1,0 +1,13 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_log/e_log.c
+  New 'function' coverage: __ieee754_log()
+  New 'line' coverage: 100
+  New 'line' coverage: 101
+  New 'line' coverage: 103
+  New 'line' coverage: 104
+  New 'line' coverage: 105
+  New 'line' coverage: 106
+  New 'line' coverage: 90
+  New 'line' coverage: 96
+  New 'line' coverage: 97
+  New 'line' coverage: 98

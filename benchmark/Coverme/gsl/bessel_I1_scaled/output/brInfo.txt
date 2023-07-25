@@ -1,0 +1,7 @@
+56960032	1	0	  br i1 %21, label %22, label %26
+56959920	4	0	  br i1 %28, label %29, label %32
+56959648	4	0	  br i1 %34, label %35, label %42
+57158016	5	0	  br i1 %44, label %45, label %83
+57165568	5	0	  br i1 %85, label %86, label %120
+57153920	2	0	  %102 = select i1 %100, double 1.000000e+00, double -1.000000e+00
+57177584	2	0	  %135 = select i1 %133, double 1.000000e+00, double -1.000000e+00

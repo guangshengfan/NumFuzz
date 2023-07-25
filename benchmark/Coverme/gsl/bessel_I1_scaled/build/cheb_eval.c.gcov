@@ -1,0 +1,41 @@
+        -:    0:Source:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/bessel_I1_scaled/cheb_eval.c
+        -:    0:Graph:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/bessel_I1_scaled/build/foo_raw.gcno
+        -:    0:Data:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/gsl/bessel_I1_scaled/build/foo_raw.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:static inline int
+function cheb_eval_e called 9 returned 100% blocks executed 100%
+        9:    3:cheb_eval_e(const cheb_series * cs,
+        -:    4:            const double x,
+        -:    5:            gsl_sf_result * result)
+        -:    6:{
+        -:    7:  int j;
+        9:    8:  double d  = 0.0;
+        9:    9:  double dd = 0.0;
+        -:   10:
+        9:   11:  double y  = (2.0*x - cs->a - cs->b) / (cs->b - cs->a);
+        9:   12:  double y2 = 2.0 * y;
+        -:   13:
+        9:   14:  double e = 0.0;
+        -:   15:
+      172:   16:  for(j = cs->order; j>=1; j--) {
+branch  0 taken 95%
+branch  1 taken 5% (fallthrough)
+      163:   17:    double temp = d;
+      163:   18:    d = y2*d - dd + cs->c[j];
+      163:   19:    e += fabs(y2*temp) + fabs(dd) + fabs(cs->c[j]);
+      163:   20:    dd = temp;
+        -:   21:  }
+        -:   22:
+        -:   23:  { 
+        9:   24:    double temp = d;
+        9:   25:    d = y*d - dd + 0.5 * cs->c[0];
+        9:   26:    e += fabs(y*temp) + fabs(dd) + 0.5 * fabs(cs->c[0]);
+        -:   27:  }
+        -:   28:
+        9:   29:  result->val = d;
+        9:   30:  result->err = GSL_DBL_EPSILON * e + fabs(cs->c[cs->order]);
+        -:   31:
+        9:   32:  return GSL_SUCCESS;
+        -:   33:}
+        -:   34:

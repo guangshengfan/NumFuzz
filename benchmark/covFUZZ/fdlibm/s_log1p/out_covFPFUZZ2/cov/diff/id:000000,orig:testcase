@@ -1,0 +1,14 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_log1p/s_log1p.c
+  New 'function' coverage: log1p_bis()
+  New 'line' coverage: 105
+  New 'line' coverage: 111
+  New 'line' coverage: 112
+  New 'line' coverage: 114
+  New 'line' coverage: 115
+  New 'line' coverage: 117
+  New 'line' coverage: 118
+  New 'line' coverage: 119
+  New 'line' coverage: 123
+  New 'line' coverage: 124
+  New 'line' coverage: 125

@@ -1,0 +1,31 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/gsl-2.7.1/specfunc/gsl_sf_airy_Ai/airy_Ai.c
+  New 'function' coverage: main()
+  New 'line' coverage: 569
+  New 'line' coverage: 580
+  New 'line' coverage: 581
+  New 'line' coverage: 582
+  New 'line' coverage: 583
+  New 'line' coverage: 584
+  New 'line' coverage: 585
+  New 'line' coverage: 586
+  New 'line' coverage: 587
+  New 'line' coverage: 588
+  New 'line' coverage: 589
+  New 'line' coverage: 615
+  New 'line' coverage: 621
+  New 'line' coverage: 623
+  New 'line' coverage: 624
+  New 'line' coverage: 625
+  New 'line' coverage: 626
+  New 'line' coverage: 627
+  New 'line' coverage: 628
+  New 'line' coverage: 630
+  New 'line' coverage: 632
+  New 'line' coverage: 635
+  New 'line' coverage: 637
+New src file: /usr/local/include/gsl/gsl_sf_airy.h
+  New 'function' coverage: gsl_sf_airy_Ai()
+  New 'function' coverage: gsl_sf_airy_Ai_e()
+  New 'line' coverage: 45
+  New 'line' coverage: 46

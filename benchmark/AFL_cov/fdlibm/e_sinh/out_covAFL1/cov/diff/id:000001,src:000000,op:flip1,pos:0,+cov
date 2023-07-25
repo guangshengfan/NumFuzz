@@ -1,0 +1,5 @@
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_sinh/e_sinh.c
+  New 'line' coverage: 151
+  New 'line' coverage: 152
+  New 'line' coverage: 153

@@ -1,0 +1,4 @@
+diff id:000002,orig:testcase4 -> id:000003,src:000002,op:flip1,pos:31,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acos/e_acos.c
+  New 'line' coverage: 75
+  New 'line' coverage: 79

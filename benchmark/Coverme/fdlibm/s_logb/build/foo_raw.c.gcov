@@ -1,0 +1,49 @@
+        -:    0:Source:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/s_logb/build/foo_raw.c
+        -:    0:Graph:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/s_logb/build/foo_raw.gcno
+        -:    0:Data:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/s_logb/build/foo_raw.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:/* @(#)s_logb.c 1.3 95/01/18 */
+        -:    3:/*
+        -:    4: * ====================================================
+        -:    5: * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+        -:    6: *
+        -:    7: * Developed at SunSoft, a Sun Microsystems, Inc. business.
+        -:    8: * Permission to use, copy, modify, and distribute this
+        -:    9: * software is freely granted, provided that this notice 
+        -:   10: * is preserved.
+        -:   11: * ====================================================
+        -:   12: */
+        -:   13:
+        -:   14:/*
+        -:   15: * double logb(x)
+        -:   16: * IEEE 754 logb. Included to pass IEEE test suite. Not recommend.
+        -:   17: * Use ilogb instead.
+        -:   18: */
+        -:   19:
+        -:   20:#include "fdlibm.h"
+        -:   21:
+        -:   22:#ifdef __STDC__
+function foo_raw called 5 returned 100% blocks executed 88%
+        5:   23:	double foo_raw(double x)
+        -:   24:#else
+        -:   25:	double foo_raw(x)
+        -:   26:	double x;
+        -:   27:#endif
+        -:   28:{
+        -:   29:	int lx,ix;
+        5:   30:	ix = (__HI(x))&0x7fffffff;	/* high |x| */
+        5:   31:	lx = __LO(x);			/* low x */
+        5:   32:	if((ix|lx)==0) return -1.0/fabs(x);
+branch  0 taken 20% (fallthrough)
+branch  1 taken 80%
+        4:   33:	if(ix>=0x7ff00000) return x*x;
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+        2:   34:	if((ix>>=20)==0) 			/* IEEE 754 logb */
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   35:		return -1022.0; 
+        -:   36:	else
+        2:   37:		return (double) (ix-1023); 
+        -:   38:}

@@ -1,0 +1,6 @@
+diff id:000006,src:000000,op:havoc,rep:8,+cov -> id:000007,src:000000,op:havoc,rep:64,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acosh/e_acosh.c
+  New 'line' coverage: 131
+  New 'line' coverage: 133
+  New 'line' coverage: 134
+  New 'line' coverage: 135

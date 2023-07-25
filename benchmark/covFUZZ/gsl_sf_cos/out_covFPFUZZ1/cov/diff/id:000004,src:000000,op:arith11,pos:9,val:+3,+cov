@@ -1,0 +1,4 @@
+diff id:000003,src:000000,op:flip1,pos:53,+cov -> id:000004,src:000000,op:arith11,pos:9,val:+3,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/gsl_sf_cos/cos.c
+  New 'line' coverage: 121
+  New 'line' coverage: 122

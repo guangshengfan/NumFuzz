@@ -1,0 +1,8 @@
+diff id:000009,src:000000,op:flip1,pos:52,+cov -> id:000010,src:000000,op:flip3,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_log1p/s_log1p.c
+  New 'line' coverage: 142
+  New 'line' coverage: 143
+  New 'line' coverage: 144
+  New 'line' coverage: 145
+  New 'line' coverage: 149
+  New 'line' coverage: 160

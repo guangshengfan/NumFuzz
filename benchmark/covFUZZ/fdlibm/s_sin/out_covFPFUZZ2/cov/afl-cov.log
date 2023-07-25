@@ -1,0 +1,208 @@
+
+*** Imported 38 new test cases from: out_covFPFUZZ2//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 38), cycle: 0
+    lines......: 38.5% (5 of 13 lines)
+    functions..: no data found
+    branches...: 12.5% (1 of 8 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 475
+  New 'line' coverage: 476
+  New 'line' coverage: 479
+  New 'line' coverage: 482
+  New 'line' coverage: 483
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ2//queue/id:000000,orig:testcase | ./s_sin_cov out_covFPFUZZ2//queue/id:000000,orig:testcase
+    0.0000000000000000e+00
+    The Value of b is 0.000000
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 38), cycle: 0
+    lines......: 69.2% (9 of 13 lines)
+    functions..: no data found
+    branches...: 50.0% (4 of 8 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 486
+  New 'line' coverage: 490
+  New 'line' coverage: 491
+  New 'line' coverage: 493
+
+[+] AFL test case: id:000002,orig:testcase10 (2 / 38), cycle: 0
+    lines......: 69.2% (9 of 13 lines)
+    functions..: no data found
+    branches...: 50.0% (4 of 8 branches)
+[+] AFL test case: id:000003,orig:testcase11 (3 / 38), cycle: 0
+    lines......: 84.6% (11 of 13 lines)
+    functions..: no data found
+    branches...: 62.5% (5 of 8 branches)
+
+    Coverage diff id:000002,orig:testcase10 id:000003,orig:testcase11
+diff id:000002,orig:testcase10 -> id:000003,orig:testcase11
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 495
+  New 'line' coverage: 496
+
+[+] AFL test case: id:000004,orig:testcase12 (4 / 38), cycle: 0
+    lines......: 92.3% (12 of 13 lines)
+    functions..: no data found
+    branches...: 75.0% (6 of 8 branches)
+
+    Coverage diff id:000003,orig:testcase11 id:000004,orig:testcase12
+diff id:000003,orig:testcase11 -> id:000004,orig:testcase12
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 494
+
+[+] AFL test case: id:000005,orig:testcase13 (5 / 38), cycle: 0
+    lines......: 92.3% (12 of 13 lines)
+    functions..: no data found
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000006,orig:testcase14 (6 / 38), cycle: 0
+    lines......: 92.3% (12 of 13 lines)
+    functions..: no data found
+    branches...: 75.0% (6 of 8 branches)
+[+] AFL test case: id:000007,orig:testcase15 (7 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 87.5% (7 of 8 branches)
+
+    Coverage diff id:000006,orig:testcase14 id:000007,orig:testcase15
+diff id:000006,orig:testcase14 -> id:000007,orig:testcase15
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 492
+
+[+] AFL test case: id:000008,orig:testcase2 (8 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 87.5% (7 of 8 branches)
+[+] AFL test case: id:000009,orig:testcase3 (9 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000010,orig:testcase4 (10 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000011,orig:testcase5 (11 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000012,orig:testcase6 (12 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000013,orig:testcase7 (13 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000014,orig:testcase8 (14 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000015,orig:testcase9 (15 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000016,src:000000,op:flip2,pos:63,+cov (16 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000017,src:000000,op:flip3,pos:63,+cov (17 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000018,src:000000,op:flip8,pos:63 (18 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000019,src:000000,op:flip8,pos:62,+cov (19 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000020,src:000000,op:arith11,pos:10,val:-17,+cov (20 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000021,src:000000,op:arith11,pos:9,val:-18,+cov (21 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000022,src:000000,op:arith11,pos:2,val:-30 (22 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000023,src:000000,op:arith11,pos:7,val:-31,+cov (23 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000024,src:000000,op:arith11,pos:1,val:-32,+cov (24 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000025,src:000000,op:havoc,rep:64 (25 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000026,src:000000,op:havoc,rep:128 (26 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000027,src:000000,op:havoc,rep:32 (27 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000028,src:000000,op:havoc,rep:64,+cov (28 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000029,src:000000,op:havoc,rep:128 (29 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000030,src:000000,op:havoc,rep:16 (30 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000031,src:000000,op:havoc,rep:32 (31 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000032,src:000000,op:havoc,rep:64,+cov (32 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000033,src:000000,op:havoc,rep:32,+cov (33 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000034,src:000000,op:havoc,rep:8 (34 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000035,src:000000,op:havoc,rep:16 (35 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000036,src:000000,op:havoc,rep:4,+cov (36 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] AFL test case: id:000037,src:000000,op:havoc,rep:32 (37 / 38), cycle: 0
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] Processed 38 / 38 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ2//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ2//cov/pos-cov
+    lines......: 100.0% (13 of 13 lines)
+    functions..: no data found
+    branches...: 100.0% (8 of 8 branches)
+[+] Final lcov web report: out_covFPFUZZ2//cov/web/index.html

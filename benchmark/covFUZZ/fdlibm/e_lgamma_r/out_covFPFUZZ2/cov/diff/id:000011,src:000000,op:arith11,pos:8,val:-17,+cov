@@ -1,0 +1,5 @@
+diff id:000010,src:000000,op:flip8,pos:62,+cov -> id:000011,src:000000,op:arith11,pos:8,val:-17,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_lgamma_r/e_lgamma_r.c
+  New 'line' coverage: 435
+  New 'line' coverage: 452
+  New 'line' coverage: 460

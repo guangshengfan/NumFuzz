@@ -1,0 +1,17 @@
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_cbrt/s_cbrt.c
+  New 'line' coverage: 63
+  New 'line' coverage: 65
+  New 'line' coverage: 66
+  New 'line' coverage: 67
+  New 'line' coverage: 74
+  New 'line' coverage: 75
+  New 'line' coverage: 76
+  New 'line' coverage: 79
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+  New 'line' coverage: 90
+  New 'line' coverage: 91

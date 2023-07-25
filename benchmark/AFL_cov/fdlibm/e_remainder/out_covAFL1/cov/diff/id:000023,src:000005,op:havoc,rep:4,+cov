@@ -1,0 +1,4 @@
+diff id:000022,src:000005,op:havoc,rep:4,+cov -> id:000023,src:000005,op:havoc,rep:4,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 197
+  New 'line' coverage: 198

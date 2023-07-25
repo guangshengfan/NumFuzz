@@ -1,0 +1,9 @@
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_j0y/e_j0y.c
+  New 'line' coverage: 254
+  New 'line' coverage: 255
+  New 'line' coverage: 287
+  New 'line' coverage: 290
+  New 'line' coverage: 291
+  New 'line' coverage: 292
+  New 'line' coverage: 293

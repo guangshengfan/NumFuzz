@@ -1,0 +1,9 @@
+diff id:000022,src:000002,op:havoc,rep:16 -> id:000023,src:000002,op:havoc,rep:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/FUZZ/fdlibm/e_acos.c
+  New 'line' coverage: 89
+  New 'line' coverage: 90
+  New 'line' coverage: 91
+  New 'line' coverage: 92
+  New 'line' coverage: 93
+  New 'line' coverage: 94
+  New 'line' coverage: 95

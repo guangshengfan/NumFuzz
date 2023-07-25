@@ -1,0 +1,6 @@
+diff id:000001,orig:testcase1 -> id:000002,orig:testcase2
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_nextafter/s_nextafter.c
+  New 'line' coverage: 50
+  New 'line' coverage: 51
+  New 'line' coverage: 52
+  New 'line' coverage: 53

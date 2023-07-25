@@ -1,0 +1,6 @@
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_cos/s_cos.c
+  New 'line' coverage: 491
+  New 'line' coverage: 495
+  New 'line' coverage: 496
+  New 'line' coverage: 498

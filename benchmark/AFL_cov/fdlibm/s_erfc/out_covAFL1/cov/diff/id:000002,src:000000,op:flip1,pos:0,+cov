@@ -1,0 +1,6 @@
+diff id:000001,src:000000,op:flip1,pos:0,+cov -> id:000002,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_erfc/s_erfc.c
+  New 'line' coverage: 323
+  New 'line' coverage: 324
+  New 'line' coverage: 325
+  New 'line' coverage: 326

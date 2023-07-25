@@ -1,0 +1,108 @@
+        -:    0:Source:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/s_sin/build/foo_raw.c
+        -:    0:Graph:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/s_sin/build/foo_raw.gcno
+        -:    0:Data:/home/savcuda/Desktop/FloatFuz/benchmark/Coverme/fdlibm/s_sin/build/foo_raw.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:/* @(#)s_sin.c 1.3 95/01/18 */
+        -:    3:/*
+        -:    4: * ====================================================
+        -:    5: * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+        -:    6: *
+        -:    7: * Developed at SunSoft, a Sun Microsystems, Inc. business.
+        -:    8: * Permission to use, copy, modify, and distribute this
+        -:    9: * software is freely granted, provided that this notice 
+        -:   10: * is preserved.
+        -:   11: * ====================================================
+        -:   12: */
+        -:   13:
+        -:   14:/* sin(x)
+        -:   15: * Return sine function of x.
+        -:   16: *
+        -:   17: * kernel function:
+        -:   18: *	__kernel_sin		... sine function on [-pi/4,pi/4]
+        -:   19: *	__kernel_cos		... cose function on [-pi/4,pi/4]
+        -:   20: *	__ieee754_rem_pio2	... argument reduction routine
+        -:   21: *
+        -:   22: * Method.
+        -:   23: *      Let S,C and T denote the sin, cos and tan respectively on 
+        -:   24: *	[-PI/4, +PI/4]. Reduce the argument x to y1+y2 = x-k*pi/2 
+        -:   25: *	in [-pi/4 , +pi/4], and let n = k mod 4.
+        -:   26: *	We have
+        -:   27: *
+        -:   28: *          n        sin(x)      cos(x)        tan(x)
+        -:   29: *     ----------------------------------------------------------
+        -:   30: *	    0	       S	   C		 T
+        -:   31: *	    1	       C	  -S		-1/T
+        -:   32: *	    2	      -S	  -C		 T
+        -:   33: *	    3	      -C	   S		-1/T
+        -:   34: *     ----------------------------------------------------------
+        -:   35: *
+        -:   36: * Special cases:
+        -:   37: *      Let trig be any of sin, cos, or tan.
+        -:   38: *      trig(+-INF)  is NaN, with signals;
+        -:   39: *      trig(NaN)    is that NaN;
+        -:   40: *
+        -:   41: * Accuracy:
+        -:   42: *	TRIG(x) returns trig(x) nearly rounded 
+        -:   43: */
+        -:   44:
+        -:   45:#include "fdlibm.h"
+        -:   46:
+        -:   47:#ifdef __STDC__
+function foo_raw called 9 returned 100% blocks executed 100%
+        9:   48:double foo_raw(double x)
+        -:   49:#else
+        -:   50:  double foo_raw(x)
+        -:   51:     double x;
+        -:   52:#endif
+        -:   53:{
+        9:   54:  double y[2],z=0.0;
+        -:   55:  int n, ix;
+        -:   56:
+        -:   57:  /* High word of x. */
+        9:   58:  ix = __HI(x);
+        -:   59:
+        -:   60:  /* |x| ~< pi/4 */
+        9:   61:  ix &= 0x7fffffff;
+        9:   62:  if(ix <= 0x3fe921fb) return __kernel_sin(x,z,0);
+branch  0 taken 11% (fallthrough)
+branch  1 taken 89%
+call    2 returned 100%
+        -:   63:
+        -:   64:  /* sin(Inf or NaN) is NaN */
+        8:   65:  else if (ix>=0x7ff00000) return x-x;
+branch  0 taken 12% (fallthrough)
+branch  1 taken 88%
+        -:   66:
+        -:   67:  /* argument reduction needed */
+        -:   68:  else {
+        7:   69:    n = __ieee754_rem_pio2(x,y);
+call    0 returned 100%
+        -:   70:    //change this to reflect logic otherwise, 'return do not work'
+        7:   71:    if ((n&3)==0)
+branch  0 taken 14% (fallthrough)
+branch  1 taken 86%
+        1:   72:      return  __kernel_sin(y[0],y[1],1);
+call    0 returned 100%
+        6:   73:    else if ((n&3)==1)
+branch  0 taken 17% (fallthrough)
+branch  1 taken 83%
+        1:   74:      return  __kernel_cos(y[0],y[1]);
+call    0 returned 100%
+        5:   75:    else if ((n&3) ==2)
+branch  0 taken 80% (fallthrough)
+branch  1 taken 20%
+        4:   76:      return -__kernel_sin(y[0],y[1],1);
+call    0 returned 100%
+        -:   77:    else
+        1:   78:      return -__kernel_cos(y[0],y[1]);
+call    0 returned 100%
+        -:   79:    /*	    switch(n&3) {
+        -:   80:            case 0: return  __kernel_sin(y[0],y[1],1);
+        -:   81:            case 1: return  __kernel_cos(y[0],y[1]);
+        -:   82:            case 2: return -__kernel_sin(y[0],y[1],1);
+        -:   83:            default:
+        -:   84:            return -__kernel_cos(y[0],y[1]);*/
+        -:   85:  }
+        -:   86:}
+        -:   87:

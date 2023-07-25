@@ -1,0 +1,3 @@
+diff id:000006,src:000000,op:havoc,rep:8,+cov -> id:000007,src:000000,op:havoc,rep:64,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_tanh/s_tanh.c
+  New 'line' coverage: 69

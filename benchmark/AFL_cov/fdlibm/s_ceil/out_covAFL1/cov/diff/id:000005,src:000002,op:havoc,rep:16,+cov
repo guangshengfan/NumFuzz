@@ -1,0 +1,5 @@
+diff id:000004,src:000002,op:flip1,pos:2,+cov -> id:000005,src:000002,op:havoc,rep:16,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_ceil/s_ceil.c
+  New 'line' coverage: 61
+  New 'line' coverage: 65
+  New 'line' coverage: 66

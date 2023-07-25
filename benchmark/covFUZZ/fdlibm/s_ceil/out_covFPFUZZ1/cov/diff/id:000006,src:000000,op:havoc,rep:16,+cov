@@ -1,0 +1,8 @@
+diff id:000005,src:000000,op:arith11,pos:8,val:+21,+cov -> id:000006,src:000000,op:havoc,rep:16,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_ceil/s_ceil.c
+  New 'line' coverage: 67
+  New 'line' coverage: 68
+  New 'line' coverage: 69
+  New 'line' coverage: 71
+  New 'line' coverage: 72
+  New 'line' coverage: 76

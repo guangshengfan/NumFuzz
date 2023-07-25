@@ -1,0 +1,117 @@
+
+*** Imported 10 new test cases from: out_covFPFUZZ4//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 10), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acos/e_acos.c
+  New 'function' coverage: __ieee754_acos()
+  New 'line' coverage: 64
+  New 'line' coverage: 70
+  New 'line' coverage: 71
+  New 'line' coverage: 72
+  New 'line' coverage: 73
+  New 'line' coverage: 74
+  New 'line' coverage: 81
+  New 'line' coverage: 82
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ4//queue/id:000000,orig:testcase | ./e_acos_cov out_covFPFUZZ4//queue/id:000000,orig:testcase
+    1.0000000000000000e+00
+    The Value of b is 1.570796
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 10), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000002,orig:testcase2 (2 / 10), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000003,orig:testcase3 (3 / 10), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000004,orig:testcase4 (4 / 10), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000005,orig:testcase5 (5 / 10), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000006,src:000000,op:flip1,pos:31,+cov (6 / 10), cycle: 0
+    lines......: 28.6% (10 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 41.7% (5 of 12 branches)
+
+    Coverage diff id:000005,orig:testcase5 id:000006,src:000000,op:flip1,pos:31,+cov
+diff id:000005,orig:testcase5 -> id:000006,src:000000,op:flip1,pos:31,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acos/e_acos.c
+  New 'line' coverage: 75
+  New 'line' coverage: 79
+
+[+] AFL test case: id:000007,src:000000,op:flip8,pos:30,+cov (7 / 10), cycle: 0
+    lines......: 42.9% (15 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (6 of 12 branches)
+
+    Coverage diff id:000006,src:000000,op:flip1,pos:31,+cov id:000007,src:000000,op:flip8,pos:30,+cov
+diff id:000006,src:000000,op:flip1,pos:31,+cov -> id:000007,src:000000,op:flip8,pos:30,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acos/e_acos.c
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+
+[+] AFL test case: id:000008,src:000006,op:flip16,pos:37,+cov (8 / 10), cycle: 0
+    lines......: 65.7% (23 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 66.7% (8 of 12 branches)
+
+    Coverage diff id:000007,src:000000,op:flip8,pos:30,+cov id:000008,src:000006,op:flip16,pos:37,+cov
+diff id:000007,src:000000,op:flip8,pos:30,+cov -> id:000008,src:000006,op:flip16,pos:37,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acos/e_acos.c
+  New 'line' coverage: 88
+  New 'line' coverage: 89
+  New 'line' coverage: 90
+  New 'line' coverage: 91
+  New 'line' coverage: 92
+  New 'line' coverage: 93
+  New 'line' coverage: 94
+  New 'line' coverage: 95
+
+[+] AFL test case: id:000009,src:000006,op:arith52,pos:32,val:-21,+cov (9 / 10), cycle: 0
+    lines......: 94.3% (33 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (9 of 12 branches)
+
+    Coverage diff id:000008,src:000006,op:flip16,pos:37,+cov id:000009,src:000006,op:arith52,pos:32,val:-21,+cov
+diff id:000008,src:000006,op:flip16,pos:37,+cov -> id:000009,src:000006,op:arith52,pos:32,val:-21,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_acos/e_acos.c
+  New 'line' coverage: 100
+  New 'line' coverage: 101
+  New 'line' coverage: 102
+  New 'line' coverage: 103
+  New 'line' coverage: 104
+  New 'line' coverage: 105
+  New 'line' coverage: 106
+  New 'line' coverage: 97
+  New 'line' coverage: 98
+  New 'line' coverage: 99
+
+[+] Processed 10 / 10 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ4//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ4//cov/pos-cov
+    lines......: 94.3% (33 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (9 of 12 branches)
+[+] Final lcov web report: out_covFPFUZZ4//cov/web/index.html

@@ -1,0 +1,10 @@
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/k_cos/k_cos.c
+  New 'line' coverage: 81
+  New 'line' coverage: 82
+  New 'line' coverage: 83
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+  New 'line' coverage: 92
+  New 'line' coverage: 93
+  New 'line' coverage: 94

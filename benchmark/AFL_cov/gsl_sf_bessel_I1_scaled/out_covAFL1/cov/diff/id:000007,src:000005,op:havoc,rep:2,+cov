@@ -1,0 +1,5 @@
+diff id:000006,src:000001,op:flip2,pos:1,+cov -> id:000007,src:000005,op:havoc,rep:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 161
+  New 'line' coverage: 162
+  New 'line' coverage: 163

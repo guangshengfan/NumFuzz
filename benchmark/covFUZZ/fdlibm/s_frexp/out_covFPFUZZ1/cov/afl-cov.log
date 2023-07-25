@@ -1,0 +1,59 @@
+
+*** Imported 5 new test cases from: out_covFPFUZZ1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 5), cycle: 0
+    lines......: 40.0% (6 of 15 lines)
+    functions..: no data found
+    branches...: 33.3% (2 of 6 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/s_frexp.c
+  New 'line' coverage: 44
+  New 'line' coverage: 45
+  New 'line' coverage: 46
+  New 'line' coverage: 47
+  New 'line' coverage: 48
+  New 'line' coverage: 49
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ1//queue/id:000000,orig:testcase | ./s_frexp_cov out_covFPFUZZ1//queue/id:000000,orig:testcase
+    0.0000000000000000e+00 0
+    The Value of b is 0.000000
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 5), cycle: 0
+    lines......: 73.3% (11 of 15 lines)
+    functions..: no data found
+    branches...: 66.7% (4 of 6 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/s_frexp.c
+  New 'line' coverage: 50
+  New 'line' coverage: 56
+  New 'line' coverage: 57
+  New 'line' coverage: 58
+  New 'line' coverage: 59
+
+[+] AFL test case: id:000002,orig:testcase2 (2 / 5), cycle: 0
+    lines......: 73.3% (11 of 15 lines)
+    functions..: no data found
+    branches...: 66.7% (4 of 6 branches)
+[+] AFL test case: id:000003,orig:testcase3 (3 / 5), cycle: 0
+    lines......: 73.3% (11 of 15 lines)
+    functions..: no data found
+    branches...: 83.3% (5 of 6 branches)
+[+] AFL test case: id:000004,orig:testcase4 (4 / 5), cycle: 0
+    lines......: 73.3% (11 of 15 lines)
+    functions..: no data found
+    branches...: 83.3% (5 of 6 branches)
+[+] Processed 5 / 5 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ1//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ1//cov/pos-cov
+    lines......: 73.3% (11 of 15 lines)
+    functions..: no data found
+    branches...: 83.3% (5 of 6 branches)
+[+] Final lcov web report: out_covFPFUZZ1//cov/web/index.html

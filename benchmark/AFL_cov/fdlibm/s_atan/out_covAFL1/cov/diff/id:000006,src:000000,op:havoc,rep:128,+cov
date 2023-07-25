@@ -1,0 +1,4 @@
+diff id:000005,src:000000,op:flip2,pos:2,+cov -> id:000006,src:000000,op:havoc,rep:128,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_atan/s_atan.c
+  New 'line' coverage: 102
+  New 'line' coverage: 105

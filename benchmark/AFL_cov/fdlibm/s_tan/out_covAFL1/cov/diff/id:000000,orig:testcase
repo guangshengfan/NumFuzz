@@ -1,0 +1,9 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_tan/s_tan.c
+  New 'function' coverage: tan_bis()
+  New 'line' coverage: 496
+  New 'line' coverage: 502
+  New 'line' coverage: 503
+  New 'line' coverage: 506
+  New 'line' coverage: 509
+  New 'line' coverage: 510

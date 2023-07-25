@@ -1,0 +1,64 @@
+
+*** Imported 6 new test cases from: out_covFPFUZZ2//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 6), cycle: 0
+    lines......: 54.5% (6 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 33.3% (2 of 6 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/k_sin.c
+  New 'function' coverage: __kernel_sin()
+  New 'line' coverage: 62
+  New 'line' coverage: 68
+  New 'line' coverage: 69
+  New 'line' coverage: 70
+  New 'line' coverage: 71
+  New 'line' coverage: 72
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ2//queue/id:000000,orig:testcase | ./k_sin_cov out_covFPFUZZ2//queue/id:000000,orig:testcase
+    0.0000000000000000e+00 0.0000000000000000e+00 0
+    The Value of b is 0.000000
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 6), cycle: 0
+    lines......: 100.0% (11 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 66.7% (4 of 6 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_sin/k_sin.c
+  New 'line' coverage: 73
+  New 'line' coverage: 74
+  New 'line' coverage: 75
+  New 'line' coverage: 76
+  New 'line' coverage: 77
+
+[+] AFL test case: id:000002,orig:testcase2 (2 / 6), cycle: 0
+    lines......: 100.0% (11 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 66.7% (4 of 6 branches)
+[+] AFL test case: id:000003,orig:testcase3 (3 / 6), cycle: 0
+    lines......: 100.0% (11 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 66.7% (4 of 6 branches)
+[+] AFL test case: id:000004,orig:testcase4 (4 / 6), cycle: 0
+    lines......: 100.0% (11 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 66.7% (4 of 6 branches)
+[+] AFL test case: id:000005,src:000000,op:flip1,pos:63,+cov (5 / 6), cycle: 0
+    lines......: 100.0% (11 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (5 of 6 branches)
+[+] Processed 6 / 6 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ2//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ2//cov/pos-cov
+    lines......: 100.0% (11 of 11 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (5 of 6 branches)
+[+] Final lcov web report: out_covFPFUZZ2//cov/web/index.html

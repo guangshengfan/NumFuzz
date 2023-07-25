@@ -1,0 +1,5 @@
+# All functions / lines in this file were executed by at
+# least one AFL test case. See the cov/id-delta-cov file
+# for more information.
+File: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_asin/e_asin.c
+    function: __ieee754_asin()

@@ -1,0 +1,105 @@
+
+*** Imported 11 new test cases from: out_covFPFUZZ1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 11), cycle: 0
+    lines......: 51.9% (14 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 18.8% (3 of 16 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_j1j/e_j1j.c
+  New 'function' coverage: __ieee754_j1()
+  New 'line' coverage: 100
+  New 'line' coverage: 101
+  New 'line' coverage: 103
+  New 'line' coverage: 104
+  New 'line' coverage: 105
+  New 'line' coverage: 106
+  New 'line' coverage: 107
+  New 'line' coverage: 129
+  New 'line' coverage: 132
+  New 'line' coverage: 133
+  New 'line' coverage: 134
+  New 'line' coverage: 135
+  New 'line' coverage: 136
+  New 'line' coverage: 94
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ1//queue/id:000000,orig:testcase | ./e_j1j_cov out_covFPFUZZ1//queue/id:000000,orig:testcase
+    5.0000000000000000e-01
+    The Value of b is 0.242268
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 11), cycle: 0
+    lines......: 51.9% (14 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 18.8% (3 of 16 branches)
+[+] AFL test case: id:000002,orig:testcase2 (2 / 11), cycle: 0
+    lines......: 96.3% (26 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (8 of 16 branches)
+
+    Coverage diff id:000001,orig:testcase1 id:000002,orig:testcase2
+diff id:000001,orig:testcase1 -> id:000002,orig:testcase2
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_j1j/e_j1j.c
+  New 'line' coverage: 108
+  New 'line' coverage: 109
+  New 'line' coverage: 110
+  New 'line' coverage: 111
+  New 'line' coverage: 112
+  New 'line' coverage: 113
+  New 'line' coverage: 114
+  New 'line' coverage: 115
+  New 'line' coverage: 121
+  New 'line' coverage: 123
+  New 'line' coverage: 124
+  New 'line' coverage: 126
+
+[+] AFL test case: id:000003,src:000000,op:flip1,pos:63,+cov (3 / 11), cycle: 0
+    lines......: 96.3% (26 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 62.5% (10 of 16 branches)
+[+] AFL test case: id:000004,src:000000,op:flip1,pos:62,+cov (4 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 75.0% (12 of 16 branches)
+
+    Coverage diff id:000003,src:000000,op:flip1,pos:63,+cov id:000004,src:000000,op:flip1,pos:62,+cov
+diff id:000003,src:000000,op:flip1,pos:63,+cov -> id:000004,src:000000,op:flip1,pos:62,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_j1j/e_j1j.c
+  New 'line' coverage: 130
+
+[+] AFL test case: id:000005,src:000000,op:flip2,pos:63,+cov (5 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 81.2% (13 of 16 branches)
+[+] AFL test case: id:000006,src:000000,op:flip3,pos:63,+cov (6 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (14 of 16 branches)
+[+] AFL test case: id:000007,src:000000,op:flip4,pos:63,+cov (7 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (14 of 16 branches)
+[+] AFL test case: id:000008,src:000000,op:arith11,pos:7,val:+3,+cov (8 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (14 of 16 branches)
+[+] AFL test case: id:000009,src:000002,op:havoc,rep:8,+cov (9 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (14 of 16 branches)
+[+] AFL test case: id:000010,src:000002,op:havoc,rep:32,+cov (10 / 11), cycle: 0
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 93.8% (15 of 16 branches)
+[+] Processed 11 / 11 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ1//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ1//cov/pos-cov
+    lines......: 100.0% (27 of 27 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 93.8% (15 of 16 branches)
+[+] Final lcov web report: out_covFPFUZZ1//cov/web/index.html

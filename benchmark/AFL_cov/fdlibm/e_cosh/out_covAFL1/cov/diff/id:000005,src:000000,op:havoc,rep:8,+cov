@@ -1,0 +1,6 @@
+diff id:000004,src:000000,op:flip2,pos:1,+cov -> id:000005,src:000000,op:havoc,rep:8,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_cosh/e_cosh.c
+  New 'line' coverage: 167
+  New 'line' coverage: 168
+  New 'line' coverage: 169
+  New 'line' coverage: 176

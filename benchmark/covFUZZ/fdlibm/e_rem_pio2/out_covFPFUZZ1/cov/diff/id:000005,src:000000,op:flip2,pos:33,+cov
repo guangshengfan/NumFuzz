@@ -1,0 +1,7 @@
+diff id:000004,src:000000,op:flip2,pos:63,+cov -> id:000005,src:000000,op:flip2,pos:33,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 305
+  New 'line' coverage: 306
+  New 'line' coverage: 307
+  New 'line' coverage: 308
+  New 'line' coverage: 314

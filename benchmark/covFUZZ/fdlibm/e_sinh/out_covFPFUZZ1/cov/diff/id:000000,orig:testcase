@@ -1,0 +1,16 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_sinh/e_sinh.c
+  New 'function' coverage: __ieee754_sinh()
+  New 'line' coverage: 128
+  New 'line' coverage: 134
+  New 'line' coverage: 135
+  New 'line' coverage: 136
+  New 'line' coverage: 139
+  New 'line' coverage: 140
+  New 'line' coverage: 143
+  New 'line' coverage: 145
+  New 'line' coverage: 146
+  New 'line' coverage: 148
+  New 'line' coverage: 149
+  New 'line' coverage: 151
+  New 'line' coverage: 152

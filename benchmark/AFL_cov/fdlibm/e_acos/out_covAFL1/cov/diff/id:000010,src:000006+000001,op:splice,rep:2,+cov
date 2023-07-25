@@ -1,0 +1,10 @@
+diff id:000009,src:000001,op:flip2,pos:6,+cov -> id:000010,src:000006+000001,op:splice,rep:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_acos/e_acos.c
+  New 'line' coverage: 88
+  New 'line' coverage: 89
+  New 'line' coverage: 90
+  New 'line' coverage: 91
+  New 'line' coverage: 92
+  New 'line' coverage: 93
+  New 'line' coverage: 94
+  New 'line' coverage: 95

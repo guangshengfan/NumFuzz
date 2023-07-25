@@ -1,0 +1,21 @@
+69608672	32	1	  br i1 %22, label %23, label %25
+69609104	35	1	  br i1 %32, label %33, label %73
+69609216	35	1	  br i1 %35, label %36, label %63
+69609328	35	1	  br i1 %38, label %39, label %58
+69798704	33	1	  br i1 %45, label %46, label %50
+69799584	32	1	  br i1 %52, label %53, label %55
+69800528	2	0	  br i1 %60, label %61, label %62
+69790624	33	1	  br i1 %65, label %66, label %72
+69791088	4	0	  br i1 %69, label %70, label %71
+69791856	34	1	  br i1 %75, label %76, label %115
+69792208	36	1	  br i1 %78, label %79, label %89
+69792560	32	1	  br i1 %81, label %82, label %85
+69807232	32	1	  %95 = select i1 %93, double 5.000000e-01, double -5.000000e-01
+69815680	36	1	  br i1 %117, label %118, label %127
+69821744	32	1	  br i1 %165, label %166, label %174
+69802064	32	1	  br i1 %186, label %187, label %193
+69803168	32	1	  br i1 %195, label %196, label %211
+69803520	4	0	  br i1 %198, label %199, label %205
+69831760	41	1	  br i1 %213, label %217, label %214
+69832112	38	1	  br i1 %216, label %217, label %230
+69795824	40	1	  br i1 %232, label %233, label %250

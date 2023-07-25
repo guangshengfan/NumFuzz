@@ -1,0 +1,12 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_tanh/s_tanh.c
+  New 'function' coverage: tanh_bis()
+  New 'line' coverage: 53
+  New 'line' coverage: 59
+  New 'line' coverage: 60
+  New 'line' coverage: 63
+  New 'line' coverage: 64
+  New 'line' coverage: 67
+  New 'line' coverage: 73
+  New 'line' coverage: 74
+  New 'line' coverage: 75

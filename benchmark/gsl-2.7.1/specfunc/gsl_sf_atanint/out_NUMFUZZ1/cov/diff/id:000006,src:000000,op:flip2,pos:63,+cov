@@ -1,0 +1,5 @@
+diff id:000005,src:000000,op:flip1,pos:53 -> id:000006,src:000000,op:flip2,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/gsl-2.7.1/specfunc/gsl_sf_atanint/atanint.c
+  New 'line' coverage: 102
+  New 'line' coverage: 103
+  New 'line' coverage: 104

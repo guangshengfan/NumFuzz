@@ -1,0 +1,271 @@
+
+*** Imported 48 new test cases from: out_covFPFUZZ2//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 48), cycle: 0
+    lines......: 70.0% (21 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 31.8% (7 of 22 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'function' coverage: __ieee754_remainder()
+  New 'line' coverage: 159
+  New 'line' coverage: 165
+  New 'line' coverage: 166
+  New 'line' coverage: 167
+  New 'line' coverage: 169
+  New 'line' coverage: 170
+  New 'line' coverage: 171
+  New 'line' coverage: 172
+  New 'line' coverage: 173
+  New 'line' coverage: 174
+  New 'line' coverage: 175
+  New 'line' coverage: 178
+  New 'line' coverage: 179
+  New 'line' coverage: 185
+  New 'line' coverage: 186
+  New 'line' coverage: 187
+  New 'line' coverage: 188
+  New 'line' coverage: 189
+  New 'line' coverage: 190
+  New 'line' coverage: 201
+  New 'line' coverage: 202
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ2//queue/id:000000,orig:testcase | ./e_remainder_cov out_covFPFUZZ2//queue/id:000000,orig:testcase
+    0.0000000000000000e+00 6.9531023975004755e-310
+    The Value of b is 0.000000
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 40.9% (9 of 22 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 191
+  New 'line' coverage: 192
+
+[+] AFL test case: id:000002,orig:testcase10 (2 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 40.9% (9 of 22 branches)
+[+] AFL test case: id:000003,orig:testcase11 (3 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 40.9% (9 of 22 branches)
+[+] AFL test case: id:000004,orig:testcase12 (4 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 40.9% (9 of 22 branches)
+[+] AFL test case: id:000005,orig:testcase13 (5 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 40.9% (9 of 22 branches)
+[+] AFL test case: id:000006,orig:testcase14 (6 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 45.5% (10 of 22 branches)
+[+] AFL test case: id:000007,orig:testcase15 (7 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 45.5% (10 of 22 branches)
+[+] AFL test case: id:000008,orig:testcase2 (8 / 48), cycle: 0
+    lines......: 76.7% (23 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 45.5% (10 of 22 branches)
+[+] AFL test case: id:000009,orig:testcase3 (9 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+
+    Coverage diff id:000008,orig:testcase2 id:000009,orig:testcase3
+diff id:000008,orig:testcase2 -> id:000009,orig:testcase3
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 182
+
+[+] AFL test case: id:000010,orig:testcase4 (10 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000011,orig:testcase5 (11 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000012,orig:testcase6 (12 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000013,orig:testcase7 (13 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000014,orig:testcase8 (14 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000015,orig:testcase9 (15 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000016,src:000000,op:flip1,pos:63,+cov (16 / 48), cycle: 0
+    lines......: 80.0% (24 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (11 of 22 branches)
+[+] AFL test case: id:000017,src:000000,op:flip1,pos:63,+cov (17 / 48), cycle: 0
+    lines......: 86.7% (26 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 59.1% (13 of 22 branches)
+
+    Coverage diff id:000016,src:000000,op:flip1,pos:63,+cov id:000017,src:000000,op:flip1,pos:63,+cov
+diff id:000016,src:000000,op:flip1,pos:63,+cov -> id:000017,src:000000,op:flip1,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 195
+  New 'line' coverage: 196
+
+[+] AFL test case: id:000018,src:000000,op:flip1,pos:52,+cov (18 / 48), cycle: 0
+    lines......: 86.7% (26 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 63.6% (14 of 22 branches)
+[+] AFL test case: id:000019,src:000000,op:arith11,pos:10,val:-7,+cov (19 / 48), cycle: 0
+    lines......: 93.3% (28 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 77.3% (17 of 22 branches)
+
+    Coverage diff id:000018,src:000000,op:flip1,pos:52,+cov id:000019,src:000000,op:arith11,pos:10,val:-7,+cov
+diff id:000018,src:000000,op:flip1,pos:52,+cov -> id:000019,src:000000,op:arith11,pos:10,val:-7,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 180
+  New 'line' coverage: 181
+
+[+] AFL test case: id:000020,src:000000,op:havoc,rep:4,+cov (20 / 48), cycle: 0
+    lines......: 93.3% (28 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 77.3% (17 of 22 branches)
+[+] AFL test case: id:000021,src:000000,op:havoc,rep:32,+cov (21 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.4% (19 of 22 branches)
+
+    Coverage diff id:000020,src:000000,op:havoc,rep:4,+cov id:000021,src:000000,op:havoc,rep:32,+cov
+diff id:000020,src:000000,op:havoc,rep:4,+cov -> id:000021,src:000000,op:havoc,rep:32,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 197
+  New 'line' coverage: 198
+
+[+] AFL test case: id:000022,src:000000,op:havoc,rep:32,+cov (22 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.4% (19 of 22 branches)
+[+] AFL test case: id:000023,src:000000,op:havoc,rep:32 (23 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.4% (19 of 22 branches)
+[+] AFL test case: id:000024,src:000000,op:havoc,rep:32 (24 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.4% (19 of 22 branches)
+[+] AFL test case: id:000025,src:000000,op:havoc,rep:8,+cov (25 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000026,src:000000,op:havoc,rep:64 (26 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000027,src:000000,op:havoc,rep:8 (27 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000028,src:000000,op:havoc,rep:4,+cov (28 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000029,src:000000,op:havoc,rep:32,+cov (29 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000030,src:000000,op:havoc,rep:16 (30 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000031,src:000000,op:havoc,rep:64 (31 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000032,src:000000,op:havoc,rep:4 (32 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000033,src:000000,op:havoc,rep:2 (33 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000034,src:000000,op:havoc,rep:8 (34 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000035,src:000000,op:havoc,rep:8 (35 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000036,src:000000,op:havoc,rep:8 (36 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000037,src:000000,op:havoc,rep:4 (37 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000038,src:000000,op:havoc,rep:128 (38 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000039,src:000000,op:havoc,rep:64 (39 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000040,src:000000,op:havoc,rep:32 (40 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000041,src:000000,op:havoc,rep:128 (41 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000042,src:000000,op:havoc,rep:4 (42 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000043,src:000000,op:havoc,rep:2,+cov (43 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000044,src:000000,op:havoc,rep:16 (44 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000045,src:000000,op:havoc,rep:4,+cov (45 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 90.9% (20 of 22 branches)
+[+] AFL test case: id:000046,src:000011,op:flip1,pos:34,+cov (46 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 95.5% (21 of 22 branches)
+[+] AFL test case: id:000047,src:000046,op:flip1,pos:53,+cov (47 / 48), cycle: 0
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 95.5% (21 of 22 branches)
+[+] Processed 48 / 48 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ2//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ2//cov/pos-cov
+    lines......: 100.0% (30 of 30 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 95.5% (21 of 22 branches)
+[+] Final lcov web report: out_covFPFUZZ2//cov/web/index.html

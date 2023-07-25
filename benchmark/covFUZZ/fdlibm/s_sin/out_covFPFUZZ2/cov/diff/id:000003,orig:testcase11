@@ -1,0 +1,4 @@
+diff id:000002,orig:testcase10 -> id:000003,orig:testcase11
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_sin/s_sin.c
+  New 'line' coverage: 495
+  New 'line' coverage: 496

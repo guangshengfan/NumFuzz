@@ -1,0 +1,2 @@
+# id:NNNNNN*_file, cycle, src_file, coverage_type, fcn/line
+id:000000,orig:testcase, 0, /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_j0j/e_j0j.c, function, __ieee754_j0()

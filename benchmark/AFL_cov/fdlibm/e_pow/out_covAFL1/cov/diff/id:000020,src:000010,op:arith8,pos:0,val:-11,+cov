@@ -1,0 +1,7 @@
+diff id:000019,src:000006,op:flip1,pos:2,+cov -> id:000020,src:000010,op:arith8,pos:0,val:-11,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_pow/e_pow.c
+  New 'line' coverage: 140
+  New 'line' coverage: 141
+  New 'line' coverage: 144
+  New 'line' coverage: 145
+  New 'line' coverage: 146

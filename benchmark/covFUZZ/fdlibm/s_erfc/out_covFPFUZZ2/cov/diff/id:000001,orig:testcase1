@@ -1,0 +1,8 @@
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_erfc/s_erfc.c
+  New 'line' coverage: 309
+  New 'line' coverage: 310
+  New 'line' coverage: 311
+  New 'line' coverage: 312
+  New 'line' coverage: 313
+  New 'line' coverage: 314

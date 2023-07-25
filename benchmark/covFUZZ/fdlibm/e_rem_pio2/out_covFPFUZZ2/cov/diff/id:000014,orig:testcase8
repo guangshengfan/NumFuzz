@@ -1,0 +1,14 @@
+diff id:000013,orig:testcase7 -> id:000014,orig:testcase8
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 330
+  New 'line' coverage: 331
+  New 'line' coverage: 332
+  New 'line' coverage: 333
+  New 'line' coverage: 334
+  New 'line' coverage: 335
+  New 'line' coverage: 336
+  New 'line' coverage: 337
+  New 'line' coverage: 338
+  New 'line' coverage: 339
+  New 'line' coverage: 340
+  New 'line' coverage: 341

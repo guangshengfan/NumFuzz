@@ -1,0 +1,5 @@
+diff id:000006,src:000000,op:havoc,rep:16,+cov -> id:000007,src:000000,op:havoc,rep:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_scalbn/s_scalbn.c
+  New 'line' coverage: 64
+  New 'line' coverage: 65
+  New 'line' coverage: 66

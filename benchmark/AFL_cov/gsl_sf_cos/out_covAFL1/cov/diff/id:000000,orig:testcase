@@ -1,0 +1,32 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /usr/local/include/gsl/gsl_sf_trig.h
+  New 'function' coverage: gsl_sf_cos()
+  New 'function' coverage: gsl_sf_cos_e()
+  New 'line' coverage: 51
+  New 'line' coverage: 52
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_cos/cos.c
+  New 'line' coverage: 101
+  New 'line' coverage: 108
+  New 'line' coverage: 109
+  New 'line' coverage: 110
+  New 'line' coverage: 111
+  New 'line' coverage: 112
+  New 'line' coverage: 114
+  New 'line' coverage: 120
+  New 'line' coverage: 125
+  New 'line' coverage: 129
+  New 'line' coverage: 131
+  New 'line' coverage: 132
+  New 'line' coverage: 133
+  New 'line' coverage: 134
+  New 'line' coverage: 135
+  New 'line' coverage: 144
+  New 'line' coverage: 146
+  New 'line' coverage: 149
+  New 'line' coverage: 152
+  New 'line' coverage: 156
+  New 'line' coverage: 159
+  New 'line' coverage: 95
+  New 'line' coverage: 96
+  New 'line' coverage: 97
+  New 'line' coverage: 99

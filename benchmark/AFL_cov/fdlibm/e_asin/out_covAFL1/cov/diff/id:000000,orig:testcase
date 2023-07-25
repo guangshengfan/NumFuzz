@@ -1,0 +1,12 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_asin/e_asin.c
+  New 'function' coverage: __ieee754_asin()
+  New 'line' coverage: 74
+  New 'line' coverage: 80
+  New 'line' coverage: 81
+  New 'line' coverage: 82
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 89
+  New 'line' coverage: 90
+  New 'line' coverage: 91

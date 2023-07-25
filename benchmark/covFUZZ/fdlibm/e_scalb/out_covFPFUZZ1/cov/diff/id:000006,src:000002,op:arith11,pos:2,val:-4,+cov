@@ -1,0 +1,4 @@
+diff id:000005,src:000002,op:flip4,pos:63,+cov -> id:000006,src:000002,op:arith11,pos:2,val:-4,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_scalb/e_scalb.c
+  New 'line' coverage: 48
+  New 'line' coverage: 49

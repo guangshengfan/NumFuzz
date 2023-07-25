@@ -1,0 +1,6 @@
+# queue_name, start_time, produce_time, total_time
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/out_covFPFUZZ2/queue/id:000000,orig:testcase, 1657767394868, 1657767391067, 199
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/out_covFPFUZZ2/queue/id:000001,orig:testcase1, 1657767394868, 1657767391067, 199
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/out_covFPFUZZ2/queue/id:000002,orig:testcase2, 1657767394868, 1657767391067, 199
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/out_covFPFUZZ2/queue/id:000003,orig:testcase3, 1657767394868, 1657767391067, 199
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_frexp/out_covFPFUZZ2/queue/id:000004,orig:testcase4, 1657767394868, 1657767391067, 199

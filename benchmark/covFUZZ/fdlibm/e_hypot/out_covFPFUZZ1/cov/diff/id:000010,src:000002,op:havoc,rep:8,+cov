@@ -1,0 +1,6 @@
+diff id:000009,src:000002,op:havoc,rep:2,+cov -> id:000010,src:000002,op:havoc,rep:8,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/e_hypot.c
+  New 'line' coverage: 72
+  New 'line' coverage: 73
+  New 'line' coverage: 74
+  New 'line' coverage: 75

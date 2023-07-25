@@ -1,0 +1,3 @@
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/gsl_sf_cos/cos.c
+  New 'line' coverage: 147

@@ -1,0 +1,7 @@
+diff id:000013,src:000000,op:havoc,rep:4,+cov -> id:000014,src:000000,op:havoc,rep:64,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_lgamma_r/e_lgamma_r.c
+  New 'line' coverage: 453
+  New 'line' coverage: 454
+  New 'line' coverage: 455
+  New 'line' coverage: 456
+  New 'line' coverage: 457

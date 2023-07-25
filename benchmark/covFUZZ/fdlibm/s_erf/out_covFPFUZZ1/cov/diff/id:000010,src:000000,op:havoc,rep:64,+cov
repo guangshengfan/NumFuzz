@@ -1,0 +1,4 @@
+diff id:000009,src:000000,op:havoc,rep:2,+cov -> id:000010,src:000000,op:havoc,rep:64,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_erf/s_erf.c
+  New 'line' coverage: 289
+  New 'line' coverage: 290

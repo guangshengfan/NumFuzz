@@ -1,0 +1,4 @@
+diff id:000025,src:000000,op:flip16,pos:33 -> id:000026,src:000000,op:arith11,pos:10,val:-11,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 180
+  New 'line' coverage: 181

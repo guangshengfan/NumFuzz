@@ -1,0 +1,7 @@
+# All functions / lines in this file were executed by at
+# least one AFL test case. See the cov/id-delta-cov file
+# for more information.
+File: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/gsl_sf_bessel_i2_scaled/i2scaled.c
+File: /usr/local/include/gsl/gsl_sf_bessel.h
+    function: gsl_sf_bessel_i2_scaled()
+    function: gsl_sf_bessel_i2_scaled_e()

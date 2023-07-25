@@ -1,0 +1,2 @@
+# id:NNNNNN*_file, cycle, src_file, coverage_type, fcn/line
+id:000000,orig:testcase, 0, /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_expm1/s_expm1.c, function, expm1_bis()

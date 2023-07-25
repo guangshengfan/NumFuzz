@@ -1,0 +1,7 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_scalb/e_scalb.c
+  New 'function' coverage: __ieee754_scalb()
+  New 'line' coverage: 36
+  New 'line' coverage: 46
+  New 'line' coverage: 47
+  New 'line' coverage: 51

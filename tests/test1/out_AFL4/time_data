@@ -1,0 +1,5 @@
+# queue_name, start_time, produce_time, total_time
+/home/fgs/tests/test1/out_AFL4/queue/id:000000,orig:testcase, 1690270198633, 1690270194646, 13
+/home/fgs/tests/test1/out_AFL4/queue/id:000001,src:000000,op:havoc,rep:4, 1690270198633, 1690270198657, 24
+/home/fgs/tests/test1/out_AFL4/queue/id:000002,src:000000,op:havoc,rep:128, 1690270198633, 1690270198707, 74
+/home/fgs/tests/test1/out_AFL4/queue/id:000003,src:000000,op:havoc,rep:4, 1690270198633, 1690270198965, 332

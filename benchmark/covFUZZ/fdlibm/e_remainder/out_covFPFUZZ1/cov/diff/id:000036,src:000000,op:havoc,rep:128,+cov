@@ -1,0 +1,3 @@
+diff id:000035,src:000000,op:havoc,rep:64 -> id:000036,src:000000,op:havoc,rep:128,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_remainder/e_remainder.c
+  New 'line' coverage: 182

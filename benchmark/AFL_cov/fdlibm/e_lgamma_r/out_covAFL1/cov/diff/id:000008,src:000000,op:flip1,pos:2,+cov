@@ -1,0 +1,6 @@
+diff id:000007,src:000000,op:flip1,pos:2,+cov -> id:000008,src:000000,op:flip1,pos:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_lgamma_r/e_lgamma_r.c
+  New 'line' coverage: 429
+  New 'line' coverage: 430
+  New 'line' coverage: 431
+  New 'line' coverage: 432

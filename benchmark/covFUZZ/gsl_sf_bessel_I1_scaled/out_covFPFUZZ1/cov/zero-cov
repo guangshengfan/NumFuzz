@@ -1,0 +1,4 @@
+# All functions / lines in this file were never executed by any
+# AFL test case.
+File: /usr/local/include/gsl/gsl_sf_bessel.h
+File: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c

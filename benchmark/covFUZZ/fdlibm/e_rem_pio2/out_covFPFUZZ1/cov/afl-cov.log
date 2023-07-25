@@ -1,0 +1,216 @@
+
+*** Imported 26 new test cases from: out_covFPFUZZ1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 26), cycle: 0
+    lines......: 12.3% (8 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 3.3% (1 of 30 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'function' coverage: __ieee754_rem_pio2()
+  New 'line' coverage: 278
+  New 'line' coverage: 284
+  New 'line' coverage: 285
+  New 'line' coverage: 286
+  New 'line' coverage: 288
+  New 'line' coverage: 289
+  New 'line' coverage: 290
+  New 'line' coverage: 291
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ1//queue/id:000000,orig:testcase | ./e_rem_pio2_cov out_covFPFUZZ1//queue/id:000000,orig:testcase
+    The Value of b is 0.000000
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 26), cycle: 0
+    lines......: 23.1% (15 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 16.7% (5 of 30 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 292
+  New 'line' coverage: 293
+  New 'line' coverage: 294
+  New 'line' coverage: 295
+  New 'line' coverage: 296
+  New 'line' coverage: 297
+  New 'line' coverage: 303
+
+[+] AFL test case: id:000002,orig:testcase2 (2 / 26), cycle: 0
+    lines......: 23.1% (15 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 16.7% (5 of 30 branches)
+[+] AFL test case: id:000003,src:000000,op:flip1,pos:63,+cov (3 / 26), cycle: 0
+    lines......: 43.1% (28 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 43.3% (13 of 30 branches)
+
+    Coverage diff id:000002,orig:testcase2 id:000003,src:000000,op:flip1,pos:63,+cov
+diff id:000002,orig:testcase2 -> id:000003,src:000000,op:flip1,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 317
+  New 'line' coverage: 352
+  New 'line' coverage: 356
+  New 'line' coverage: 357
+  New 'line' coverage: 358
+  New 'line' coverage: 359
+  New 'line' coverage: 360
+  New 'line' coverage: 361
+  New 'line' coverage: 363
+  New 'line' coverage: 364
+  New 'line' coverage: 365
+  New 'line' coverage: 366
+  New 'line' coverage: 367
+
+[+] AFL test case: id:000004,src:000000,op:flip2,pos:63,+cov (4 / 26), cycle: 0
+    lines......: 43.1% (28 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 46.7% (14 of 30 branches)
+[+] AFL test case: id:000005,src:000000,op:flip2,pos:33,+cov (5 / 26), cycle: 0
+    lines......: 50.8% (33 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 53.3% (16 of 30 branches)
+
+    Coverage diff id:000004,src:000000,op:flip2,pos:63,+cov id:000005,src:000000,op:flip2,pos:33,+cov
+diff id:000004,src:000000,op:flip2,pos:63,+cov -> id:000005,src:000000,op:flip2,pos:33,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 305
+  New 'line' coverage: 306
+  New 'line' coverage: 307
+  New 'line' coverage: 308
+  New 'line' coverage: 314
+
+[+] AFL test case: id:000006,src:000000,op:flip8,pos:63,+cov (6 / 26), cycle: 0
+    lines......: 69.2% (45 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 66.7% (20 of 30 branches)
+
+    Coverage diff id:000005,src:000000,op:flip2,pos:33,+cov id:000006,src:000000,op:flip8,pos:63,+cov
+diff id:000005,src:000000,op:flip2,pos:33,+cov -> id:000006,src:000000,op:flip8,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 318
+  New 'line' coverage: 319
+  New 'line' coverage: 320
+  New 'line' coverage: 321
+  New 'line' coverage: 322
+  New 'line' coverage: 323
+  New 'line' coverage: 326
+  New 'line' coverage: 327
+  New 'line' coverage: 328
+  New 'line' coverage: 329
+  New 'line' coverage: 345
+  New 'line' coverage: 346
+
+[+] AFL test case: id:000007,src:000000,op:arith11,pos:11,val:+3,+cov (7 / 26), cycle: 0
+    lines......: 70.8% (46 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 73.3% (22 of 30 branches)
+
+    Coverage diff id:000006,src:000000,op:flip8,pos:63,+cov id:000007,src:000000,op:arith11,pos:11,val:+3,+cov
+diff id:000006,src:000000,op:flip8,pos:63,+cov -> id:000007,src:000000,op:arith11,pos:11,val:+3,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 324
+
+[+] AFL test case: id:000008,src:000000,op:arith11,pos:4,val:+4,+cov (8 / 26), cycle: 0
+    lines......: 70.8% (46 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 76.7% (23 of 30 branches)
+[+] AFL test case: id:000009,src:000000,op:arith11,pos:7,val:+16,+cov (9 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+
+    Coverage diff id:000008,src:000000,op:arith11,pos:4,val:+4,+cov id:000009,src:000000,op:arith11,pos:7,val:+16,+cov
+diff id:000008,src:000000,op:arith11,pos:4,val:+4,+cov -> id:000009,src:000000,op:arith11,pos:7,val:+16,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 330
+  New 'line' coverage: 331
+  New 'line' coverage: 332
+  New 'line' coverage: 333
+  New 'line' coverage: 334
+  New 'line' coverage: 335
+  New 'line' coverage: 336
+
+[+] AFL test case: id:000010,src:000000,op:arith11,pos:5,val:+22,+cov (10 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000011,src:000000,op:havoc,rep:128 (11 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000012,src:000000,op:havoc,rep:16 (12 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000013,src:000000,op:havoc,rep:128,+cov (13 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000014,src:000000,op:havoc,rep:32,+cov (14 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000015,src:000000,op:havoc,rep:4,+cov (15 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000016,src:000000,op:havoc,rep:2 (16 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000017,src:000000,op:havoc,rep:64,+cov (17 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000018,src:000000,op:havoc,rep:8 (18 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000019,src:000000,op:havoc,rep:64,+cov (19 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000020,src:000000,op:havoc,rep:16 (20 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000021,src:000000,op:havoc,rep:64,+cov (21 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000022,src:000000,op:havoc,rep:2 (22 / 26), cycle: 0
+    lines......: 81.5% (53 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 83.3% (25 of 30 branches)
+[+] AFL test case: id:000023,src:000000,op:havoc,rep:128,+cov (23 / 26), cycle: 0
+    lines......: 83.1% (54 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.7% (26 of 30 branches)
+
+    Coverage diff id:000022,src:000000,op:havoc,rep:2 id:000023,src:000000,op:havoc,rep:128,+cov
+diff id:000022,src:000000,op:havoc,rep:2 -> id:000023,src:000000,op:havoc,rep:128,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_rem_pio2/e_rem_pio2.c
+  New 'line' coverage: 353
+
+[+] AFL test case: id:000024,src:000000,op:havoc,rep:2 (24 / 26), cycle: 0
+    lines......: 83.1% (54 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.7% (26 of 30 branches)
+[+] AFL test case: id:000025,src:000000,op:havoc,rep:64 (25 / 26), cycle: 0
+    lines......: 83.1% (54 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.7% (26 of 30 branches)
+[+] Processed 26 / 26 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ1//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ1//cov/pos-cov
+    lines......: 83.1% (54 of 65 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 86.7% (26 of 30 branches)
+[+] Final lcov web report: out_covFPFUZZ1//cov/web/index.html

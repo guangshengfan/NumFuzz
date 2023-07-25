@@ -1,0 +1,58 @@
+
+*** Imported 4 new test cases from: out_OAFL1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 4), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/FUZZ/fdlibm/e_acos.c
+  New 'function' coverage: __ieee754_acos()
+  New 'line' coverage: 64
+  New 'line' coverage: 70
+  New 'line' coverage: 71
+  New 'line' coverage: 72
+  New 'line' coverage: 73
+  New 'line' coverage: 74
+  New 'line' coverage: 81
+  New 'line' coverage: 82
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_OAFL1//queue/id:000000,orig:testcase | ./e_acos_cov out_OAFL1//queue/id:000000,orig:testcase
+    5.0000000000000000e-01
+    The Value of b is 1.570796
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 4), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000002,orig:testcase4 (2 / 4), cycle: 0
+    lines......: 22.9% (8 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+[+] AFL test case: id:000003,src:000001,op:flip2,pos:6,+cov (3 / 4), cycle: 0
+    lines......: 37.1% (13 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 33.3% (4 of 12 branches)
+
+    Coverage diff id:000002,orig:testcase4 id:000003,src:000001,op:flip2,pos:6,+cov
+diff id:000002,orig:testcase4 -> id:000003,src:000001,op:flip2,pos:6,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/FUZZ/fdlibm/e_acos.c
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+
+[+] Processed 4 / 4 test cases.
+
+[+] Final zero coverage report: out_OAFL1//cov/zero-cov
+[+] Final positive coverage report: out_OAFL1//cov/pos-cov
+    lines......: 37.1% (13 of 35 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 33.3% (4 of 12 branches)
+[+] Final lcov web report: out_OAFL1//cov/web/index.html

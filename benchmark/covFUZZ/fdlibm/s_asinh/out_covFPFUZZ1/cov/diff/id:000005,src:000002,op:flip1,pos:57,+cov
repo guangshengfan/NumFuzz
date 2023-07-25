@@ -1,0 +1,4 @@
+diff id:000004,src:000002,op:flip1,pos:62,+cov -> id:000005,src:000002,op:flip1,pos:57,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_asinh/s_asinh.c
+  New 'line' coverage: 135
+  New 'line' coverage: 136

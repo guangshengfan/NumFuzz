@@ -1,0 +1,123 @@
+
+*** Imported 8 new test cases from: out_covAFL1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 8), cycle: 0
+    lines......: 35.6% (16 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 31.2% (5 of 16 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /usr/local/include/gsl/gsl_sf_bessel.h
+  New 'function' coverage: gsl_sf_bessel_I1_scaled()
+  New 'function' coverage: gsl_sf_bessel_I1_scaled_e()
+  New 'line' coverage: 155
+  New 'line' coverage: 156
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 146
+  New 'line' coverage: 147
+  New 'line' coverage: 148
+  New 'line' coverage: 152
+  New 'line' coverage: 157
+  New 'line' coverage: 160
+  New 'line' coverage: 165
+  New 'line' coverage: 166
+  New 'line' coverage: 167
+  New 'line' coverage: 168
+  New 'line' coverage: 169
+  New 'line' coverage: 170
+  New 'line' coverage: 171
+  New 'line' coverage: 172
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covAFL1//queue/id:000000,orig:testcase | ./bessel_I1_scaled_cov out_covAFL1//queue/id:000000,orig:testcase
+    5.000000000000000e-01
+    The Value of b is 0.156421
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 8), cycle: 0
+    lines......: 35.6% (16 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 31.2% (5 of 16 branches)
+[+] AFL test case: id:000002,orig:testcase2 (2 / 8), cycle: 0
+    lines......: 35.6% (16 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 31.2% (5 of 16 branches)
+[+] AFL test case: id:000003,src:000001,op:flip1,pos:0,+cov (3 / 8), cycle: 0
+    lines......: 35.6% (16 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 37.5% (6 of 16 branches)
+[+] AFL test case: id:000004,src:000001,op:flip1,pos:0,+cov (4 / 8), cycle: 0
+    lines......: 62.2% (28 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 56.2% (9 of 16 branches)
+
+    Coverage diff id:000003,src:000001,op:flip1,pos:0,+cov id:000004,src:000001,op:flip1,pos:0,+cov
+diff id:000003,src:000001,op:flip1,pos:0,+cov -> id:000004,src:000001,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 174
+  New 'line' coverage: 175
+  New 'line' coverage: 176
+  New 'line' coverage: 177
+  New 'line' coverage: 178
+  New 'line' coverage: 179
+  New 'line' coverage: 180
+  New 'line' coverage: 181
+  New 'line' coverage: 182
+  New 'line' coverage: 183
+  New 'line' coverage: 184
+  New 'line' coverage: 185
+
+[+] AFL test case: id:000005,src:000001,op:flip1,pos:0,+cov (5 / 8), cycle: 0
+    lines......: 68.9% (31 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 68.8% (11 of 16 branches)
+
+    Coverage diff id:000004,src:000001,op:flip1,pos:0,+cov id:000005,src:000001,op:flip1,pos:0,+cov
+diff id:000004,src:000001,op:flip1,pos:0,+cov -> id:000005,src:000001,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 153
+  New 'line' coverage: 154
+  New 'line' coverage: 155
+
+[+] AFL test case: id:000006,src:000001,op:flip2,pos:1,+cov (6 / 8), cycle: 0
+    lines......: 93.3% (42 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 81.2% (13 of 16 branches)
+
+    Coverage diff id:000005,src:000001,op:flip1,pos:0,+cov id:000006,src:000001,op:flip2,pos:1,+cov
+diff id:000005,src:000001,op:flip1,pos:0,+cov -> id:000006,src:000001,op:flip2,pos:1,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 188
+  New 'line' coverage: 189
+  New 'line' coverage: 190
+  New 'line' coverage: 191
+  New 'line' coverage: 192
+  New 'line' coverage: 193
+  New 'line' coverage: 194
+  New 'line' coverage: 195
+  New 'line' coverage: 196
+  New 'line' coverage: 197
+  New 'line' coverage: 198
+
+[+] AFL test case: id:000007,src:000005,op:havoc,rep:2,+cov (7 / 8), cycle: 0
+    lines......: 100.0% (45 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 87.5% (14 of 16 branches)
+
+    Coverage diff id:000006,src:000001,op:flip2,pos:1,+cov id:000007,src:000005,op:havoc,rep:2,+cov
+diff id:000006,src:000001,op:flip2,pos:1,+cov -> id:000007,src:000005,op:havoc,rep:2,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 161
+  New 'line' coverage: 162
+  New 'line' coverage: 163
+
+[+] Processed 8 / 8 test cases.
+
+[+] Final zero coverage report: out_covAFL1//cov/zero-cov
+[+] Final positive coverage report: out_covAFL1//cov/pos-cov
+    lines......: 100.0% (45 of 45 lines)
+    functions..: 100.0% (2 of 2 functions)
+    branches...: 87.5% (14 of 16 branches)
+[+] Final lcov web report: out_covAFL1//cov/web/index.html

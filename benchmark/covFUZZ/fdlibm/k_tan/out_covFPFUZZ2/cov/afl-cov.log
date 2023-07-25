@@ -1,0 +1,124 @@
+
+*** Imported 9 new test cases from: out_covFPFUZZ2//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 9), cycle: 0
+    lines......: 34.7% (17 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (4 of 16 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_tan/k_tan.c
+  New 'function' coverage: __kernel_tan()
+  New 'line' coverage: 100
+  New 'line' coverage: 78
+  New 'line' coverage: 79
+  New 'line' coverage: 80
+  New 'line' coverage: 82
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 89
+  New 'line' coverage: 92
+  New 'line' coverage: 94
+  New 'line' coverage: 95
+  New 'line' coverage: 96
+  New 'line' coverage: 97
+  New 'line' coverage: 98
+  New 'line' coverage: 99
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covFPFUZZ2//queue/id:000000,orig:testcase | ./k_tan_cov out_covFPFUZZ2//queue/id:000000,orig:testcase
+    0.0000000000000000e+00 0.0000000000000000e+00 0
+    The Value of b is -nan
+++++++ END
+
+[+] AFL test case: id:000001,orig:testcase1 (1 / 9), cycle: 0
+    lines......: 79.6% (39 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (8 of 16 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,orig:testcase1
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_tan/k_tan.c
+  New 'line' coverage: 105
+  New 'line' coverage: 106
+  New 'line' coverage: 107
+  New 'line' coverage: 108
+  New 'line' coverage: 110
+  New 'line' coverage: 111
+  New 'line' coverage: 112
+  New 'line' coverage: 113
+  New 'line' coverage: 115
+  New 'line' coverage: 116
+  New 'line' coverage: 122
+  New 'line' coverage: 123
+  New 'line' coverage: 124
+  New 'line' coverage: 125
+  New 'line' coverage: 126
+  New 'line' coverage: 127
+  New 'line' coverage: 128
+  New 'line' coverage: 129
+  New 'line' coverage: 130
+  New 'line' coverage: 131
+  New 'line' coverage: 132
+  New 'line' coverage: 133
+
+[+] AFL test case: id:000002,orig:testcase2 (2 / 9), cycle: 0
+    lines......: 79.6% (39 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 56.2% (9 of 16 branches)
+[+] AFL test case: id:000003,orig:testcase3 (3 / 9), cycle: 0
+    lines......: 79.6% (39 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 56.2% (9 of 16 branches)
+[+] AFL test case: id:000004,orig:testcase4 (4 / 9), cycle: 0
+    lines......: 79.6% (39 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 56.2% (9 of 16 branches)
+[+] AFL test case: id:000005,src:000000,op:flip1,pos:1,+cov (5 / 9), cycle: 0
+    lines......: 79.6% (39 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 62.5% (10 of 16 branches)
+[+] AFL test case: id:000006,src:000000,op:flip8,pos:62,+cov (6 / 9), cycle: 0
+    lines......: 98.0% (48 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 81.2% (13 of 16 branches)
+
+    Coverage diff id:000005,src:000000,op:flip1,pos:1,+cov id:000006,src:000000,op:flip8,pos:62,+cov
+diff id:000005,src:000000,op:flip1,pos:1,+cov -> id:000006,src:000000,op:flip8,pos:62,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_tan/k_tan.c
+  New 'line' coverage: 135
+  New 'line' coverage: 143
+  New 'line' coverage: 144
+  New 'line' coverage: 145
+  New 'line' coverage: 146
+  New 'line' coverage: 147
+  New 'line' coverage: 148
+  New 'line' coverage: 149
+  New 'line' coverage: 150
+
+[+] AFL test case: id:000007,src:000000,op:flip32,pos:33,+cov (7 / 9), cycle: 0
+    lines......: 100.0% (49 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 87.5% (14 of 16 branches)
+
+    Coverage diff id:000006,src:000000,op:flip8,pos:62,+cov id:000007,src:000000,op:flip32,pos:33,+cov
+diff id:000006,src:000000,op:flip8,pos:62,+cov -> id:000007,src:000000,op:flip32,pos:33,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/k_tan/k_tan.c
+  New 'line' coverage: 87
+
+[+] AFL test case: id:000008,src:000001,op:flip1,pos:57,+cov (8 / 9), cycle: 0
+    lines......: 100.0% (49 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 93.8% (15 of 16 branches)
+[+] Processed 9 / 9 test cases.
+
+[+] Final zero coverage report: out_covFPFUZZ2//cov/zero-cov
+[+] Final positive coverage report: out_covFPFUZZ2//cov/pos-cov
+    lines......: 100.0% (49 of 49 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 93.8% (15 of 16 branches)
+[+] Final lcov web report: out_covFPFUZZ2//cov/web/index.html

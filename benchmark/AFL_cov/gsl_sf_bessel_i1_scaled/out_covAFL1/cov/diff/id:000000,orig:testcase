@@ -1,0 +1,16 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /usr/local/include/gsl/gsl_sf_bessel.h
+  New 'function' coverage: gsl_sf_bessel_i1_scaled()
+  New 'function' coverage: gsl_sf_bessel_i1_scaled_e()
+  New 'line' coverage: 353
+  New 'line' coverage: 354
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_bessel_i1_scaled/i1scaled.c
+  New 'line' coverage: 40
+  New 'line' coverage: 44
+  New 'line' coverage: 49
+  New 'line' coverage: 52
+  New 'line' coverage: 66
+  New 'line' coverage: 67
+  New 'line' coverage: 68
+  New 'line' coverage: 69
+  New 'line' coverage: 70

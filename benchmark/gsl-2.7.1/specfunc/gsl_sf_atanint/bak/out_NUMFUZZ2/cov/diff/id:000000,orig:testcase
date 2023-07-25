@@ -1,0 +1,19 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /usr/local/include/gsl/gsl_sf_expint.h
+  New 'function' coverage: gsl_sf_atanint()
+  New 'function' coverage: gsl_sf_atanint_e()
+  New 'line' coverage: 161
+  New 'line' coverage: 162
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/gsl-2.7.1/specfunc/gsl_sf_atanint/atanint.c
+  New 'line' coverage: 68
+  New 'line' coverage: 69
+  New 'line' coverage: 73
+  New 'line' coverage: 78
+  New 'line' coverage: 83
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+  New 'line' coverage: 88
+  New 'line' coverage: 89
+  New 'line' coverage: 90

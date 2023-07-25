@@ -1,0 +1,6 @@
+diff id:000007,src:000000,op:flip8,pos:62,+cov -> id:000008,src:000000,op:arith11,pos:7,val:+3,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_erf/s_erf.c
+  New 'line' coverage: 322
+  New 'line' coverage: 323
+  New 'line' coverage: 324
+  New 'line' coverage: 325

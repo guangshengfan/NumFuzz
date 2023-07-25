@@ -1,0 +1,4 @@
+diff id:000004,src:000000,op:flip1,pos:62,+cov -> id:000005,src:000000,op:arith11,pos:6,val:+21,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/s_floor.c
+  New 'line' coverage: 67
+  New 'line' coverage: 68

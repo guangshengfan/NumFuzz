@@ -1,0 +1,44 @@
+
+*** Imported 2 new test cases from: out_covAFL1//queue
+
+[+] AFL test case: id:000000,orig:testcase (0 / 2), cycle: 0
+    lines......: 44.4% (4 of 9 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 25.0% (3 of 12 branches)
+
+    Coverage diff (init) id:000000,orig:testcase
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_scalb/e_scalb.c
+  New 'function' coverage: __ieee754_scalb()
+  New 'line' coverage: 36
+  New 'line' coverage: 46
+  New 'line' coverage: 47
+  New 'line' coverage: 51
+
+
+
+++++++ BEGIN - first exec output for CMD: cat out_covAFL1//queue/id:000000,orig:testcase | ./e_scalb_cov out_covAFL1//queue/id:000000,orig:testcase
+    0.0000000000000000e+00 6.9528066035445203e-310
+    The Value of b is -nan
+++++++ END
+
+[+] AFL test case: id:000001,src:000000,op:flip2,pos:1,+cov (1 / 2), cycle: 0
+    lines......: 77.8% (7 of 9 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (6 of 12 branches)
+
+    Coverage diff id:000000,orig:testcase id:000001,src:000000,op:flip2,pos:1,+cov
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip2,pos:1,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_scalb/e_scalb.c
+  New 'line' coverage: 52
+  New 'line' coverage: 53
+  New 'line' coverage: 54
+
+[+] Processed 2 / 2 test cases.
+
+[+] Final zero coverage report: out_covAFL1//cov/zero-cov
+[+] Final positive coverage report: out_covAFL1//cov/pos-cov
+    lines......: 77.8% (7 of 9 lines)
+    functions..: 100.0% (1 of 1 function)
+    branches...: 50.0% (6 of 12 branches)
+[+] Final lcov web report: out_covAFL1//cov/web/index.html

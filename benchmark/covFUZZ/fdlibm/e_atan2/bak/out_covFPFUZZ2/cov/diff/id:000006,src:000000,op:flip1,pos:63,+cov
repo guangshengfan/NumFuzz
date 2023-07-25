@@ -1,0 +1,5 @@
+diff id:000005,src:000000,op:flip1,pos:62,+cov -> id:000006,src:000000,op:flip1,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_atan2/e_atan2.c
+  New 'line' coverage: 116
+  New 'line' coverage: 117
+  New 'line' coverage: 122

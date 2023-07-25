@@ -1,0 +1,3 @@
+diff id:000014,src:000001,op:havoc,rep:16,+cov -> id:000015,src:000001,op:havoc,rep:64,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_pow/e_pow.c
+  New 'line' coverage: 157

@@ -1,0 +1,7 @@
+# All functions / lines in this file were executed by at
+# least one AFL test case. See the cov/id-delta-cov file
+# for more information.
+File: /usr/local/include/gsl/gsl_sf_trig.h
+    function: gsl_sf_sin()
+    function: gsl_sf_sin_e()
+File: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_sin/sin.c

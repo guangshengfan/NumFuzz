@@ -1,0 +1,4 @@
+diff id:000006,src:000000,op:flip1,pos:50,+cov -> id:000007,src:000000,op:flip3,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_nextafter/s_nextafter.c
+  New 'line' coverage: 60
+  New 'line' coverage: 61

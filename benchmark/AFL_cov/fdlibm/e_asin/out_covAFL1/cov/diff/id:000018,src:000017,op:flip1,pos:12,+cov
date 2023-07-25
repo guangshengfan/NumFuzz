@@ -1,0 +1,4 @@
+diff id:000017,src:000012+000004,op:splice,rep:2,+cov -> id:000018,src:000017,op:flip1,pos:12,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_asin/e_asin.c
+  New 'line' coverage: 106
+  New 'line' coverage: 107

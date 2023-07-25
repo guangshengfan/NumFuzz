@@ -1,0 +1,12 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/e_hypot.c
+  New 'function' coverage: __ieee754_hypot()
+  New 'line' coverage: 54
+  New 'line' coverage: 60
+  New 'line' coverage: 61
+  New 'line' coverage: 63
+  New 'line' coverage: 64
+  New 'line' coverage: 65
+  New 'line' coverage: 66
+  New 'line' coverage: 67
+  New 'line' coverage: 68

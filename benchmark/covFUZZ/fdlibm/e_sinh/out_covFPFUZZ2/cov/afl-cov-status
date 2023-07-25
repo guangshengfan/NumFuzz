@@ -1,0 +1,3 @@
+afl_cov_pid     : 319550
+afl_cov_version : 0.6.2
+command_line    : /home/savcuda/Desktop/afl-cov-master/afl-cov -d out_covFPFUZZ2/ --enable-branch-coverage -c . -e cat AFL_FILE | ./e_sinh_cov AFL_FILE

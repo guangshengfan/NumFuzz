@@ -1,0 +1,4 @@
+diff id:000008,orig:testcase2 -> id:000009,orig:testcase3
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_exp/e_exp.c
+  New 'line' coverage: 123
+  New 'line' coverage: 124

@@ -1,0 +1,3 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_ldexp/s_ldexp.c
+  New 'line' coverage: 73

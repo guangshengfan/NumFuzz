@@ -1,0 +1,32 @@
+diff id:000000,orig:testcase -> id:000001,src:000000,op:flip1,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_jnj/e_jnj.c
+  New 'line' coverage: 834
+  New 'line' coverage: 867
+  New 'line' coverage: 911
+  New 'line' coverage: 912
+  New 'line' coverage: 913
+  New 'line' coverage: 914
+  New 'line' coverage: 915
+  New 'line' coverage: 916
+  New 'line' coverage: 917
+  New 'line' coverage: 918
+  New 'line' coverage: 919
+  New 'line' coverage: 921
+  New 'line' coverage: 922
+  New 'line' coverage: 923
+  New 'line' coverage: 924
+  New 'line' coverage: 933
+  New 'line' coverage: 934
+  New 'line' coverage: 935
+  New 'line' coverage: 936
+  New 'line' coverage: 945
+  New 'line' coverage: 946
+  New 'line' coverage: 947
+  New 'line' coverage: 948
+  New 'line' coverage: 949
+  New 'line' coverage: 950
+  New 'line' coverage: 952
+  New 'line' coverage: 953
+  New 'line' coverage: 954
+  New 'line' coverage: 955
+  New 'line' coverage: 959

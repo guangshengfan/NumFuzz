@@ -1,0 +1,15 @@
+# queue_name, start_time, produce_time, total_time
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000000,orig:testcase, 1657765221514, 1657765217662, 148
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000001,orig:testcase1, 1657765221514, 1657765217662, 148
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000002,orig:testcase2, 1657765221514, 1657765217662, 148
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000003,src:000000,op:flip1,pos:63,+cov, 1657765221514, 1657765221676, 162
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000004,src:000000,op:flip1,pos:61,+cov, 1657765221514, 1657765221681, 167
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000005,src:000000,op:arith11,pos:11,val:+21,+cov, 1657765221514, 1657765221850, 336
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000006,src:000000,op:havoc,rep:8,+cov, 1657765221514, 1657765221899, 385
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000007,src:000000,op:havoc,rep:8,+cov, 1657765221514, 1657765221908, 394
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000008,src:000000,op:havoc,rep:2,+cov, 1657765221514, 1657765221927, 413
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000009,src:000000,op:havoc,rep:128,+cov, 1657765221514, 1657765221933, 419
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000010,src:000000,op:havoc,rep:128,+cov, 1657765221514, 1657765221970, 456
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000011,src:000000,op:havoc,rep:128,+cov, 1657765221514, 1657765221990, 476
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000012,src:000000,op:havoc,rep:32,+cov, 1657765221514, 1657765222280, 766
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_floor/out_covFPFUZZ2/queue/id:000013,src:000000,op:havoc,rep:4,+cov, 1657765221514, 1657765222431, 917

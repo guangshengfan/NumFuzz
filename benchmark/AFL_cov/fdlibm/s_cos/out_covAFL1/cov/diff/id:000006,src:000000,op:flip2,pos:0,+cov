@@ -1,0 +1,3 @@
+diff id:000005,src:000000,op:flip1,pos:2,+cov -> id:000006,src:000000,op:flip2,pos:0,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/s_cos/s_cos.c
+  New 'line' coverage: 497

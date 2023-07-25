@@ -1,0 +1,32 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /usr/local/include/gsl/gsl_sf_trig.h
+  New 'function' coverage: gsl_sf_sin()
+  New 'function' coverage: gsl_sf_sin_e()
+  New 'line' coverage: 45
+  New 'line' coverage: 46
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/gsl_sf_sin/sin.c
+  New 'line' coverage: 101
+  New 'line' coverage: 103
+  New 'line' coverage: 104
+  New 'line' coverage: 105
+  New 'line' coverage: 106
+  New 'line' coverage: 107
+  New 'line' coverage: 116
+  New 'line' coverage: 118
+  New 'line' coverage: 121
+  New 'line' coverage: 124
+  New 'line' coverage: 128
+  New 'line' coverage: 131
+  New 'line' coverage: 70
+  New 'line' coverage: 71
+  New 'line' coverage: 72
+  New 'line' coverage: 74
+  New 'line' coverage: 75
+  New 'line' coverage: 77
+  New 'line' coverage: 84
+  New 'line' coverage: 85
+  New 'line' coverage: 86
+  New 'line' coverage: 87
+  New 'line' coverage: 88
+  New 'line' coverage: 90
+  New 'line' coverage: 96

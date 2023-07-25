@@ -1,0 +1,4 @@
+diff id:000009,orig:testcase3 -> id:000010,orig:testcase4
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_atan/s_atan.c
+  New 'line' coverage: 103
+  New 'line' coverage: 105

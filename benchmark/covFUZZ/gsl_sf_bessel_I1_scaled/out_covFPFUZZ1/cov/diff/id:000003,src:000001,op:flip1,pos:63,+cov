@@ -1,0 +1,5 @@
+diff id:000002,orig:testcase2 -> id:000003,src:000001,op:flip1,pos:63,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/gsl_sf_bessel_I1_scaled/bessel_I1_scaled.c
+  New 'line' coverage: 153
+  New 'line' coverage: 154
+  New 'line' coverage: 155

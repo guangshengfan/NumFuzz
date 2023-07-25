@@ -1,0 +1,8 @@
+diff id:000004,orig:testcase4 -> id:000005,src:000000,op:flip1,pos:53,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_modf/s_modf.c
+  New 'line' coverage: 56
+  New 'line' coverage: 57
+  New 'line' coverage: 58
+  New 'line' coverage: 59
+  New 'line' coverage: 60
+  New 'line' coverage: 61

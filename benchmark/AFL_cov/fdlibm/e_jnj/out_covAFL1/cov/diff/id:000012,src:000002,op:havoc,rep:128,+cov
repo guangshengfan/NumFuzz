@@ -1,0 +1,8 @@
+diff id:000011,src:000002,op:havoc,rep:8,+cov -> id:000012,src:000002,op:havoc,rep:128,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/AFL_cov/fdlibm/e_jnj/e_jnj.c
+  New 'line' coverage: 871
+  New 'line' coverage: 874
+  New 'line' coverage: 875
+  New 'line' coverage: 876
+  New 'line' coverage: 877
+  New 'line' coverage: 879

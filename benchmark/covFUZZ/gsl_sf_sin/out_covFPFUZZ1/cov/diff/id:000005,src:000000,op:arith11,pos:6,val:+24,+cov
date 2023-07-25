@@ -1,0 +1,3 @@
+diff id:000004,src:000000,op:arith11,pos:6,val:+3,+cov -> id:000005,src:000000,op:arith11,pos:6,val:+24,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/gsl_sf_sin/sin.c
+  New 'line' coverage: 125

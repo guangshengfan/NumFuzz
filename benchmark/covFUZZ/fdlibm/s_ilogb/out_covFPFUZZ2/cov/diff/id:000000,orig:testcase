@@ -1,0 +1,9 @@
+diff (init) -> id:000000,orig:testcase
+New src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/s_ilogb/s_ilogb.c
+  New 'function' coverage: ilogb_bis()
+  New 'line' coverage: 28
+  New 'line' coverage: 34
+  New 'line' coverage: 36
+  New 'line' coverage: 37
+  New 'line' coverage: 38
+  New 'line' coverage: 39

@@ -1,0 +1,23 @@
+diff id:000000,orig:testcase -> id:000001,orig:testcase1
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_lgamma_r/e_lgamma_r.c
+  New 'line' coverage: 383
+  New 'line' coverage: 389
+  New 'line' coverage: 390
+  New 'line' coverage: 392
+  New 'line' coverage: 393
+  New 'line' coverage: 394
+  New 'line' coverage: 395
+  New 'line' coverage: 396
+  New 'line' coverage: 400
+  New 'line' coverage: 402
+  New 'line' coverage: 403
+  New 'line' coverage: 409
+  New 'line' coverage: 410
+  New 'line' coverage: 411
+  New 'line' coverage: 412
+  New 'line' coverage: 414
+  New 'line' coverage: 429
+  New 'line' coverage: 430
+  New 'line' coverage: 431
+  New 'line' coverage: 432
+  New 'line' coverage: 461

@@ -1,0 +1,4 @@
+diff id:000018,src:000017,op:flip1,pos:32,+cov -> id:000019,src:000017,op:havoc,rep:8,+cov
+Src file: /home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_asin/e_asin.c
+  New 'line' coverage: 106
+  New 'line' coverage: 107

@@ -1,0 +1,11 @@
+# queue_name, start_time, produce_time, total_time
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000000,orig:testcase, 1657761058898, 1657761055019, 121
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000001,orig:testcase1, 1657761058898, 1657761055019, 121
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000002,orig:testcase2, 1657761058898, 1657761055019, 121
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000003,src:000000,op:flip1,pos:63,+cov, 1657761058898, 1657761059036, 138
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000004,src:000000,op:flip1,pos:58,+cov, 1657761058898, 1657761059043, 145
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000005,src:000000,op:havoc,rep:128,+cov, 1657761058898, 1657761059527, 629
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000006,src:000000,op:havoc,rep:64,+cov, 1657761058898, 1657761059619, 721
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000007,src:000000,op:havoc,rep:16,+cov, 1657761058898, 1657761059836, 938
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000008,src:000002,op:havoc,rep:8,+cov, 1657761058898, 1657761064741, 5843
+/home/savcuda/Desktop/FloatFuz/benchmark/covFUZZ/fdlibm/e_hypot/out_covFPFUZZ2/queue/id:000009,src:000007,op:havoc,rep:64,+cov, 1657761058898, 1657761068940, 10042
